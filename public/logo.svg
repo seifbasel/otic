@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 43.05px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #ded9c5;
+      }
+
+      .cls-1, .cls-4 {
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-2 {
+        font-family: FuturaMugen-Regular, 'Futura Mugen';
+        font-size: 184.46px;
+      }
+
+      .cls-4 {
+        font-size: 16.68px;
+      }
+    </style>
+  </defs>
+  <text class="cls-4" transform="translate(552.94 689.72)"><tspan x="0" y="0">ESTABLISHED</tspan><tspan x="-.29" y="18.42">2024</tspan></text>
+  <text class="cls-1" transform="translate(552.35 464.67)"><tspan x="0" y="0">®</tspan></text>
+  <text class="cls-4" transform="translate(1184.23 689.72)"><tspan x="0" y="0">SHAPING INTERIORS,</tspan><tspan x="0" y="18.42">ELEVATING HOMES</tspan></text>
+  <g>
+    <path class="cls-3" d="M643.96,458.37c-34.76,0-62.94,28.18-62.94,62.94h186.73v-62.94h-123.79Z"/>
+    <polygon class="cls-3" points="755.3 526.86 692.35 526.86 692.35 588.41 631.51 588.41 631.51 526.85 568.57 526.85 568.57 649.95 568.57 649.95 568.57 651.36 692.35 651.36 692.35 662.84 755.3 662.84 755.3 651.36 755.3 651.36 755.3 588.41 755.3 588.41 755.3 526.86"/>
+  </g>
+  <text class="cls-2" transform="translate(829.36 627.36)"><tspan x="0" y="0">oTIC</tspan></text>
+</svg>
