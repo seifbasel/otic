@@ -1,4 +1,5 @@
 import Contact from "@/sections/Contact";
+import Crafts from "@/sections/Crafts";
 import Footer from "@/sections/Footer";
 import Hero from "@/sections/Hero";
 import History from "@/sections/History";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Projects />
+      <Crafts/>
       <History />
       <Contact />
       <Footer />
