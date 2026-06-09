@@ -1,49 +1,143 @@
 'use client';
-import { motion } from 'motion/react';
+import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 
 const services = [
-  { id: '01', title: 'Dressing Rooms', desc: 'Walk-in statement systems custom-engineered with boutique configurations, integrated intelligent lighting, and premium veneers.' },
-  { id: '02', title: 'Architectural Kitchens', desc: 'Culinary epicenters balancing robust utility with seamless hidden integrations and pristine timber millwork.' },
-  { id: '03', title: 'Bespoke Doors', desc: 'Grand entryways and internal structural pivot doors precision-cut to define spatial flow with minimalist elegance.' },
-  { id: '04', title: 'Wall Panel Systems', desc: 'Accoustic, fluted, or bookmatched rich timber wood surfacing that turns standard walls into architectural art.' },
+  { 
+    id: '01', 
+    title: 'Dressing Rooms', 
+    desc: 'Walk-in statement systems custom-engineered with boutique configurations, integrated intelligent lighting, and premium veneers.',
+    img: '/dressing.png' // Replace with your actual image paths
+  },
+  { 
+    id: '02', 
+    title: 'Architectural Kitchens', 
+    desc: 'Culinary epicenters balancing robust utility with seamless hidden integrations and pristine timber millwork.',
+    img: '/kitchen.png' 
+  },
+  { 
+    id: '03', 
+    title: 'Bespoke Doors', 
+    desc: 'Grand entryways and internal structural pivot doors precision-cut to define spatial flow with minimalist elegance.',
+    img: '/door.png' 
+  },
+  { 
+    id: '04', 
+    title: 'Wall Panel Systems', 
+    desc: 'Accoustic, fluted, or bookmatched rich timber wood surfacing that turns standard walls into architectural art.',
+    img: '/walls.png' 
+  },
 ];
+
+// Animation variants for the premium fade-in effect
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, // use a named easing compatible with Framer Motion types
+      ease: 'easeOut' }
+  }
+};
+
+const fadeInDown: Variants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: 'easeOut' }
+  }
+};
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 bg-sandstone text-claywood px-6">
+    <section id="services" className="py-32 bg-background text-foreground px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6">
+        
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-6"
+        >
           <div>
-            <span className="text-vibrant text-xs uppercase font-bold tracking-widest block mb-2">OUR CAPABILITIES</span>
+            <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">OUR CAPABILITIES</span>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight">Tailored Structural Elements</h2>
           </div>
-          <p className="max-w-md text-claywood/80 font-light">
+          <p className="max-w-md text-foreground/60 font-light text-base">
             Every millimeter is custom cut, stained, and hand-finished within our facility to fit perfectly into your architectural blue-prints.
           </p>
+        </motion.div>
+
+        {/* Services List */}
+        <div className="flex flex-col gap-24 md:gap-32">
+          {services.map((svc, idx) => {
+            const isEven = idx % 2 === 0;
+            
+            return (
+              <motion.div 
+                key={svc.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
+                  !isEven ? 'lg:direction-rtl' : ''
+                }`}
+              >
+                {/* Image Column */}
+                <motion.div 
+                  variants={isEven ? fadeInUp : fadeInDown}
+                  className={`relative w-full aspect-4/3 overflow-hidden rounded-2xl bg-card ${
+                    !isEven ? 'lg:order-2' : ''
+                  }`}
+                >
+                  <Image 
+                    src={svc.img} 
+                    alt={svc.title}
+                    fill
+                    className="object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Subtle inner border for premium feel */}
+                  <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" />
+                </motion.div>
+
+                {/* Text Column */}
+                <motion.div 
+                  variants={isEven ? fadeInDown : fadeInUp}
+                  className={`flex flex-col justify-center ${
+                    !isEven ? 'lg:order-1 lg:text-right' : ''
+                  }`}
+                >
+                  <span className="text-accent font-mono font-bold text-sm tracking-widest block mb-4">
+                    {svc.id}
+                  </span>
+                  
+                  <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                    {svc.title}
+                  </h3>
+                  
+                  <p className={`text-foreground/60 text-base leading-relaxed mb-8 ${!isEven ? 'lg:ml-auto' : ''}`} style={{ maxWidth: '480px' }}>
+                    {svc.desc}
+                  </p>
+                  
+                  <div className={`${!isEven ? 'lg:ml-auto' : ''}`}>
+                    <a 
+                      href="#contact" 
+                      className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-semibold group/link"
+                    >
+                      Inquire Feature
+                      <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((svc, idx) => (
-            <motion.div 
-              key={svc.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-desert/30 p-8 rounded-2xl border border-claywood/5 flex flex-col justify-between h-80 hover:bg-claywood hover:text-sandstone transition-all duration-300 group"
-            >
-              <div>
-                <span className="text-vibrant font-mono font-bold block mb-4 group-hover:text-sandstone transition-colors">{svc.id}</span>
-                <h3 className="text-2xl font-normal mb-3">{svc.title}</h3>
-                <p className="text-sm font-light leading-relaxed text-claywood/70 group-hover:text-sandstone/80 transition-colors">{svc.desc}</p>
-              </div>
-              <span className="text-xs uppercase tracking-widest font-semibold pt-4 opacity-0 group-hover:opacity-100 transition-opacity text-vibrant">
-                Inquire Feature &rarr;
-              </span>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

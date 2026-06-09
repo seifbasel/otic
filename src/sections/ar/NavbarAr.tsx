@@ -9,12 +9,11 @@ import {
 import Image from "next/image";
 import LangSwitcher from "@/components/LangSwitcher";
 
-export default function Navbar() {
+export default function NavbarAr() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
       return document.documentElement.classList.contains("dark");
@@ -34,11 +33,8 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
+    if (latest > previous && latest > 150) setHidden(true);
+    else setHidden(false);
     setScrolled(latest > 50);
   });
 
@@ -78,41 +74,37 @@ export default function Navbar() {
               variants={itemVariants}
               href="#services"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
             >
-              Services
+              خدماتنا
             </motion.a>
             <motion.a
               variants={itemVariants}
               href="#projects"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
             >
-              Projects
+              مشاريعنا
             </motion.a>
             <motion.a
               variants={itemVariants}
               href="#history"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
             >
-              Our Legacy
+              إرثنا
             </motion.a>
             <motion.a
               variants={itemVariants}
               href="#contact"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
             >
-              Inquire
+              تواصل معنا
             </motion.a>
-            <motion.div
-              variants={itemVariants}
-              className="mt-8 flex flex-col items-center gap-4"
-            >
-              <LangSwitcher currentLang="en" />
-              <button className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors">
-                Start a Project
+            <motion.div variants={itemVariants} className="mt-8">
+              <button className="bg-accent hover:bg-accent/90 text-white font-semibold text-sm tracking-wider px-10 py-3.5 rounded-full transition-colors">
+                ابدأ مشروعك
               </button>
             </motion.div>
           </motion.div>
@@ -131,11 +123,11 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Right: Logo (RTL — logo is the "start" side) */}
           <div className="shrink-0 flex items-center h-full py-2">
             <Image
               src="/logo-2.png"
-              alt="OTIC Logo"
+              alt="شعار أوتيك"
               width={300}
               height={300}
               priority
@@ -143,35 +135,43 @@ export default function Navbar() {
             />
           </div>
 
-          {/* Desktop Nav links */}
-          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-bone">
-            <a href="#services" className="hover:text-accent transition-colors">
-              Services
+          {/* Center: Desktop Nav links */}
+          <div className="hidden md:flex items-center gap-8 text-sm text-bone">
+            <a
+              href="#services"
+              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
+            >
+              خدماتنا
             </a>
             <a
               href="#projects"
-              className="hover:text-accent  transition-colors"
+              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
             >
-              Projects
+              مشاريعنا
             </a>
-            <a href="#history" className="hover:text-accent transition-colors">
-              Our Legacy
+            <a
+              href="#history"
+              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
+            >
+              إرثنا
             </a>
-            <a href="#contact" className="hover:text-accent transition-colors">
-              Inquire
+            <a
+              href="#contact"
+              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
+            >
+              تواصل معنا
             </a>
           </div>
 
-          {/* Right-side actions */}
+          {/* Left: Actions (RTL — actions are the "end" side) */}
           <div className="flex items-center gap-3 md:gap-4">
-            {/* Lang Switcher */}
-            <LangSwitcher currentLang="en" className="hidden md:flex" />
+            <LangSwitcher currentLang="ar" />
 
             {/* Theme toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-foreground/10 bg-onyx/20 hover:bg-accent/20 transition-all text-bone cursor-pointer"
-              aria-label="Toggle Theme"
+              className="p-2 rounded-full border border-foreground/10 bg-card/20 hover:bg-accent/20 transition-all text-foreground cursor-pointer"
+              aria-label="تبديل الوضع"
             >
               {isDark ? (
                 <svg
@@ -204,30 +204,30 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Desktop Inquire Button */}
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
-              Inquire
+            {/* Desktop CTA */}
+            <button className="hidden md:block bg-accent hover:bg-accent/90 text-white font-semibold text-sm tracking-wide px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+              استفسر الآن
             </button>
 
-            {/* Mobile Hamburger */}
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-foreground"
-              aria-label="Toggle Menu"
+              aria-label="تبديل القائمة"
             >
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                className="w-6 h-[1.5px] bg-current block"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-[1.5px] bg-current block transition-opacity"
+                className="w-6 h-[1.5px] bg-current block"
               />
               <motion.span
                 animate={
                   menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
                 }
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                className="w-6 h-[1.5px] bg-current block"
               />
             </button>
           </div>

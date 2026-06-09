@@ -4,6 +4,8 @@ import Footer from "@/sections/Footer";
 import Hero from "@/sections/Hero";
 import History from "@/sections/History";
 import Navbar from "@/sections/Navbar";
+import Portfolio from "@/sections/Portfolio";
+import Products from "@/sections/Products";
 import Projects from "@/sections/Projects";
 import Services from "@/sections/Services";
 
@@ -13,8 +15,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <Projects />
-      <Crafts/>
+      {/* <Projects /> */}
+      <Portfolio />
+      <Crafts />
+      <Products />
       <History />
       <Contact />
       <Footer />
