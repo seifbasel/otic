@@ -78,7 +78,7 @@ export default function Navbar() {
               variants={itemVariants}
               href="#services"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-light text-text  uppercase tracking-widest hover:text-accent transition-colors"
             >
               Services
             </motion.a>
@@ -86,7 +86,7 @@ export default function Navbar() {
               variants={itemVariants}
               href="#projects"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-light text-text   uppercase tracking-widest hover:text-accent transition-colors"
             >
               Projects
             </motion.a>
@@ -94,7 +94,7 @@ export default function Navbar() {
               variants={itemVariants}
               href="#history"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
             >
               Our Legacy
             </motion.a>
@@ -102,7 +102,7 @@ export default function Navbar() {
               variants={itemVariants}
               href="#contact"
               onClick={handleLinkClick}
-              className="text-3xl font-light text-bone uppercase tracking-widest hover:text-accent transition-colors"
+              className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
             >
               Inquire
             </motion.a>

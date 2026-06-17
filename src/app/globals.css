@@ -14,6 +14,8 @@
   --color-card: #DED9C5;
   --color-border: rgba(36, 26, 25, 0.15);
   --color-accent: #F4743B;       /* tangerine */
+  --color-text: #070C0E;      
+
 }
 
 .dark {
@@ -22,6 +24,8 @@
   --color-card: #241A19;         /* coffee */
   --color-border: rgba(222, 217, 197, 0.15);
   --color-accent: #F4743B;       /* tangerine stays the same */
+  --color-text: #DED9C5;      
+
 }
 
 @layer base {

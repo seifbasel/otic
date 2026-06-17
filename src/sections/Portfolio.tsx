@@ -13,30 +13,6 @@ const categories = [
 
 const projects = [
   {
-    title: "The Noir Walk-In",
-    category: "Dressing Rooms",
-    img: "/dressing.png", // Replace with your images
-    desc: "Bespoke cabinetry systems engineered for seamless garment display and luxurious materiality.",
-  },
-  {
-    title: "Obsidian Kitchen Hub",
-    category: "Architectural Kitchens",
-    img: "/kitchen.png",
-    desc: "Where robust utility meets pristine timber millwork and hidden appliance integration.",
-  },
-  {
-    title: "Heritage Pivot Entry",
-    category: "Bespoke Doors",
-    img: "/door.png",
-    desc: "Grand structural pivot doors precision-cut to define spatial flow with imposing elegance.",
-  },
-  {
-    title: "Linear Slat Acoustic",
-    category: "Wall Paneling",
-    img: "/walls.png",
-    desc: "Bookmatched veneers and acoustic slat walls that transform standard interiors into art.",
-  },
-  {
     title: "Boutique Wardrobe",
     category: "Dressing Rooms",
     img: "/dressing.png",
