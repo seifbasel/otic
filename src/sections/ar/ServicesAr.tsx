@@ -1,64 +1,156 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 
 const services = [
   {
-    id: "٠١",
-    title: "غرف الملابس",
-    desc: "أنظمة خزائن واسعة مُصمَّمة خصيصًا بإضاءة ذكية وأسطح قشرة خشبية راقية، تحوّل الروتين اليومي إلى تجربة فنية.",
+    id: "01",
+    title: "غرف ملابس",
+    desc: "أنظمة واسعة مصممة حسب الطلب، بتوزيعات أنيقة، وإضاءة مدمجة، وتشطيبات خشبية راقية.",
+    img: "/dressing.png",
   },
   {
-    id: "٠٢",
-    title: "المطابخ المعمارية",
-    desc: "محاور طهي تجمع بين الوظيفة الصارمة والجماليات السلسة، مع تشطيبات خشبية دقيقة ومخفيّات متكاملة.",
+    id: "02",
+    title: "مطابخ معمارية",
+    desc: "مساحات طهي تجمع بين العملية العالية والتكامل الخفي والتشطيبات الخشبية الدقيقة.",
+    img: "/kitchen.png",
   },
   {
-    id: "٠٣",
-    title: "الأبواب المخصصة",
-    desc: "مداخل فاخرة وأبواب محورية داخلية مقطوعة بدقة لتحديد تدفق الفضاء بأناقة بسيطة وهوية معمارية واضحة.",
+    id: "03",
+    title: "أبواب مخصصة",
+    desc: "مداخل داخلية وأبواب محورية دقيقة الصنع، تمنح المساحة حضورًا هادئًا وأنيقًا.",
+    img: "/door.png",
   },
   {
-    id: "٠٤",
-    title: "أنظمة ألواح الجدران",
-    desc: "تكسيات خشبية صوتية أو مخدَّدة أو مطابِقة للكتاب تحوّل الجدران العادية إلى لوحات معمارية حية.",
+    id: "04",
+    title: "أنظمة الألواح الجدارية",
+    desc: "تكسية خشبية مصقولة أو ذات تموّج بصري أو طبعات متوازنة، تحول الجدران إلى عنصر معماري.",
+    img: "/livingroom.png",
+  },
+  {
+    id: "05",
+    title: "غرف نوم فاخرة",
+    desc: "مساحات خاصة تُنفذ بعناية مع نجارة مخصصة، وإضاءة محيطية، وخامات تمنح إحساسًا بالسكينة.",
+    img: "/bedroom.png",
   },
 ];
 
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const fadeInDown: Variants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
 export default function ServicesAr() {
   return (
-    <section id="services" className="py-32 bg-sandstone text-claywood px-6">
+    <section id="services" className="py-32 bg-background text-foreground px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-6"
+        >
           <div>
-            <span className="text-vibrant text-xs font-bold tracking-widest block mb-2">قدراتنا</span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">عناصر هيكلية مخصصة</h2>
+            <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
+              قدراتنا
+            </span>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+              عناصر معمارية مصممة بعناية
+            </h2>
           </div>
-          <p className="max-w-md text-claywood/80 font-medium leading-relaxed">
-            كل مليمتر يُقطع ويُصبغ ويُشطَّب يدويًا داخل مصنعنا ليتلاءم تمامًا مع مخططاتك المعمارية.
+          <p className="max-w-md text-foreground/60 font-light text-base md:text-right">
+            كل تفصيلة تُقص وتُشكّل وتُنهى داخل منشأتنا لتنسجم بدقة مع المخطط
+            المعماري للمساحة.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((svc, idx) => (
-            <motion.div
-              key={svc.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-desert/30 p-8 rounded-2xl border border-claywood/5 flex flex-col justify-between h-80 hover:bg-claywood hover:text-sandstone transition-all duration-300 group"
-            >
-              <div>
-                <span className="text-vibrant font-bold block mb-4 text-xl group-hover:text-sandstone transition-colors">{svc.id}</span>
-                <h3 className="text-2xl font-bold mb-3">{svc.title}</h3>
-                <p className="text-sm font-medium leading-relaxed text-claywood/70 group-hover:text-sandstone/80 transition-colors">{svc.desc}</p>
-              </div>
-              <span className="text-xs tracking-widest font-bold pt-4 opacity-0 group-hover:opacity-100 transition-opacity text-vibrant">
-                استفسر عن الخدمة ←
-              </span>
-            </motion.div>
-          ))}
+        <div className="flex flex-col gap-24 md:gap-32">
+          {services.map((svc, idx) => {
+            const isEven = idx % 2 === 0;
+
+            return (
+              <motion.div
+                key={svc.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+              >
+                <motion.div
+                  variants={isEven ? fadeInUp : fadeInDown}
+                  className={`relative w-full aspect-4/3 overflow-hidden rounded-2xl bg-card ${!isEven ? "lg:order-2" : ""}`}
+                >
+                  <Image
+                    src={svc.img}
+                    alt={svc.title}
+                    fill
+                    className="object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" />
+                </motion.div>
+
+                <motion.div
+                  variants={isEven ? fadeInDown : fadeInUp}
+                  className={`flex flex-col justify-center ${!isEven ? "lg:order-1 lg:text-right" : ""}`}
+                >
+                  <span className="text-accent font-mono font-bold text-sm tracking-widest block mb-4">
+                    {svc.id}
+                  </span>
+
+                  <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                    {svc.title}
+                  </h3>
+
+                  <p
+                    className={`text-foreground/60 text-base leading-relaxed mb-8 ${!isEven ? "lg:ml-auto" : ""}`}
+                    style={{ maxWidth: "480px" }}
+                  >
+                    {svc.desc}
+                  </p>
+
+                  <div className={`${!isEven ? "lg:ml-auto" : ""}`}>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-semibold group/link"
+                    >
+                      اطلب هذه الخدمة
+                      <svg
+                        className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -5,28 +5,28 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "مطابخ مخصصة",
-    category: "العمارة الطهوية",
+    title: "مطابخ مفصلة",
+    category: "النجارة المعمارية",
     img: "/kitchen.png",
-    description: "مراكز طهي متطورة مُهندَسة لتحقيق التميز في الطهو والهيمنة البصرية.",
+    description: "مساحات طهي مصممة بعناية لتجمع بين العملية العالية والهدوء البصري.",
   },
   {
     title: "غرف ملابس فاخرة",
-    category: "تصميم الفضاء",
+    category: "تصميم الفراغ",
     img: "/dressing.png",
-    description: "خزائن واسعة ومساحات تلبّس ترتقي بالطقس اليومي إلى مستوى الفن.",
+    description: "خزائن واسعة ومساحات تبديل ترتقي بالروتين اليومي إلى تجربة راقية.",
   },
   {
     title: "أبواب خشبية راقية",
     category: "بيانات المدخل",
     img: "/door.png",
-    description: "مداخل مصنوعة يدويًا تضع لهجة الهوية المعمارية لمساحاتك.",
+    description: "مداخل مصنوعة يدويًا تمنح الهوية المعمارية للمساحة لغة واضحة.",
   },
   {
     title: "ألواح جدارية صوتية",
     category: "التكامل الداخلي",
     img: "/walls.png",
-    description: "جدران بألواح خشبية خطية وصوتية تمزج بين الدفء الجمالي والوظيفة البنيوية.",
+    description: "جدران بتفاصيل خشبية مدمجة توازن بين الجمال والوظيفة والراحة الصوتية.",
   },
 ];
 
@@ -73,9 +73,13 @@ export default function CraftsAr() {
   return (
     <section id="services" className="py-32 bg-background text-foreground px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <span className="text-accent text-xs font-bold tracking-widest block mb-3">ما نحرفه</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">خدماتنا الحرفية</h2>
+        <div className="mb-20 text-right">
+          <span className="text-accent text-xs font-bold tracking-widest block mb-3">
+            ما نقدمه
+          </span>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+            حلولنا الحرفية
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -96,7 +100,7 @@ export default function CraftsAr() {
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-onyx via-onyx/60 to-transparent z-10 group-hover:via-onyx/40 transition-all duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-20" style={{ transform: "translateZ(40px)" }}>
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-right" style={{ transform: "translateZ(40px)" }}>
                   <span className="text-accent text-[10px] tracking-[0.2em] font-bold mb-2 block">
                     {service.category}
                   </span>

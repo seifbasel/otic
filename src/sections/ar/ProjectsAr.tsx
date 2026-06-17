@@ -2,19 +2,23 @@
 import { motion } from "motion/react";
 
 const projects = [
-  { title: "مطبخ الأوبسيديان", category: "مطبخ / تصميم بسيط", img: "/kitchen.png" },
-  { title: "غرفة الملابس الخشبية", category: "غرفة ملابس / فاخرة", img: "/dressing.png" },
-  { title: "الأبواب الخشبية الراقية", category: "أبواب خشبية / مميزة", img: "/door.png" },
-  { title: "ألواح الجدار الخطي", category: "ألواح / صوتية", img: "/walls.png" },
+  { title: "مطبخ أوبسيديان", category: "مطبخ / بسيط", img: "/kitchen.png" },
+  { title: "غرفة ملابس من البلوط", category: "غرفة ملابس / فاخرة", img: "/dressing.png" },
+  { title: "باب خشبي فاخر", category: "أبواب خشبية / مميزة", img: "/door.png" },
+  { title: "ألواح جدارية بخطوط واضحة", category: "ألواح / صوتيات", img: "/walls.png" },
 ];
 
 export default function ProjectsAr() {
   return (
     <section id="projects" className="py-32 bg-claywood text-sandstone px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <span className="text-vibrant text-xs font-bold tracking-widest block mb-2">محفظة أعمالنا</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">أبرز تحققاتنا الفضائية</h2>
+        <div className="mb-16 text-right">
+          <span className="text-vibrant text-xs font-bold tracking-widest block mb-2">
+            مجموعة مختارة
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            أبرز الأعمال والمساحات المنفذة
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -37,7 +41,9 @@ export default function ProjectsAr() {
                 />
               </div>
               <p className="text-xs text-vibrant font-bold tracking-wider mb-1">{proj.category}</p>
-              <h3 className="text-2xl font-bold tracking-wide group-hover:text-vibrant transition-colors duration-300">{proj.title}</h3>
+              <h3 className="text-2xl font-bold tracking-wide group-hover:text-vibrant transition-colors duration-300">
+                {proj.title}
+              </h3>
             </motion.div>
           ))}
         </div>

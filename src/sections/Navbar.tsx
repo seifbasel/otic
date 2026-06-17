@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -9,27 +9,64 @@ import {
 import Image from "next/image";
 import LangSwitcher from "@/components/LangSwitcher";
 
+const THEME_STORAGE_KEY = "otic-theme";
+
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#products", label: "Products" },
+  { href: "#history", label: "History" },
+  { href: "#contact", label: "Contact" },
+  { href: "#location", label: "Location" },
+];
+
 export default function Navbar() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
-    }
-    return false;
-  });
+  useEffect(() => {
+    setMounted(true);
+
+    const syncTheme = () => {
+      const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === "dark") {
+        setIsDark(true);
+        return;
+      }
+      if (stored === "light") {
+        setIsDark(false);
+        return;
+      }
+
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    syncTheme();
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === THEME_STORAGE_KEY) {
+        syncTheme();
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
+
+  const applyTheme = (nextDark: boolean) => {
+    const html = document.documentElement;
+    html.classList.toggle("dark", nextDark);
+    html.style.colorScheme = nextDark ? "dark" : "light";
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextDark ? "dark" : "light");
+    setIsDark(nextDark);
+  };
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    }
+    applyTheme(!isDark);
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -74,38 +111,17 @@ export default function Navbar() {
             exit="exit"
             className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
-            <motion.a
-              variants={itemVariants}
-              href="#services"
-              onClick={handleLinkClick}
-              className="text-3xl font-light text-text  uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              Services
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#projects"
-              onClick={handleLinkClick}
-              className="text-3xl font-light text-text   uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              Projects
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#history"
-              onClick={handleLinkClick}
-              className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              Our Legacy
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#contact"
-              onClick={handleLinkClick}
-              className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              Inquire
-            </motion.a>
+            {navLinks.map((link) => (
+              <motion.a
+                key={link.href}
+                variants={itemVariants}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
+              >
+                {link.label}
+              </motion.a>
+            ))}
             <motion.div
               variants={itemVariants}
               className="mt-8 flex flex-col items-center gap-4"
@@ -144,22 +160,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Nav links */}
-          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-bone">
-            <a href="#services" className="hover:text-accent transition-colors">
-              Services
-            </a>
-            <a
-              href="#projects"
-              className="hover:text-accent  transition-colors"
-            >
-              Projects
-            </a>
-            <a href="#history" className="hover:text-accent transition-colors">
-              Our Legacy
-            </a>
-            <a href="#contact" className="hover:text-accent transition-colors">
-              Inquire
-            </a>
+          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-[11px] uppercase tracking-[0.22em] text-bone">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-accent transition-colors whitespace-nowrap">
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Right-side actions */}
@@ -173,7 +179,9 @@ export default function Navbar() {
               className="p-2 rounded-full border border-foreground/10 bg-onyx/20 hover:bg-accent/20 transition-all text-bone cursor-pointer"
               aria-label="Toggle Theme"
             >
-              {isDark ? (
+              {!mounted ? (
+                <span className="block w-5 h-5" aria-hidden="true" />
+              ) : isDark ? (
                 <svg
                   className="w-5 h-5"
                   fill="none"

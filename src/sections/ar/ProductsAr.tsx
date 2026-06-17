@@ -25,155 +25,155 @@ interface Product {
 const PRODUCTS_DATA = [
   {
     id: 1,
-    name: "The Noir Walnut Door",
-    category: "Bespoke Doors",
+    name: "باب جوز داكن",
+    category: "أبواب مخصصة",
     priceRange: "mid",
     price: "1,450",
     priceNum: 1450,
-    finish: "Veneer",
+    finish: "قشرة خشبية",
     img: "/10.jpeg",
     description:
-      "A deep walnut finish with quiet, refined lines and a calm architectural presence.",
-    dimensions: "2100mm x 900mm x 40mm",
-    finishLabel: "Natural Walnut Veneer",
-    hardware: "Brushed Brass",
+      "تشطيب جوز داكن بخطوط هادئة وحضور معماري راقٍ يضيف دفئًا وأناقة للمكان.",
+    dimensions: "2100 مم × 900 مم × 40 مم",
+    finishLabel: "قشرة جوز طبيعية",
+    hardware: "نحاس مصقول",
   },
   {
     id: 2,
-    name: "Arctic Minimalist Door",
-    category: "Bespoke Doors",
+    name: "باب أبيض هادئ",
+    category: "أبواب مخصصة",
     priceRange: "entry",
     price: "1,050",
     priceNum: 1050,
-    finish: "Lacquer",
+    finish: "لاكير",
     img: "/11.jpeg",
     description:
-      "A pure white surface for interiors that rely on restraint, clarity, and seamless integration.",
-    dimensions: "2100mm x 850mm x 40mm",
-    finishLabel: "Matte Lacquer",
-    hardware: "Satin Nickel",
+      "سطح أبيض نقي للمساحات التي تعتمد على البساطة والاتساع والهدوء البصري.",
+    dimensions: "2100 مم × 850 مم × 40 مم",
+    finishLabel: "لاكير مطفي",
+    hardware: "نيكل ساتان",
   },
   {
     id: 3,
-    name: "Savanna Oak Door",
-    category: "Bespoke Doors",
+    name: "باب بلوط فاخر",
+    category: "أبواب مخصصة",
     priceRange: "premium",
     price: "2,100",
     priceNum: 2100,
-    finish: "Veneer",
+    finish: "قشرة خشبية",
     img: "/12.jpeg",
     description:
-      "Warm oak tones paired with polished hardware for a balanced, architectural finish.",
-    dimensions: "2100mm x 900mm x 44mm",
-    finishLabel: "Smoked Oak Veneer",
-    hardware: "Polished Gold",
+      "درجات بلوط دافئة مع إكسسوارات مصقولة تمنح التصميم توازنًا بصريًا فخمًا.",
+    dimensions: "2100 مم × 900 مم × 44 مم",
+    finishLabel: "قشرة بلوط مدخن",
+    hardware: "ذهبي مصقول",
   },
   {
     id: 4,
-    name: "Stone Gray Flush Door",
-    category: "Bespoke Doors",
+    name: "باب رمادي مسطح",
+    category: "أبواب مخصصة",
     priceRange: "premium",
     price: "1,950",
     priceNum: 1950,
-    finish: "Laminate",
+    finish: "لامينيت",
     img: "/13.jpeg",
     description:
-      "A flush gray design ideal for modern interiors that prefer a quieter architectural line.",
-    dimensions: "2100mm x 900mm x 40mm",
-    finishLabel: "Textured Matte Laminate",
-    hardware: "Matte Black",
+      "تصميم مسطح بدرجات رمادية هادئة ومسار بصري نظيف يناسب المساحات المعاصرة.",
+    dimensions: "2100 مم × 900 مم × 40 مم",
+    finishLabel: "لامينيت مطفي محبب",
+    hardware: "أسود مطفي",
   },
   {
     id: 5,
-    name: "Linear Panel Door",
-    category: "Wall Paneling",
+    name: "باب بألواح خطية",
+    category: "ألواح جدارية",
     priceRange: "luxury",
     price: "2,800",
     priceNum: 2800,
-    finish: "Lacquer",
+    finish: "لاكير",
     img: "/13.jpeg",
     description:
-      "A subtle vertical rhythm adds depth and shadow to transitional wall and door compositions.",
-    dimensions: "2100mm x 950mm x 50mm",
-    finishLabel: "Painted MDF / Veneer",
-    hardware: "Integrated Pull",
+      "إيقاع رأسي خفيف يضيف عمقًا وظلالًا أنيقة لتكوينات الجدران والأبواب.",
+    dimensions: "2100 مم × 950 مم × 50 مم",
+    finishLabel: "MDF مطلي / قشرة خشبية",
+    hardware: "مقبض مدمج",
   },
   {
     id: 6,
-    name: "Deco Geometric Door",
-    category: "Signature Pieces",
+    name: "باب هندسي بطابع لافت",
+    category: "قطع مميزة",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
-    finish: "Lacquer",
+    finish: "لاكير",
     img: "/14.jpeg",
     description:
-      "A statement piece with geometric brass inlays designed to anchor a luxury entrance.",
-    dimensions: "2200mm x 1000mm x 55mm",
-    finishLabel: "Dark Grey Lacquer & Brass",
-    hardware: "Gold Inlaid Handle",
+      "تفاصيل نحاسية هندسية تمنح المدخل شخصية فاخرة وحضورًا واضحًا من النظرة الأولى.",
+    dimensions: "2200 مم × 1000 مم × 55 مم",
+    finishLabel: "لاكير رمادي داكن مع نحاس",
+    hardware: "مقبض مطعّم بالذهب",
   },
   {
     id: 7,
-    name: "Ribbed Oak Panel",
-    category: "Wall Paneling",
+    name: "ألواح بلوط ذات تموج",
+    category: "ألواح جدارية",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
-    finish: "Veneer",
+    finish: "قشرة خشبية",
     img: "/15.jpeg",
     description:
-      "Ribbed oak creates richer shadow play and stronger texture, especially with concealed lighting.",
-    dimensions: "2200mm x 1000mm x 55mm",
-    finishLabel: "Dark Grey Lacquer & Brass",
-    hardware: "Gold Inlaid Handle",
+      "تموجات البلوط تضيف ملمسًا أعمق وأناقة أكثر هدوءًا مع إمكانية دمج الإضاءة المخفية.",
+    dimensions: "2200 مم × 1000 مم × 55 مم",
+    finishLabel: "لاكير رمادي داكن مع نحاس",
+    hardware: "مقبض مطعّم بالذهب",
   },
 ];
 
 const DICTIONARY = {
-  all: "All",
-  collection: "Collection",
-  title: "A product catalog with a calm and premium logic.",
+  all: "الكل",
+  collection: "المجموعة",
+  title: "كتالوج منتجات بمنطق هادئ وفاخر.",
   subtitle:
-    "A curated selection of doors, panels, and signature pieces with clean filtering and light browsing.",
-  type: "Type",
-  finish: "Finish",
-  price: "Price",
-  sort: "Sort",
-  reset: "Reset",
-  items: "items",
-  itemSingle: "item",
-  noProducts: "No matching pieces found",
-  page: "Page",
-  of: "of",
-  prev: "Previous",
-  next: "Next",
-  viewDetails: "View Details",
-  perPiece: "per piece",
-  dimensions: "Dimensions",
-  hardware: "Hardware",
-  whatsappBtn: "Order via WhatsApp",
-  continueBtn: "Continue Browsing",
+    "مجموعة مختارة من الأبواب والألواح والقطع المميزة، مع تصفح خفيف وفلاتر مرتبة وصفحات واضحة.",
+  type: "النوع",
+  finish: "التشطيب",
+  price: "السعر",
+  sort: "الترتيب",
+  reset: "إعادة الضبط",
+  items: "قطع",
+  itemSingle: "قطعة",
+  noProducts: "لا توجد قطع تطابق الفلاتر",
+  page: "الصفحة",
+  of: "من",
+  prev: "السابق",
+  next: "التالي",
+  viewDetails: "عرض التفاصيل",
+  perPiece: "للقطعة",
+  dimensions: "الأبعاد",
+  hardware: "الإكسسوارات",
+  whatsappBtn: "اطلب عبر واتساب",
+  continueBtn: "متابعة التصفح",
   whatsappMsg: (name: string, cat: string, price: string) =>
-    `Hi, I'm interested in the *${name}* (${cat}) priced at SAR ${price}. Could you provide more details?`,
-  categories: ["All", "Bespoke Doors", "Wall Paneling", "Signature Pieces"],
-  finishes: ["All", "Veneer", "Lacquer", "Laminate"],
+    `مرحبًا، أرغب بالاستفسار عن *${name}* (${cat}) بسعر SAR ${price}. هل يمكنكم مشاركة المزيد من التفاصيل؟`,
+  categories: ["الكل", "أبواب مخصصة", "ألواح جدارية", "قطع مميزة"],
+  finishes: ["الكل", "قشرة خشبية", "لاكير", "لامينيت"],
   priceRanges: [
-    { key: "all", label: "All Prices" },
-    { key: "entry", label: "Under SAR 1,500" },
-    { key: "mid", label: "SAR 1,500 - 2,000" },
-    { key: "premium", label: "SAR 2,000 - 2,500" },
-    { key: "luxury", label: "SAR 2,500+" },
+    { key: "all", label: "كل الأسعار" },
+    { key: "entry", label: "أقل من 1500 ريال" },
+    { key: "mid", label: "1500 - 2000 ريال" },
+    { key: "premium", label: "2000 - 2500 ريال" },
+    { key: "luxury", label: "2500 ريال فأعلى" },
   ],
   sortOptions: [
-    { key: "default", label: "Featured" },
-    { key: "price-asc", label: "Price: Low to High" },
-    { key: "price-desc", label: "Price: High to Low" },
-    { key: "name", label: "Name A to Z" },
+    { key: "default", label: "الأبرز" },
+    { key: "price-asc", label: "السعر: من الأقل إلى الأعلى" },
+    { key: "price-desc", label: "السعر: من الأعلى إلى الأقل" },
+    { key: "name", label: "الاسم: من أ إلى ي" },
   ],
 };
 
-function ProductModalEn({
+function ProductModalAr({
   product,
   onClose,
 }: {
@@ -208,13 +208,13 @@ function ProductModalEn({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full max-w-5xl max-h-[90vh] bg-background rounded-[2rem] overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
+        className="relative w-full max-w-5xl max-h-[90vh] bg-background rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center text-foreground transition-colors cursor-pointer"
-          aria-label="Close"
+          className="absolute top-4 left-4 z-50 w-10 h-10 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center text-foreground transition-colors cursor-pointer"
+          aria-label="إغلاق"
         >
           <svg
             className="w-5 h-5"
@@ -238,7 +238,7 @@ function ProductModalEn({
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/25 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-background/25 via-transparent to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-onyx/35 to-transparent md:hidden" />
         </div>
 
@@ -252,11 +252,11 @@ function ProductModalEn({
             </h3>
           </div>
 
-          <div className="flex items-end gap-3 mb-6 justify-start">
-            <span className="text-sm text-foreground/50">{t.perPiece}</span>
+          <div className="flex items-end gap-3 mb-6 justify-end">
             <span className="text-3xl md:text-4xl font-light text-foreground">
               SAR {product.price}
             </span>
+            <span className="text-sm text-foreground/50">{t.perPiece}</span>
           </div>
 
           <p className="text-foreground/70 text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
@@ -270,7 +270,7 @@ function ProductModalEn({
               </span>
               <span className="text-sm font-light">{product.dimensions}</span>
             </div>
-            <div className="border border-border rounded-2xl p-4 bg-white/2">
+            <div className="border border-border rounded-2xl p-4 bg-white/[0.02]">
               <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
                 {t.finish}
               </span>
@@ -356,7 +356,7 @@ function PaginationButton({
   );
 }
 
-export default function ProductCatalogEn() {
+export default function ProductCatalogAr() {
   const t = DICTIONARY;
   const products = PRODUCTS_DATA;
 
@@ -391,8 +391,8 @@ export default function ProductCatalogEn() {
   }, [category, finish, priceRange, sort, products, t.all]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
-// Fix: Fallback to the maximum available page if current page exceeds it
-const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
+  // Fix: Fallback to the maximum available page if current page exceeds it
+  const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
 
@@ -416,10 +416,10 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
     sort !== "default";
 
   return (
-    <div dir="ltr" className="text-left">
+    <div dir="rtl" className="text-right">
       <AnimatePresence>
         {selectedProduct && (
-          <ProductModalEn
+          <ProductModalAr
             product={selectedProduct}
             onClose={() => setSelectedProduct(null)}
           />
@@ -545,7 +545,7 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between xl:justify-end gap-4 xl:gap-5 xl:mr-auto">
+                <div className="flex items-center justify-between xl:justify-end gap-4 xl:gap-5 xl:ml-auto">
                   <span className="text-[11px] text-foreground/40 font-light whitespace-nowrap">
                     {filtered.length}{" "}
                     {filtered.length === 1 ? t.itemSingle : t.items}
@@ -597,11 +597,11 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
                           </div>
                         </div>
 
-                        <div className="absolute top-4 right-4 z-20 bg-onyx/75 backdrop-blur-sm text-bone text-sm px-3 py-1.5 rounded-full font-light tracking-wide">
+                        <div className="absolute top-4 left-4 z-20 bg-onyx/75 backdrop-blur-sm text-bone text-sm px-3 py-1.5 rounded-full font-light tracking-wide">
                           SAR {product.price}
                         </div>
 
-                        <div className="absolute top-4 left-4 z-20 bg-onyx/55 backdrop-blur-sm text-bone/80 text-[10px] px-2.5 py-1 rounded-full font-light uppercase tracking-wider">
+                        <div className="absolute top-4 right-4 z-20 bg-onyx/55 backdrop-blur-sm text-bone/80 text-[10px] px-2.5 py-1 rounded-full font-light uppercase tracking-wider">
                           {product.finish}
                         </div>
                       </div>
@@ -621,6 +621,7 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
               </motion.div>
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* English Version UI string update */}
                 <p className="text-xs uppercase tracking-[0.25em] text-foreground/40">
                   {t.page} {safeCurrentPage} {t.of} {totalPages}
                 </p>

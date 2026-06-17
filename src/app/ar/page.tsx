@@ -1,10 +1,11 @@
 import NavbarAr from "@/sections/ar/NavbarAr";
 import HeroAr from "@/sections/ar/HeroAr";
 import ServicesAr from "@/sections/ar/ServicesAr";
-import ProjectsAr from "@/sections/ar/ProjectsAr";
-import CraftsAr from "@/sections/ar/CraftsAr";
+import PortfolioAr from "@/sections/ar/PortfolioAr";
+import ProductsAr from "@/sections/ar/ProductsAr";
 import HistoryAr from "@/sections/ar/HistoryAr";
 import ContactAr from "@/sections/ar/ContactAr";
+import LocationsectionAr from "@/sections/ar/LocationsectionAr";
 import FooterAr from "@/sections/ar/FooterAr";
 
 export default function HomeAr() {
@@ -13,10 +14,11 @@ export default function HomeAr() {
       <NavbarAr />
       <HeroAr />
       <ServicesAr />
-      <ProjectsAr />
-      <CraftsAr />
+      <PortfolioAr />
+      <ProductsAr />
       <HistoryAr />
       <ContactAr />
+      <LocationsectionAr />
       <FooterAr />
     </main>
   );

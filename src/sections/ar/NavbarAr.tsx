@@ -1,34 +1,67 @@
 "use client";
-import { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import LangSwitcher from "@/components/LangSwitcher";
+
+const THEME_STORAGE_KEY = "otic-theme";
+
+const links = [
+  { href: "#services", label: "خدماتنا" },
+  { href: "#portfolio", label: "الأعمال" },
+  { href: "#products", label: "المنتجات" },
+  { href: "#history", label: "سجلنا" },
+  { href: "#contact", label: "تواصل معنا" },
+  { href: "#location", label: "الموقع" },
+];
 
 export default function NavbarAr() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
-    }
-    return false;
-  });
+  const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+
+    const syncTheme = () => {
+      const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === "dark") {
+        setIsDark(true);
+        return;
+      }
+      if (stored === "light") {
+        setIsDark(false);
+        return;
+      }
+
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    syncTheme();
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === THEME_STORAGE_KEY) {
+        syncTheme();
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
+
+  const applyTheme = (nextDark: boolean) => {
+    const html = document.documentElement;
+    html.classList.toggle("dark", nextDark);
+    html.style.colorScheme = nextDark ? "dark" : "light";
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextDark ? "dark" : "light");
+    setIsDark(nextDark);
+  };
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    }
+    applyTheme(!isDark);
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -60,7 +93,6 @@ export default function NavbarAr() {
 
   return (
     <>
-      {/* Mobile Full-Screen Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -70,40 +102,20 @@ export default function NavbarAr() {
             exit="exit"
             className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
-            <motion.a
-              variants={itemVariants}
-              href="#services"
-              onClick={handleLinkClick}
-              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              خدماتنا
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#projects"
-              onClick={handleLinkClick}
-              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              مشاريعنا
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#history"
-              onClick={handleLinkClick}
-              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              إرثنا
-            </motion.a>
-            <motion.a
-              variants={itemVariants}
-              href="#contact"
-              onClick={handleLinkClick}
-              className="text-3xl font-semibold text-bone uppercase tracking-widest hover:text-accent transition-colors"
-            >
-              تواصل معنا
-            </motion.a>
-            <motion.div variants={itemVariants} className="mt-8">
-              <button className="bg-accent hover:bg-accent/90 text-white font-semibold text-sm tracking-wider px-10 py-3.5 rounded-full transition-colors">
+            {links.map((link) => (
+              <motion.a
+                key={link.href}
+                variants={itemVariants}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+            <motion.div variants={itemVariants} className="mt-8 flex flex-col items-center gap-4">
+              <LangSwitcher currentLang="ar" />
+              <button className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors">
                 ابدأ مشروعك
               </button>
             </motion.div>
@@ -111,7 +123,6 @@ export default function NavbarAr() {
         )}
       </AnimatePresence>
 
-      {/* Main Navigation Pill */}
       <motion.nav
         variants={{ visible: { y: 0 }, hidden: { y: "-120%" } }}
         animate={hidden ? "hidden" : "visible"}
@@ -123,7 +134,6 @@ export default function NavbarAr() {
         }`}
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Right: Logo (RTL — logo is the "start" side) */}
           <div className="shrink-0 flex items-center h-full py-2">
             <Image
               src="/logo-2.png"
@@ -135,51 +145,26 @@ export default function NavbarAr() {
             />
           </div>
 
-          {/* Center: Desktop Nav links */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-bone">
-            <a
-              href="#services"
-              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
-            >
-              خدماتنا
-            </a>
-            <a
-              href="#projects"
-              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
-            >
-              مشاريعنا
-            </a>
-            <a
-              href="#history"
-              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
-            >
-              إرثنا
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-accent text-xl transition-colors font-medium tracking-wide"
-            >
-              تواصل معنا
-            </a>
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-bone">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-accent transition-colors">
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          {/* Left: Actions (RTL — actions are the "end" side) */}
           <div className="flex items-center gap-3 md:gap-4">
-            <LangSwitcher currentLang="ar" />
+            <LangSwitcher currentLang="ar" className="hidden md:flex" />
 
-            {/* Theme toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-foreground/10 bg-card/20 hover:bg-accent/20 transition-all text-foreground cursor-pointer"
-              aria-label="تبديل الوضع"
+              className="p-2 rounded-full border border-foreground/10 bg-onyx/20 hover:bg-accent/20 transition-all text-bone cursor-pointer"
+              aria-label="تبديل المظهر"
             >
-              {isDark ? (
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+              {!mounted ? (
+                <span className="block w-5 h-5" aria-hidden="true" />
+              ) : isDark ? (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -188,12 +173,7 @@ export default function NavbarAr() {
                   />
                 </svg>
               ) : (
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -204,12 +184,10 @@ export default function NavbarAr() {
               )}
             </button>
 
-            {/* Desktop CTA */}
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-white font-semibold text-sm tracking-wide px-5 py-2.5 rounded-full transition-colors cursor-pointer">
-              استفسر الآن
+            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+              اطلب استشارة
             </button>
 
-            {/* Mobile hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-foreground"
@@ -217,17 +195,15 @@ export default function NavbarAr() {
             >
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-[1.5px] bg-current block"
+                className="w-6 h-[1.5px] bg-current block transition-transform"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-[1.5px] bg-current block"
+                className="w-6 h-[1.5px] bg-current block transition-opacity"
               />
               <motion.span
-                animate={
-                  menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
-                }
-                className="w-6 h-[1.5px] bg-current block"
+                animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                className="w-6 h-[1.5px] bg-current block transition-transform"
               />
             </button>
           </div>

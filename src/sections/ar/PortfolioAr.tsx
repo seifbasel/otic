@@ -1,0 +1,116 @@
+"use client";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+
+const categories = ["الكل", "غرف الملابس", "مطابخ معمارية", "أبواب مخصصة", "ألواح جدارية"];
+
+const projects = [
+  {
+    title: "خزانة بوتيكية",
+    category: "غرف الملابس",
+    img: "/dressing.png",
+    desc: "توزيعات مدروسة مع إضاءة مدمجة تمنح الغرفة حضورًا مرتبًا ومترفًا.",
+  },
+  {
+    title: "مطبخ هادئ بتفاصيل دقيقة",
+    category: "مطابخ معمارية",
+    img: "/kitchen.png",
+    desc: "مركز عملي متكامل يجمع بين الخطوط الهادئة والتكامل الخفي للخدمات.",
+  },
+  {
+    title: "باب رئيسي بملمس دافئ",
+    category: "أبواب مخصصة",
+    img: "/door.png",
+    desc: "باب داخلي يضبط حركة المساحة ويمنحها لغة تصميم واضحة ومتناغمة.",
+  },
+  {
+    title: "نظام ألواح مجعدة",
+    category: "ألواح جدارية",
+    img: "/walls.png",
+    desc: "كسوة خشبية تحول الجدار إلى عنصر معماري يضيف عمقًا وشخصية للمكان.",
+  },
+];
+
+export default function PortfolioAr() {
+  const [activeFilter, setActiveFilter] = useState("الكل");
+
+  const filteredProjects =
+    activeFilter === "الكل"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
+
+  return (
+    <section id="portfolio" className="relative w-full bg-background text-foreground px-6 py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-right"
+        >
+          <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
+            أعمال مختارة
+          </span>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+            محطات من أعمالنا الأخيرة
+          </h2>
+        </motion.div>
+
+        <div className="flex flex-wrap gap-3 mb-16 justify-start md:justify-end">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`relative px-5 py-2.5 text-xs uppercase tracking-widest font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
+                activeFilter === cat
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-foreground/60 border-border hover:border-foreground/40 hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, idx) => (
+              <motion.div
+                key={project.title}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative w-full aspect-4/5 overflow-hidden rounded-xl mb-5 bg-card border border-border group-hover:border-accent/30 transition-colors duration-300">
+                  <Image
+                    src={project.img}
+                    alt={project.title}
+                    fill
+                    className="object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-onyx/0 group-hover:bg-onyx/40 transition-colors duration-300 z-10" />
+                </div>
+
+                <p className="text-accent text-[10px] font-mono uppercase tracking-[0.2em] mb-1.5">
+                  {project.category}
+                </p>
+                <h3 className="text-xl font-light tracking-wide group-hover:text-accent transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm text-foreground/60 leading-relaxed max-w-sm">
+                  {project.desc}
+                </p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 const slides = [
-  { src: "/5.jpg", alt: "مطبخ فاخر" },
+  { src: "/5.jpg", alt: "مطبخ مفصل" },
   { src: "/6.jpg", alt: "غرفة ملابس" },
-  { src: "/7.jpg", alt: "مساحة معيشية" },
+  { src: "/7.jpg", alt: "مساحة معيشة" },
   { src: "/8.jpg", alt: "تفاصيل معمارية" },
   { src: "/9.jpg", alt: "تفاصيل معمارية" },
 ];
@@ -16,7 +16,7 @@ function IconSculpture() {
     <svg
       viewBox="0 0 520 100vh"
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMaxYMid meet"
+      preserveAspectRatio="xMinYMid meet"
       className="absolute right-0 top-0 h-full w-120 pointer-events-none opacity-50 mix-blend-soft-light"
       aria-hidden="true"
       style={{ transform: "scaleX(-1)" }}
@@ -27,24 +27,165 @@ function IconSculpture() {
         </clipPath>
       </defs>
       <g clipPath="url(#sculptureClipAr)">
-        <rect x="60" y="22%" width="340" height="66%" rx="170" fill="#ffffff" fillOpacity="0.06" />
-        <rect x="60" y="22%" width="340" height="66%" rx="170" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.25" />
-        <rect x="110" y="25%" width="240" height="60%" rx="120" fill="#ffffff" fillOpacity="0.05" />
-        <rect x="110" y="25%" width="240" height="60%" rx="120" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.3" />
-        <rect x="20" y="18%" width="420" height="72%" rx="210" fill="none" stroke="#c9a96e" strokeWidth="0.4" strokeDasharray="5 12" strokeOpacity="0.2" />
-        <rect x="60" y="82%" width="120" height="18%" rx="0" fill="#ffffff" fillOpacity="0.08" />
-        <rect x="280" y="82%" width="120" height="18%" rx="0" fill="#ffffff" fillOpacity="0.08" />
-        <rect x="60" y="80%" width="340" height="20" rx="0" fill="#ffffff" fillOpacity="0.1" />
-        <rect x="190" y="22%" width="80" height="14" rx="0" fill="#ffffff" fillOpacity="0.15" />
-        <line x1="230" y1="8%" x2="230" y2="22%" stroke="#ffffff" strokeWidth="0.6" strokeOpacity="0.3" />
-        <path d="M150 80% L150 38% Q150 28% 230 28% Q310 28% 310 38% L310 80%" fill="none" stroke="#c9a96e" strokeWidth="1" strokeOpacity="0.4" />
-        <path d="M175 80% L175 42% Q175 32% 230 32% Q285 32% 285 42% L285 80%" fill="none" stroke="#c9a96e" strokeWidth="0.5" strokeOpacity="0.2" />
-        <circle cx="230" cy="22%" r="7" fill="none" stroke="#ffffff" strokeWidth="0.8" strokeOpacity="0.5" />
+        <rect
+          x="60"
+          y="22%"
+          width="340"
+          height="66%"
+          rx="170"
+          fill="#ffffff"
+          fillOpacity="0.06"
+        />
+        <rect
+          x="60"
+          y="22%"
+          width="340"
+          height="66%"
+          rx="170"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.5"
+          strokeOpacity="0.25"
+        />
+        <rect
+          x="110"
+          y="25%"
+          width="240"
+          height="60%"
+          rx="120"
+          fill="#ffffff"
+          fillOpacity="0.05"
+        />
+        <rect
+          x="110"
+          y="25%"
+          width="240"
+          height="60%"
+          rx="120"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.5"
+          strokeOpacity="0.3"
+        />
+        <rect
+          x="20"
+          y="18%"
+          width="420"
+          height="72%"
+          rx="210"
+          fill="none"
+          stroke="#c9a96e"
+          strokeWidth="0.4"
+          strokeDasharray="5 12"
+          strokeOpacity="0.2"
+        />
+        <rect
+          x="60"
+          y="82%"
+          width="120"
+          height="18%"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.08"
+        />
+        <rect
+          x="280"
+          y="82%"
+          width="120"
+          height="18%"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.08"
+        />
+        <rect
+          x="60"
+          y="80%"
+          width="340"
+          height="20"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.1"
+        />
+        <rect
+          x="190"
+          y="22%"
+          width="80"
+          height="14"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.15"
+        />
+        <line
+          x1="230"
+          y1="8%"
+          x2="230"
+          y2="22%"
+          stroke="#ffffff"
+          strokeWidth="0.6"
+          strokeOpacity="0.3"
+        />
+        <path
+          d="M150 80% L150 38% Q150 28% 230 28% Q310 28% 310 38% L310 80%"
+          fill="none"
+          stroke="#c9a96e"
+          strokeWidth="1"
+          strokeOpacity="0.4"
+        />
+        <path
+          d="M175 80% L175 42% Q175 32% 230 32% Q285 32% 285 42% L285 80%"
+          fill="none"
+          stroke="#c9a96e"
+          strokeWidth="0.5"
+          strokeOpacity="0.2"
+        />
+        <circle
+          cx="230"
+          cy="22%"
+          r="7"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.8"
+          strokeOpacity="0.5"
+        />
         <circle cx="230" cy="22%" r="2.5" fill="#c9a96e" fillOpacity="0.8" />
-        <circle cx="62" cy="80%" r="5" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeOpacity="0.4" />
-        <circle cx="398" cy="80%" r="5" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeOpacity="0.4" />
-        <line x1="150" y1="28%" x2="150" y2="80%" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="3 10" strokeOpacity="0.12" />
-        <line x1="310" y1="28%" x2="310" y2="80%" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="3 10" strokeOpacity="0.12" />
+        <circle
+          cx="62"
+          cy="80%"
+          r="5"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.7"
+          strokeOpacity="0.4"
+        />
+        <circle
+          cx="398"
+          cy="80%"
+          r="5"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.7"
+          strokeOpacity="0.4"
+        />
+        <line
+          x1="150"
+          y1="28%"
+          x2="150"
+          y2="80%"
+          stroke="#ffffff"
+          strokeWidth="0.3"
+          strokeDasharray="3 10"
+          strokeOpacity="0.12"
+        />
+        <line
+          x1="310"
+          y1="28%"
+          x2="310"
+          y2="80%"
+          stroke="#ffffff"
+          strokeWidth="0.3"
+          strokeDasharray="3 10"
+          strokeOpacity="0.12"
+        />
       </g>
     </svg>
   );
@@ -54,14 +195,15 @@ export default function HeroAr() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5500);
+    const timer = setInterval(
+      () => setCurrent((p) => (p + 1) % slides.length),
+      5500,
+    );
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative h-screen w-full bg-black flex items-center overflow-hidden">
-
-      {/* Cinematic Background Carousel */}
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -82,83 +224,93 @@ export default function HeroAr() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlays */}
-      <div className="absolute inset-0 z-[1]" style={{ background: "radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 100%), linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.65) 100%)" }} />
-      {/* RTL: gradient fades from RIGHT where text sits */}
-      <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)" }} />
-      <div className="absolute inset-0 bg-amber-900/10 z-[1] mix-blend-overlay pointer-events-none" />
+      <div
+        className="absolute inset-0 z-1"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 100%), linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.65) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 z-1"
+        style={{
+          background:
+            "linear-gradient(to left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-amber-900/10 z-1 mix-blend-overlay pointer-events-none" />
 
-      {/* Arch sculpture — mirrored to right for RTL */}
-      <div className="absolute inset-0 z-[2] pointer-events-none">
+      <div className="absolute inset-0 z-2 pointer-events-none">
         <IconSculpture />
       </div>
 
-      {/* Content — aligned to the right in RTL */}
-      <div className="max-w-7xl w-full relative z-10 px-8 md:px-16 lg:px-24 flex flex-col justify-center h-full ms-auto">
-        <div className="max-w-xl">
-
+      <div className="max-w-7xl w-full relative z-10 px-8 md:px-16 lg:px-24 flex flex-col justify-center h-full">
+        <div className="max-w-xl ml-auto text-right">
+          {" "}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="h-[1px] bg-accent mb-8"
+            className="h-px bg-accent mb-8 ml-auto"
           />
-
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-accent tracking-widest font-semibold text-sm mb-6"
+            className="text-accent uppercase tracking-[0.35em] font-medium text-[11px] mb-6"
           >
-            حرفية خشبية راقية
+            نجارة خشب راقية
           </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.2] mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08] tracking-tight mb-8"
           >
-            نصنع الفضاء،<br />
-            <span className="text-accent font-bold italic">نرتقي بالمنازل.</span>
+            نصنع الفراغات،
+            <br />
+            <span className="text-accent font-normal italic">
+              ونرتقي بالمنازل.
+            </span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.9 }}
-            className="text-white/60 font-medium text-base leading-relaxed mb-10 border-r-2 border-accent pr-5 max-w-md"
+            className="text-white/60 font-light text-base leading-relaxed mb-10 border-r-2 border-accent pr-5 max-w-md mr-auto"
           >
-            من غرف الملابس المخصصة إلى مطابخ معمارية استثنائية.
-            نُشكّل الهوية البنيوية للمساحات المعيشية الحديثة.
+            من غرف الملابس المصممة حسب الطلب إلى المطابخ المعمارية المتكاملة،
+            نصوغ هوية المساحات السكنية بأسلوب يجمع بين الفخامة والوظيفة.
           </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-8 items-end"
           >
             <div>
               <a
-                href="#projects"
-                className="group relative border border-white/20 hover:border-accent text-white px-10 py-4 rounded-sm tracking-widest text-sm transition-all duration-500 inline-block overflow-hidden"
+                href="#portfolio"
+                className="group relative border border-white/20 hover:border-accent text-white px-10 py-4 rounded-sm tracking-[0.2em] text-[10px] uppercase transition-all duration-500 inline-block overflow-hidden"
               >
                 <span className="relative z-10">استعرض أعمالنا</span>
                 <div className="absolute inset-0 bg-accent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 tracking-widest text-sm">استعرض أعمالنا</span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 tracking-[0.2em] text-[10px] uppercase">
+                  استعرض أعمالنا
+                </span>
               </a>
             </div>
 
-            {/* Carousel dots */}
             <div className="flex gap-3 items-center">
               {slides.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
                   aria-label={`الشريحة ${i + 1}`}
-                  className={`h-[2px] rounded-full transition-all duration-700 ease-out cursor-pointer ${
-                    i === current ? "w-10 bg-accent" : "w-5 bg-white/20 hover:bg-white/40"
+                  className={`h-0.5 rounded-full transition-all duration-700 ease-out cursor-pointer ${
+                    i === current
+                      ? "w-10 bg-accent"
+                      : "w-5 bg-white/20 hover:bg-white/40"
                   }`}
                 />
               ))}
@@ -167,8 +319,8 @@ export default function HeroAr() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-xs tracking-widest animate-bounce z-10">
-        مرر للاستكشاف
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-[10px] tracking-[0.3em] uppercase animate-bounce z-10">
+        مرّر لاكتشاف المزيد
       </div>
     </section>
   );

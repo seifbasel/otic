@@ -2,8 +2,8 @@ import HtmlDirPatcher from "@/components/HtmlDirPatcher";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "أوتيك — حرفية الخشب الراقية",
-  description: "حرفية خشبية راقية للمساحات الداخلية الفاخرة.",
+  title: "أوتيك — نجارة خشب راقية",
+  description: "نجارة خشبية راقية للمساحات الداخلية الفاخرة في السعودية.",
 };
 
 export default function ArabicLayout({
@@ -12,10 +12,7 @@ export default function ArabicLayout({
   return (
     <>
       <HtmlDirPatcher lang="ar" dir="rtl" />
-      <div
-        dir="rtl"
-        className="min-h-full flex flex-col font-(family-name:--font-arabic)"
-      >
+      <div dir="rtl" className="min-h-full flex flex-col font-(family-name:--font-arabic)">
         {children}
       </div>
     </>

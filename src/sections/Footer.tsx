@@ -10,7 +10,8 @@ export default function Footer() {
         <div className="md:col-span-4 ">
           <div className="flex items-center justify-center text-vibrant font-mono uppercase tracking-widest">
             <div className="relative w-200 h-50">
-              <Image src="/logo-2.png" alt="Icon Badge" fill className="object-cover" />
+              <Image src="/logo-1.png" alt="OTIC logo" fill className="object-cover dark:hidden" />
+              <Image src="/logo-2.png" alt="OTIC logo" fill className="object-cover hidden dark:block" />
             </div>
           </div>
         </div>
