@@ -40,6 +40,8 @@ npm run preview
 npm run deploy
 ```
 
+Both commands run the OpenNext build step first through npm lifecycle hooks, so the generated `.open-next/` output is always fresh in the same environment as the preview or deploy.
+
 The Worker name is set to `otic-home` in [`wrangler.jsonc`](/C:/github/Otic/otic/wrangler.jsonc). If your Cloudflare account still has a service binding named `WORKER_SELF_REFERENCE` that points at `otic`, update it to the deployed Worker name or remove it if the binding is not required.
 
 If you need to regenerate Cloudflare env types, run `npm run cf-typegen`.
