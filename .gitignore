@@ -19,9 +19,6 @@
 .open-next/
 .wrangler/
 
-# cloudflare
-cloudflare-env.d.ts
-
 # production
 /build
 

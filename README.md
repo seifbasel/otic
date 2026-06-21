@@ -31,17 +31,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Cloudflare
 
-This repo is configured for Cloudflare Workers through OpenNext.
+This repo is configured as a static Cloudflare Assets site.
 
-Deploy with:
+Build the export, then deploy the `out/` directory:
 
 ```bash
-npm run preview
+npm run build
 npm run deploy
 ```
 
-Both commands run the OpenNext build step first through npm lifecycle hooks, so the generated `.open-next/` output is always fresh in the same environment as the preview or deploy.
+For local preview, run:
 
-The Worker name is set to `otic-home` in [`wrangler.jsonc`](/C:/github/Otic/otic/wrangler.jsonc). If your Cloudflare account still has a service binding named `WORKER_SELF_REFERENCE` that points at `otic`, update it to the deployed Worker name or remove it if the binding is not required.
+```bash
+npm run preview
+```
 
-If you need to regenerate Cloudflare env types, run `npm run cf-typegen`.
+The static Cloudflare config lives in [`wrangler.jsonc`](/C:/github/Otic/otic/wrangler.jsonc) and serves files from `./out` with trailing-slash HTML handling.
