@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // Internal Independent Types and Configs
 const WHATSAPP_NUMBER = "1234567890";
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 8;
 
 interface Product {
   id: number;
@@ -16,126 +16,118 @@ interface Product {
   priceNum: number;
   finish: string;
   img: string;
+  finishLabel:string;
   description: string;
   dimensions: string;
-  finishLabel: string;
-  hardware: string;
 }
 
 const PRODUCTS_DATA = [
   {
     id: 1,
     name: "The Noir Walnut Door",
-    category: "Bespoke Doors",
+    category: "Doors",
     priceRange: "mid",
     price: "1,450",
     priceNum: 1450,
     finish: "Veneer",
-    img: "/10.jpeg",
+    img: "/17.png",
     description:
       "A deep walnut finish with quiet, refined lines and a calm architectural presence.",
     dimensions: "2100mm x 900mm x 40mm",
     finishLabel: "Natural Walnut Veneer",
-    hardware: "Brushed Brass",
   },
   {
     id: 2,
     name: "Arctic Minimalist Door",
-    category: "Bespoke Doors",
+    category: "Doors",
     priceRange: "entry",
     price: "1,050",
     priceNum: 1050,
     finish: "Lacquer",
-    img: "/11.jpeg",
+    img: "/11.png",
     description:
       "A pure white surface for interiors that rely on restraint, clarity, and seamless integration.",
     dimensions: "2100mm x 850mm x 40mm",
     finishLabel: "Matte Lacquer",
-    hardware: "Satin Nickel",
   },
   {
     id: 3,
     name: "Savanna Oak Door",
-    category: "Bespoke Doors",
+    category: "Doors",
     priceRange: "premium",
     price: "2,100",
     priceNum: 2100,
     finish: "Veneer",
-    img: "/12.jpeg",
+    img: "/12.png",
     description:
       "Warm oak tones paired with polished hardware for a balanced, architectural finish.",
     dimensions: "2100mm x 900mm x 44mm",
     finishLabel: "Smoked Oak Veneer",
-    hardware: "Polished Gold",
   },
   {
     id: 4,
     name: "Stone Gray Flush Door",
-    category: "Bespoke Doors",
+    category: "Doors",
     priceRange: "premium",
     price: "1,950",
     priceNum: 1950,
     finish: "Laminate",
-    img: "/13.jpeg",
+    img: "/13.png",
     description:
       "A flush gray design ideal for modern interiors that prefer a quieter architectural line.",
     dimensions: "2100mm x 900mm x 40mm",
     finishLabel: "Textured Matte Laminate",
-    hardware: "Matte Black",
   },
   {
     id: 5,
     name: "Linear Panel Door",
-    category: "Wall Paneling",
+    category: "Doors",
     priceRange: "luxury",
     price: "2,800",
     priceNum: 2800,
     finish: "Lacquer",
-    img: "/13.jpeg",
+    img: "/14.png",
     description:
       "A subtle vertical rhythm adds depth and shadow to transitional wall and door compositions.",
     dimensions: "2100mm x 950mm x 50mm",
     finishLabel: "Painted MDF / Veneer",
-    hardware: "Integrated Pull",
   },
   {
     id: 6,
     name: "Deco Geometric Door",
-    category: "Signature Pieces",
+    category: " Doors",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
     finish: "Lacquer",
-    img: "/14.jpeg",
+    img: "/15.png",
     description:
       "A statement piece with geometric brass inlays designed to anchor a luxury entrance.",
     dimensions: "2200mm x 1000mm x 55mm",
     finishLabel: "Dark Grey Lacquer & Brass",
-    hardware: "Gold Inlaid Handle",
   },
   {
     id: 7,
     name: "Ribbed Oak Panel",
-    category: "Wall Paneling",
+    category: "Doors",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
     finish: "Veneer",
-    img: "/15.jpeg",
+    img: "/16.png",
     description:
       "Ribbed oak creates richer shadow play and stronger texture, especially with concealed lighting.",
     dimensions: "2200mm x 1000mm x 55mm",
     finishLabel: "Dark Grey Lacquer & Brass",
-    hardware: "Gold Inlaid Handle",
   },
 ];
 
 const DICTIONARY = {
   all: "All",
   collection: "Collection",
-  title: "A product catalog with a calm and premium logic.",
+  title: "Products Catalog",
   subtitle:
-    "A curated selection of doors, panels, and signature pieces with clean filtering and light browsing.",
+    "A curated selection of doors, panels, and signature pieces",
   type: "Type",
   finish: "Finish",
   price: "Price",
@@ -151,13 +143,11 @@ const DICTIONARY = {
   viewDetails: "View Details",
   perPiece: "per piece",
   dimensions: "Dimensions",
-  hardware: "Hardware",
   whatsappBtn: "Order via WhatsApp",
   continueBtn: "Continue Browsing",
   whatsappMsg: (name: string, cat: string, price: string) =>
     `Hi, I'm interested in the *${name}* (${cat}) priced at SAR ${price}. Could you provide more details?`,
-  categories: ["All", "Bespoke Doors", "Wall Paneling", "Signature Pieces"],
-  finishes: ["All", "Veneer", "Lacquer", "Laminate"],
+  categories: ["All", "Doors", "Wall Paneling", "Signature Pieces"],
   priceRanges: [
     { key: "all", label: "All Prices" },
     { key: "entry", label: "Under SAR 1,500" },
@@ -208,7 +198,7 @@ function ProductModalEn({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full max-w-5xl max-h-[90vh] bg-background rounded-[2rem] overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
+        className="relative w-full max-w-5xl max-h-[90vh] bg-background rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -231,15 +221,13 @@ function ProductModalEn({
           </svg>
         </button>
 
-        <div className="w-full md:w-[46%] h-72 md:h-auto relative bg-card">
+        <div className="w-full md:w-[46%] h-72 md:h-auto relative ">
           <Image
             src={product.img}
             alt={product.name}
             fill
-            className="object-cover"
+          className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/25 via-transparent to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-onyx/35 to-transparent md:hidden" />
         </div>
 
         <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto">
@@ -264,7 +252,7 @@ function ProductModalEn({
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="border border-border rounded-2xl p-4 bg-white/[0.02]">
+            <div className="border border-border rounded-2xl p-4 bg-white/2">
               <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
                 {t.dimensions}
               </span>
@@ -276,12 +264,7 @@ function ProductModalEn({
               </span>
               <span className="text-sm font-light">{product.finishLabel}</span>
             </div>
-            <div className="border border-border rounded-2xl p-4 sm:col-span-2 bg-white/[0.02]">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
-                {t.hardware}
-              </span>
-              <span className="text-sm font-light">{product.hardware}</span>
-            </div>
+            
           </div>
 
           <div className="mt-auto flex flex-col gap-3 pt-2">
@@ -391,8 +374,8 @@ export default function ProductCatalogEn() {
   }, [category, finish, priceRange, sort, products, t.all]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
-// Fix: Fallback to the maximum available page if current page exceeds it
-const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
+  // Fix: Fallback to the maximum available page if current page exceeds it
+  const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
 
@@ -430,8 +413,7 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
         id="products"
         className="relative py-28 md:py-36 bg-background text-foreground px-6 overflow-hidden"
       >
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
-        <div className="absolute -top-24 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-foreground/15 to-transparent" />
         <div className="absolute -bottom-24 left-0 w-80 h-80 bg-vibrant/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto">
@@ -454,7 +436,7 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-10 rounded-[1.5rem] border border-border/80 bg-foreground/5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-md p-5 md:p-6"
+            className="mb-10 rounded-3xl border border-border/80 bg-foreground/5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-md p-5 md:p-6"
           >
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
@@ -479,22 +461,7 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
 
               <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-5 xl:gap-8 items-start">
                 <div className="flex flex-col gap-5">
-                  <div className="flex items-start md:items-center gap-3 flex-wrap">
-                    <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
-                      {t.finish}
-                    </span>
-                    <div className="flex gap-2 flex-wrap">
-                      {t.finishes.map((f) => (
-                        <Chip
-                          key={f}
-                          active={finish === f}
-                          onClick={() => handleFilterChange(setFinish, f)}
-                        >
-                          {f}
-                        </Chip>
-                      ))}
-                    </div>
-                  </div>
+            
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2.5">
@@ -581,15 +548,15 @@ const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
                       className="group cursor-pointer"
                       onClick={() => setSelectedProduct(product)}
                     >
-                      <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] mb-5 bg-card border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
+                      <div className="relative w-full aspect-4/5 overflow-hidden rounded-3xl mb-5 bg-background border border-border group-hover:border-accent/25 transition-colors duration-300">
                         <Image
                           src={product.img}
                           alt={product.name}
                           fill
-                          className="object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                          className="object-cover transform scale-80 group-hover:scale-90 transition-transform duration-700 ease-out"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-onyx/55 via-onyx/10 to-transparent opacity-90" />
+                        <div className="absolute inset-0 bg-linear-to-t from-onyx/80 via-onyx/10 to-transparent opacity-50" />
 
                         <div className="absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                           <div className="bg-background/90 backdrop-blur-sm text-foreground text-xs uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">

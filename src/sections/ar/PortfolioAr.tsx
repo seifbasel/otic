@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
-const categories = ["الكل", "غرف الملابس", "مطابخ معمارية", "أبواب مخصصة", "ألواح جدارية"];
+const categories = ["الكل", "غرف الملابس", "مطابخ", "أبواب", "ألواح جدارية"];
 
 const projects = [
   {
@@ -14,13 +14,13 @@ const projects = [
   },
   {
     title: "مطبخ هادئ بتفاصيل دقيقة",
-    category: "مطابخ معمارية",
+    category: "مطابخ",
     img: "/kitchen.png",
     desc: "مركز عملي متكامل يجمع بين الخطوط الهادئة والتكامل الخفي للخدمات.",
   },
   {
     title: "باب رئيسي بملمس دافئ",
-    category: "أبواب مخصصة",
+    category: "أبواب",
     img: "/door.png",
     desc: "باب داخلي يضبط حركة المساحة ويمنحها لغة تصميم واضحة ومتناغمة.",
   },

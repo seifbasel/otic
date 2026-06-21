@@ -3,9 +3,6 @@
 export default function Contact() {
   return (
     <section id="contact" className="relative py-28 md:py-36 bg-sandstone px-6 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-claywood/20 to-transparent" />
-      <div className="absolute -top-16 right-0 w-72 h-72 bg-vibrant/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-between">
@@ -40,7 +37,7 @@ export default function Contact() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative rounded-[2rem] border border-white/20 bg-accent/65 dark:bg-accent text-sandstone shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
+          <div className="relative rounded-[2rem] border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-claywood/10 rounded-full blur-3xl" />
 

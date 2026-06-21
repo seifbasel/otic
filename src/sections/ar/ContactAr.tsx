@@ -40,7 +40,7 @@ export default function ContactAr() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative rounded-[2rem] border border-white/20 bg-accent/65 dark:bg-accent text-sandstone shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
+          <div className="relative rounded-[2rem] border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-claywood/10 rounded-full blur-3xl" />
 

@@ -20,12 +20,9 @@ export default function NavbarAr() {
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const syncTheme = () => {
       const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
       if (stored === "dark") {
@@ -161,9 +158,7 @@ export default function NavbarAr() {
               className="p-2 rounded-full border border-foreground/10 bg-onyx/20 hover:bg-accent/20 transition-all text-bone cursor-pointer"
               aria-label="تبديل المظهر"
             >
-              {!mounted ? (
-                <span className="block w-5 h-5" aria-hidden="true" />
-              ) : isDark ? (
+              {isDark ? (
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // Internal Independent Types and Configs
 const WHATSAPP_NUMBER = "1234567890";
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 8;
 
 interface Product {
   id: number;
@@ -19,7 +19,6 @@ interface Product {
   description: string;
   dimensions: string;
   finishLabel: string;
-  hardware: string;
 }
 
 const PRODUCTS_DATA = [
@@ -31,12 +30,11 @@ const PRODUCTS_DATA = [
     price: "1,450",
     priceNum: 1450,
     finish: "قشرة خشبية",
-    img: "/10.jpeg",
+    img: "/17.png",
     description:
       "تشطيب جوز داكن بخطوط هادئة وحضور معماري راقٍ يضيف دفئًا وأناقة للمكان.",
     dimensions: "2100 مم × 900 مم × 40 مم",
     finishLabel: "قشرة جوز طبيعية",
-    hardware: "نحاس مصقول",
   },
   {
     id: 2,
@@ -46,12 +44,11 @@ const PRODUCTS_DATA = [
     price: "1,050",
     priceNum: 1050,
     finish: "لاكير",
-    img: "/11.jpeg",
+    img: "/11.png",
     description:
       "سطح أبيض نقي للمساحات التي تعتمد على البساطة والاتساع والهدوء البصري.",
     dimensions: "2100 مم × 850 مم × 40 مم",
     finishLabel: "لاكير مطفي",
-    hardware: "نيكل ساتان",
   },
   {
     id: 3,
@@ -61,12 +58,11 @@ const PRODUCTS_DATA = [
     price: "2,100",
     priceNum: 2100,
     finish: "قشرة خشبية",
-    img: "/12.jpeg",
+    img: "/12.png",
     description:
       "درجات بلوط دافئة مع إكسسوارات مصقولة تمنح التصميم توازنًا بصريًا فخمًا.",
     dimensions: "2100 مم × 900 مم × 44 مم",
     finishLabel: "قشرة بلوط مدخن",
-    hardware: "ذهبي مصقول",
   },
   {
     id: 4,
@@ -76,12 +72,11 @@ const PRODUCTS_DATA = [
     price: "1,950",
     priceNum: 1950,
     finish: "لامينيت",
-    img: "/13.jpeg",
+    img: "/13.png",
     description:
       "تصميم مسطح بدرجات رمادية هادئة ومسار بصري نظيف يناسب المساحات المعاصرة.",
     dimensions: "2100 مم × 900 مم × 40 مم",
     finishLabel: "لامينيت مطفي محبب",
-    hardware: "أسود مطفي",
   },
   {
     id: 5,
@@ -91,12 +86,11 @@ const PRODUCTS_DATA = [
     price: "2,800",
     priceNum: 2800,
     finish: "لاكير",
-    img: "/13.jpeg",
+    img: "/13.png",
     description:
       "إيقاع رأسي خفيف يضيف عمقًا وظلالًا أنيقة لتكوينات الجدران والأبواب.",
     dimensions: "2100 مم × 950 مم × 50 مم",
     finishLabel: "MDF مطلي / قشرة خشبية",
-    hardware: "مقبض مدمج",
   },
   {
     id: 6,
@@ -106,12 +100,11 @@ const PRODUCTS_DATA = [
     price: "3,200",
     priceNum: 3200,
     finish: "لاكير",
-    img: "/14.jpeg",
+    img: "/14.png",
     description:
       "تفاصيل نحاسية هندسية تمنح المدخل شخصية فاخرة وحضورًا واضحًا من النظرة الأولى.",
     dimensions: "2200 مم × 1000 مم × 55 مم",
     finishLabel: "لاكير رمادي داكن مع نحاس",
-    hardware: "مقبض مطعّم بالذهب",
   },
   {
     id: 7,
@@ -121,12 +114,11 @@ const PRODUCTS_DATA = [
     price: "3,200",
     priceNum: 3200,
     finish: "قشرة خشبية",
-    img: "/15.jpeg",
+    img: "/15.png",
     description:
       "تموجات البلوط تضيف ملمسًا أعمق وأناقة أكثر هدوءًا مع إمكانية دمج الإضاءة المخفية.",
     dimensions: "2200 مم × 1000 مم × 55 مم",
     finishLabel: "لاكير رمادي داكن مع نحاس",
-    hardware: "مقبض مطعّم بالذهب",
   },
 ];
 
@@ -151,13 +143,11 @@ const DICTIONARY = {
   viewDetails: "عرض التفاصيل",
   perPiece: "للقطعة",
   dimensions: "الأبعاد",
-  hardware: "الإكسسوارات",
   whatsappBtn: "اطلب عبر واتساب",
   continueBtn: "متابعة التصفح",
   whatsappMsg: (name: string, cat: string, price: string) =>
     `مرحبًا، أرغب بالاستفسار عن *${name}* (${cat}) بسعر SAR ${price}. هل يمكنكم مشاركة المزيد من التفاصيل؟`,
-  categories: ["الكل", "أبواب مخصصة", "ألواح جدارية", "قطع مميزة"],
-  finishes: ["الكل", "قشرة خشبية", "لاكير", "لامينيت"],
+  categories: ["الكل",  "أبواب","ألواح جدارية", "قطع مميزة"],
   priceRanges: [
     { key: "all", label: "كل الأسعار" },
     { key: "entry", label: "أقل من 1500 ريال" },
@@ -231,15 +221,13 @@ function ProductModalAr({
           </svg>
         </button>
 
-        <div className="w-full md:w-[46%] h-72 md:h-auto relative bg-card">
+        <div className="w-full md:w-[46%] h-72 md:h-auto relative">
           <Image
             src={product.img}
             alt={product.name}
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-background/25 via-transparent to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-onyx/35 to-transparent md:hidden" />
         </div>
 
         <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto">
@@ -264,24 +252,19 @@ function ProductModalAr({
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="border border-border rounded-2xl p-4 bg-white/[0.02]">
+            <div className="border border-border rounded-2xl p-4 bg-white/2">
               <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
                 {t.dimensions}
               </span>
               <span className="text-sm font-light">{product.dimensions}</span>
             </div>
-            <div className="border border-border rounded-2xl p-4 bg-white/[0.02]">
+            <div className="border border-border rounded-2xl p-4 bg-white/2">
               <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
                 {t.finish}
               </span>
               <span className="text-sm font-light">{product.finishLabel}</span>
             </div>
-            <div className="border border-border rounded-2xl p-4 sm:col-span-2 bg-white/[0.02]">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
-                {t.hardware}
-              </span>
-              <span className="text-sm font-light">{product.hardware}</span>
-            </div>
+    
           </div>
 
           <div className="mt-auto flex flex-col gap-3 pt-2">
@@ -430,8 +413,7 @@ export default function ProductCatalogAr() {
         id="products"
         className="relative py-28 md:py-36 bg-background text-foreground px-6 overflow-hidden"
       >
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
-        <div className="absolute -top-24 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-foreground/15 to-transparent" />
         <div className="absolute -bottom-24 left-0 w-80 h-80 bg-vibrant/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto">
@@ -454,7 +436,7 @@ export default function ProductCatalogAr() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-10 rounded-[1.5rem] border border-border/80 bg-foreground/5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-md p-5 md:p-6"
+            className="mb-10 rounded-3xl border border-border/80 bg-foreground/5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-md p-5 md:p-6"
           >
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
@@ -479,22 +461,7 @@ export default function ProductCatalogAr() {
 
               <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-5 xl:gap-8 items-start">
                 <div className="flex flex-col gap-5">
-                  <div className="flex items-start md:items-center gap-3 flex-wrap">
-                    <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
-                      {t.finish}
-                    </span>
-                    <div className="flex gap-2 flex-wrap">
-                      {t.finishes.map((f) => (
-                        <Chip
-                          key={f}
-                          active={finish === f}
-                          onClick={() => handleFilterChange(setFinish, f)}
-                        >
-                          {f}
-                        </Chip>
-                      ))}
-                    </div>
-                  </div>
+      
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2.5">
@@ -581,15 +548,15 @@ export default function ProductCatalogAr() {
                       className="group cursor-pointer"
                       onClick={() => setSelectedProduct(product)}
                     >
-                      <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] mb-5 bg-card border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
+                      <div className="relative w-full aspect-4/5 overflow-hidden rounded-3xl mb-5  border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
                         <Image
                           src={product.img}
                           alt={product.name}
                           fill
-                          className="object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                          className="object-cover transform scale-80 group-hover:scale-90 transition-transform duration-700 ease-out"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-onyx/55 via-onyx/10 to-transparent opacity-90" />
+                        <div className="absolute inset-0 bg-linear-to-t from-onyx/55 via-onyx/10 to-transparent opacity-50" />
 
                         <div className="absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                           <div className="bg-background/90 backdrop-blur-sm text-foreground text-xs uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">

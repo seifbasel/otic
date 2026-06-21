@@ -32,8 +32,7 @@ export default function Footer() {
           <h4 className="text-xs uppercase tracking-widest text-vibrant font-bold">Channels</h4>
           <ul className="space-y-2 text-sm font-light text-desert/80">
             <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">Instagram</a></li>
-            <li><a href="https://pinterest.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">Pinterest</a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">LinkedIn</a></li>
+            <li><a href="https://tiktok.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">Tiktok</a></li>
             <li><a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">Facebook</a></li>
           </ul>
         </div>

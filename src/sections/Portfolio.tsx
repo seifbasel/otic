@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const categories = [
   "All",
+  "Kitchens",
+  "Doors",
   "Dressing Rooms",
-  "Architectural Kitchens",
-  "Bespoke Doors",
   "Wall Paneling",
 ];
 
@@ -20,13 +20,13 @@ const projects = [
   },
   {
     title: "Minimalist Culinary",
-    category: "Architectural Kitchens",
+    category: "Kitchens",
     img: "/kitchen.png",
     desc: "Culinary epicenters balancing seamless hidden integrations and minimalist forms.",
   },
   {
     title: "Grand Mahogany Door",
-    category: "Bespoke Doors",
+    category: "Doors",
     img: "/door.png",
     desc: "Internal structural doors defining spatial flow with minimalist elegance and rich wood tones.",
   },
