@@ -13,8 +13,8 @@ export default function Projects() {
     <section id="projects" className="py-32 bg-claywood text-sandstone px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <span className="text-vibrant text-xs uppercase font-bold tracking-widest block mb-2">CURATED PORTFOLIO</span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">Recent Spatial Realizations</h2>
+          <span className="text-vibrant text-base uppercase font-bold  block mb-2">CURATED PORTFOLIO</span>
+          <h2 className="text-4xl md:text-5xl font-light ">Recent Spatial Realizations</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -36,7 +36,7 @@ export default function Projects() {
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
               </div>
-              <p className="text-xs text-vibrant font-mono uppercase tracking-wider mb-1">{proj.category}</p>
+              <p className="text-base text-vibrant font-mono uppercase tracking-wider mb-1">{proj.category}</p>
               <h3 className="text-2xl font-light tracking-wide group-hover:text-vibrant transition-colors duration-300">{proj.title}</h3>
             </motion.div>
           ))}

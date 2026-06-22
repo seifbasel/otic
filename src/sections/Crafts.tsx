@@ -84,8 +84,8 @@ export default function Crafts() {
     <section id="services" className="py-32 bg-background text-foreground px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">WHAT WE CRAFT</span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">Artisanal Services</h2>
+          <span className="text-accent text-base uppercase font-bold  block mb-3">WHAT WE CRAFT</span>
+          <h2 className="text-4xl md:text-5xl font-light ">Artisanal Services</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -11,28 +11,35 @@ const services = [
   },
   {
     id: "02",
-    title: "مطابخ معمارية",
+    title: "مطابخ",
     desc: "مساحات طهي تجمع بين العملية العالية والتكامل الخفي والتشطيبات الخشبية الدقيقة.",
     img: "/kitchen.png",
   },
   {
     id: "03",
-    title: "أبواب مخصصة",
+    title: "أبواب",
     desc: "مداخل داخلية وأبواب محورية دقيقة الصنع، تمنح المساحة حضورًا هادئًا وأنيقًا.",
     img: "/door.png",
   },
   {
     id: "04",
-    title: "أنظمة الألواح الجدارية",
+    title: "التكسيات الخشبية",
     desc: "تكسية خشبية مصقولة أو ذات تموّج بصري أو طبعات متوازنة، تحول الجدران إلى عنصر معماري.",
     img: "/livingroom.png",
   },
   {
     id: "05",
-    title: "غرف نوم فاخرة",
+    title: "غرف نوم",
     desc: "مساحات خاصة تُنفذ بعناية مع نجارة مخصصة، وإضاءة محيطية، وخامات تمنح إحساسًا بالسكينة.",
     img: "/bedroom.png",
   },
+  {
+    id: "06",
+    title: "غرف معيشة",
+    desc: "مساحات خاصة تُنفذ بعناية مع نجارة مخصصة، وإضاءة محيطية، وخامات تمنح إحساسًا بالسكينة.",
+    img: "/living-2.png",
+  },
+
 ];
 
 const fadeInUp: Variants = {
@@ -68,10 +75,9 @@ export default function ServicesAr() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-6"
         >
           <div>
-            <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
-              قدراتنا
-            </span>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+            <span className="text-accent text-base uppercase font-bold  block mb-3">
+خدماتنا            </span>
+            <h2 className="text-4xl md:text-5xl font-light">
               عناصر معمارية مصممة بعناية
             </h2>
           </div>
@@ -111,11 +117,11 @@ export default function ServicesAr() {
                   variants={isEven ? fadeInDown : fadeInUp}
                   className={`flex flex-col justify-center ${!isEven ? "lg:order-1 lg:text-right" : ""}`}
                 >
-                  <span className="text-accent font-mono font-bold text-sm tracking-widest block mb-4">
+                  <span className="text-accent font-mono font-bold text-sm  block mb-4">
                     {svc.id}
                   </span>
 
-                  <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                  <h3 className="text-3xl md:text-4xl font-light  mb-6">
                     {svc.title}
                   </h3>
 
@@ -129,7 +135,7 @@ export default function ServicesAr() {
                   <div className={`${!isEven ? "lg:ml-auto" : ""}`}>
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-semibold group/link"
+                      className="inline-flex items-center gap-2 text-accent text-base uppercase  font-semibold group/link"
                     >
                       اطلب هذه الخدمة
                       <svg

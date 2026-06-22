@@ -3,7 +3,16 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
-const categories = ["الكل", "غرف الملابس", "مطابخ", "أبواب", "ألواح جدارية"];
+const categories = [
+  "الكل",
+  "غرف الملابس",
+  "غرف نوم",
+  "مطابخ",
+  "أبواب",
+  "التكسيات الخشبية",
+  "غرف معيشة",
+  "وحدات ديكورية",
+];
 
 const projects = [
   {
@@ -41,7 +50,10 @@ export default function PortfolioAr() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="relative w-full bg-background text-foreground px-6 py-32 overflow-hidden">
+    <section
+      id="portfolio"
+      className="relative w-full bg-background text-foreground px-6 py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,12 +62,10 @@ export default function PortfolioAr() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-right"
         >
-          <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
+          <span className="text-accent text-base uppercase font-bold  block mb-3">
             أعمال مختارة
           </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
-            محطات من أعمالنا الأخيرة
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-light ">أعمال وتصميمات</h2>
         </motion.div>
 
         <div className="flex flex-wrap gap-3 mb-16 justify-start md:justify-end">
@@ -63,7 +73,7 @@ export default function PortfolioAr() {
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`relative px-5 py-2.5 text-xs uppercase tracking-widest font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
+              className={`relative px-5 py-2.5 text-base uppercase  font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
                 activeFilter === cat
                   ? "bg-foreground text-background border-foreground"
                   : "bg-transparent text-foreground/60 border-border hover:border-foreground/40 hover:text-foreground"
@@ -74,7 +84,10 @@ export default function PortfolioAr() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, idx) => (
               <motion.div

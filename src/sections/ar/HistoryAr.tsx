@@ -6,10 +6,10 @@ export default function HistoryAr() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-claywood/25 to-transparent" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         <div className="lg:col-span-5 text-right">
-          <span className="text-vibrant text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+          <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
             إرثنا
           </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 max-w-xl mr-auto">
+          <h2 className="text-4xl md:text-5xl font-light  leading-tight mb-6 max-w-xl mr-auto">
             الدقة والاتزان والصبر في صناعة التفاصيل.
           </h2>
           <p className="text-claywood/80 font-light leading-relaxed mb-8 max-w-xl text-base md:text-lg mr-auto">
@@ -36,7 +36,7 @@ export default function HistoryAr() {
           <div className="bg-claywood text-sandstone p-7 md:p-8 rounded-2xl flex flex-col justify-between min-h-56 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
             <div>
               <h4 className="text-4xl md:text-5xl font-light text-vibrant mb-3">100%</h4>
-              <p className="text-xs font-light tracking-[0.25em] uppercase text-desert leading-relaxed">
+              <p className="text-base font-light tracking-[0.25em] uppercase text-desert leading-relaxed">
                 تصميم وتصنيع وتشطيب داخل المنشأة مع رقابة كاملة على الجودة.
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function HistoryAr() {
           <div className="bg-sandstone text-claywood p-7 md:p-8 rounded-2xl flex flex-col justify-between min-h-56 border border-claywood/10 shadow-[0_12px_40px_rgba(36,26,25,0.08)]">
             <div>
               <h4 className="text-4xl md:text-5xl font-light text-cocoa mb-3">فاخر</h4>
-              <p className="text-xs font-light tracking-[0.25em] uppercase text-claywood/70 leading-relaxed">
+              <p className="text-base font-light tracking-[0.25em] uppercase text-claywood/70 leading-relaxed">
                 اختيار الخامات قائم على خشب متين ومختار بعناية وبمسؤولية.
               </p>
             </div>
@@ -65,7 +65,7 @@ export default function HistoryAr() {
                 <span className="text-[10px] uppercase tracking-[0.3em] text-vibrant block mb-3">
                   فلسفة الاستوديو
                 </span>
-                <p className="text-xl md:text-2xl font-light tracking-tight max-w-3xl leading-relaxed">
+                <p className="text-xl md:text-2xl font-light  max-w-3xl leading-relaxed">
                   نصنع بعقلية الورشة المنضبطة، وبهدوء بيوت التصميم الفاخر.
                 </p>
               </div>

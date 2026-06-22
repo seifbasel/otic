@@ -1,6 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import Image from "next/image";
 import LangSwitcher from "@/components/LangSwitcher";
 
@@ -105,15 +110,18 @@ export default function NavbarAr() {
                 variants={itemVariants}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
+                className="text-3xl font-light text-sand uppercase  hover:text-accent transition-colors"
               >
                 {link.label}
               </motion.a>
             ))}
-            <motion.div variants={itemVariants} className="mt-8 flex flex-col items-center gap-4">
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 flex flex-col items-center gap-4"
+            >
               <LangSwitcher currentLang="ar" />
               <button className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors">
-                ابدأ مشروعك
+                <a href="#contact"> ابدأ مشروعك</a>
               </button>
             </motion.div>
           </motion.div>
@@ -142,9 +150,13 @@ export default function NavbarAr() {
             />
           </div>
 
-          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-bone">
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase  text-bone">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-accent transition-colors">
+              <a
+                key={link.href}
+                href={link.href}
+                className="hover:text-accent transition-colors"
+              >
                 {link.label}
               </a>
             ))}
@@ -159,7 +171,12 @@ export default function NavbarAr() {
               aria-label="تبديل المظهر"
             >
               {isDark ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className="w-5 h-5 "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -168,7 +185,12 @@ export default function NavbarAr() {
                   />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -179,26 +201,28 @@ export default function NavbarAr() {
               )}
             </button>
 
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
               اطلب استشارة
             </button>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-foreground"
+              className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-bone"
               aria-label="تبديل القائمة"
             >
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                className="w-6 h-[1.5px] bg-accent block transition-transform"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-[1.5px] bg-current block transition-opacity"
+                className="w-6 h-[1.5px] bg-accent block transition-opacity"
               />
               <motion.span
-                animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                animate={
+                  menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                }
+                className="w-6 h-[1.5px] bg-accent block transition-transform"
               />
             </button>
           </div>

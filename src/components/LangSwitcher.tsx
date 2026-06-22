@@ -10,7 +10,7 @@ export default function LangSwitcher({ currentLang, className = "" }: LangSwitch
   return (
     <Link
       href={currentLang === "en" ? "/ar" : "/"}
-      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border  bg-onyx/20 border-accent text-bone hover:text-accent transition-all duration-300 text-[11px] uppercase tracking-widest font-medium ${className}`}
+      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border  bg-onyx/20 border-accent text-bone hover:text-accent transition-all duration-300 text-[11px] uppercase  font-medium ${className}`}
       aria-label={currentLang === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية"}
     >
       {currentLang === "en" ? (

@@ -60,10 +60,10 @@ export default function Portfolio() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
+          <span className="text-accent text-base uppercase font-bold  block mb-3">
             SELECTED WORK
           </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-light ">
             Our Portfolio
           </h2>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Portfolio() {
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`relative px-5 py-2.5 text-xs uppercase tracking-widest font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
+              className={`relative px-5 py-2.5 text-base uppercase  font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
                 activeFilter === cat
                   ? "bg-foreground text-background border-foreground"
                   : "bg-transparent text-foreground/60 border-border hover:border-foreground/40 hover:text-foreground"

@@ -114,7 +114,7 @@ export default function Navbar() {
                 variants={itemVariants}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-3xl font-light text-text uppercase tracking-widest hover:text-accent transition-colors"
+                className="text-3xl font-light text-text uppercase  hover:text-accent transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -208,7 +208,7 @@ export default function Navbar() {
             </button>
 
             {/* Desktop Inquire Button */}
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
               Inquire
             </button>
 

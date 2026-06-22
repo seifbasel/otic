@@ -2,19 +2,20 @@
 
 export default function ContactAr() {
   return (
-    <section id="contact" className="relative py-28 md:py-36 bg-sandstone px-6 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-claywood/20 to-transparent" />
+    <section
+      id="contact"
+      className="relative py-28 md:py-36 bg-sandstone px-6 overflow-hidden"
+    >
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-claywood/20 to-transparent" />
       <div className="absolute -top-16 right-0 w-72 h-72 bg-vibrant/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-between text-right">
           <div>
-            <span className="text-vibrant text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+            <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
               تواصل مع أوتيك
             </span>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight max-w-xl mr-auto">
-              ابدأ مشروعًا بصياغة هادئة، دقيقة، وفاخرة.
+            <h2 className="text-4xl md:text-5xl font-light  leading-tight max-w-xl mr-auto">
+              ابدأ مشروعًا بصياغة تفاصيل مميزة، دقيقة، وفاخرة.
             </h2>
             <p className="mt-6 text-claywood/80 font-light leading-relaxed text-base md:text-lg max-w-xl mr-auto">
               شاركنا ملامح مساحتك وسنعود إليك بخطوة واضحة ومعتنى بها. نحن نعمل
@@ -25,28 +26,40 @@ export default function ContactAr() {
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">الرد</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">خلال يوم عمل واحد.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                الرد
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                خلال يوم عمل واحد.
+              </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">النطاق</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">الفلل والمشاريع الفاخرة.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                النطاق
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                الفلل والمشاريع الفاخرة.
+              </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">الزيارة</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">الاستشارة تكون بالحجز المسبق.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                الزيارة
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                الاستشارة تكون بالحجز المسبق.
+              </p>
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative rounded-[2rem] border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
+          <div className="relative rounded-4xl border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-claywood/10 rounded-full blur-3xl" />
 
             <div className="relative z-10 p-8 md:p-12 lg:p-14">
               <div className="mb-10 text-right">
-                <h3 className="text-2xl md:text-3xl font-light tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-light ">
                   اطلب استشارة خاصة من الاستوديو
                 </h3>
                 <p className="mt-3 text-sandstone/75 text-sm md:text-base leading-relaxed max-w-2xl mr-auto">
@@ -105,10 +118,10 @@ export default function ContactAr() {
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-xs uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
+                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-base uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
                     طلب الاستشارة
                   </button>
-                  <p className="text-xs text-sandstone/75 leading-relaxed max-w-md">
+                  <p className="text-base text-sandstone/75 leading-relaxed max-w-md">
                     نتعامل مع المشاريع السكنية الخاصة، والتشطيبات الفاخرة،
                     وأعمال النجارة المصممة حسب الطلب.
                   </p>

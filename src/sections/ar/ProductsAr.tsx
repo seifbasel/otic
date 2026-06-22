@@ -25,7 +25,7 @@ const PRODUCTS_DATA = [
   {
     id: 1,
     name: "باب جوز داكن",
-    category: "أبواب مخصصة",
+    category: "أبواب",
     priceRange: "mid",
     price: "1,450",
     priceNum: 1450,
@@ -39,7 +39,7 @@ const PRODUCTS_DATA = [
   {
     id: 2,
     name: "باب أبيض هادئ",
-    category: "أبواب مخصصة",
+    category: "أبواب",
     priceRange: "entry",
     price: "1,050",
     priceNum: 1050,
@@ -53,7 +53,7 @@ const PRODUCTS_DATA = [
   {
     id: 3,
     name: "باب بلوط فاخر",
-    category: "أبواب مخصصة",
+    category: "أبواب",
     priceRange: "premium",
     price: "2,100",
     priceNum: 2100,
@@ -67,7 +67,7 @@ const PRODUCTS_DATA = [
   {
     id: 4,
     name: "باب رمادي مسطح",
-    category: "أبواب مخصصة",
+    category: "أبواب",
     priceRange: "premium",
     price: "1,950",
     priceNum: 1950,
@@ -81,7 +81,7 @@ const PRODUCTS_DATA = [
   {
     id: 5,
     name: "باب بألواح خطية",
-    category: "ألواح جدارية",
+    category: "أبواب",
     priceRange: "luxury",
     price: "2,800",
     priceNum: 2800,
@@ -95,7 +95,7 @@ const PRODUCTS_DATA = [
   {
     id: 6,
     name: "باب هندسي بطابع لافت",
-    category: "قطع مميزة",
+    category: "أبواب",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
@@ -109,7 +109,7 @@ const PRODUCTS_DATA = [
   {
     id: 7,
     name: "ألواح بلوط ذات تموج",
-    category: "ألواح جدارية",
+    category: "أبواب",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
@@ -125,7 +125,7 @@ const PRODUCTS_DATA = [
 const DICTIONARY = {
   all: "الكل",
   collection: "المجموعة",
-  title: "كتالوج منتجات بمنطق هادئ وفاخر.",
+  title: "كتالوج منتجات",
   subtitle:
     "مجموعة مختارة من الأبواب والألواح والقطع المميزة، مع تصفح خفيف وفلاتر مرتبة وصفحات واضحة.",
   type: "النوع",
@@ -147,7 +147,16 @@ const DICTIONARY = {
   continueBtn: "متابعة التصفح",
   whatsappMsg: (name: string, cat: string, price: string) =>
     `مرحبًا، أرغب بالاستفسار عن *${name}* (${cat}) بسعر SAR ${price}. هل يمكنكم مشاركة المزيد من التفاصيل؟`,
-  categories: ["الكل",  "أبواب","ألواح جدارية", "قطع مميزة"],
+  categories: [
+    "الكل",
+    "غرف الملابس",
+    "غرف نوم",
+    "مطابخ",
+    "أبواب",
+    "التكسيات الخشبية",
+    "غرف معيشة",
+    "وحدات ديكورية",
+  ],
   priceRanges: [
     { key: "all", label: "كل الأسعار" },
     { key: "entry", label: "أقل من 1500 ريال" },
@@ -235,7 +244,7 @@ function ProductModalAr({
             <span className="text-accent text-[10px] uppercase tracking-[0.25em] font-mono block mb-3">
               {product.category}
             </span>
-            <h3 className="text-3xl md:text-4xl font-light tracking-tight text-foreground leading-tight">
+            <h3 className="text-3xl md:text-4xl font-light  text-foreground leading-tight">
               {product.name}
             </h3>
           </div>
@@ -264,7 +273,6 @@ function ProductModalAr({
               </span>
               <span className="text-sm font-light">{product.finishLabel}</span>
             </div>
-    
           </div>
 
           <div className="mt-auto flex flex-col gap-3 pt-2">
@@ -302,7 +310,7 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 text-[11px] uppercase tracking-widest font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
+      className={`px-4 py-2 text-[11px] uppercase  font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
         active
           ? "bg-accent border-accent text-white shadow-[0_10px_25px_rgba(244,116,59,0.25)]"
           : "bg-transparent border-border text-foreground/60 hover:border-foreground/40 hover:text-foreground"
@@ -328,7 +336,7 @@ function PaginationButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`min-w-10 h-10 px-3 rounded-full border text-xs uppercase tracking-[0.25em] transition-colors ${
+      className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
         active
           ? "bg-foreground text-background border-foreground"
           : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
@@ -419,10 +427,10 @@ export default function ProductCatalogAr() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 md:mb-16">
             <div className="max-w-3xl">
-              <span className="text-accent text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+              <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
                 {t.collection}
               </span>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light  leading-tight">
                 {t.title}
               </h2>
             </div>
@@ -461,8 +469,6 @@ export default function ProductCatalogAr() {
 
               <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-5 xl:gap-8 items-start">
                 <div className="flex flex-col gap-5">
-      
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2.5">
                       <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 shrink-0">
@@ -473,7 +479,7 @@ export default function ProductCatalogAr() {
                         onChange={(e) =>
                           handleFilterChange(setPriceRange, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase tracking-widest focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
                       >
                         {t.priceRanges.map((r) => (
                           <option
@@ -496,7 +502,7 @@ export default function ProductCatalogAr() {
                         onChange={(e) =>
                           handleFilterChange(setSort, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase tracking-widest focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
                       >
                         {t.sortOptions.map((o) => (
                           <option
@@ -559,7 +565,7 @@ export default function ProductCatalogAr() {
                         <div className="absolute inset-0 bg-linear-to-t from-onyx/55 via-onyx/10 to-transparent opacity-50" />
 
                         <div className="absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                          <div className="bg-background/90 backdrop-blur-sm text-foreground text-xs uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">
+                          <div className="bg-background/90 backdrop-blur-sm text-foreground text-base uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">
                             {t.viewDetails}
                           </div>
                         </div>
@@ -589,7 +595,7 @@ export default function ProductCatalogAr() {
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 {/* English Version UI string update */}
-                <p className="text-xs uppercase tracking-[0.25em] text-foreground/40">
+                <p className="text-base uppercase tracking-[0.25em] text-foreground/40">
                   {t.page} {safeCurrentPage} {t.of} {totalPages}
                 </p>
 
@@ -635,7 +641,7 @@ export default function ProductCatalogAr() {
               </p>
               <button
                 onClick={clearFilters}
-                className="text-accent text-xs uppercase tracking-[0.35em] hover:text-accent/70 transition-colors cursor-pointer"
+                className="text-accent text-base uppercase tracking-[0.35em] hover:text-accent/70 transition-colors cursor-pointer"
               >
                 {t.reset}
               </button>

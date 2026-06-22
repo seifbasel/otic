@@ -1,14 +1,15 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import Image from 'next/image';
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const slides = [
-  { src: '/5.jpg', alt: 'Bespoke kitchen' },
-  { src: '/6.jpg', alt: 'Dressing room' },
-  { src: '/7.jpg', alt: 'Living space' },
-  { src: '/8.jpg', alt: 'Architectural detail' },
-  { src: '/9.jpg', alt: 'Architectural detail' },
+  { src: "/1.jpg", alt: "1" },
+  { src: "/2.jpg", alt: "2" },
+  { src: "/3.jpg", alt: "3" },
+  { src: "/4.jpg", alt: "4" },
+  { src: "/5.jpg", alt: "5" },
+  { src: "/6.jpg", alt: "6" },
 ];
 
 function IconSculpture() {
@@ -27,28 +28,115 @@ function IconSculpture() {
       </defs>
       <g clipPath="url(#sculptureClip)">
         {/* Outer arch — ghost fill */}
-        <rect x="60" y="22%" width="340" height="66%" rx="170" fill="#ffffff" fillOpacity="0.06" />
-        <rect x="60" y="22%" width="340" height="66%" rx="170" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.25" />
+        <rect
+          x="60"
+          y="22%"
+          width="340"
+          height="66%"
+          rx="170"
+          fill="#ffffff"
+          fillOpacity="0.06"
+        />
+        <rect
+          x="60"
+          y="22%"
+          width="340"
+          height="66%"
+          rx="170"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.5"
+          strokeOpacity="0.25"
+        />
 
         {/* Mid arch */}
-        <rect x="110" y="25%" width="240" height="60%" rx="120" fill="#ffffff" fillOpacity="0.05" />
-        <rect x="110" y="25%" width="240" height="60%" rx="120" fill="none" stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.3" />
+        <rect
+          x="110"
+          y="25%"
+          width="240"
+          height="60%"
+          rx="120"
+          fill="#ffffff"
+          fillOpacity="0.05"
+        />
+        <rect
+          x="110"
+          y="25%"
+          width="240"
+          height="60%"
+          rx="120"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.5"
+          strokeOpacity="0.3"
+        />
 
         {/* Outer dashed orbit */}
-        <rect x="20" y="18%" width="420" height="72%" rx="210" fill="none" stroke="#c9a96e" strokeWidth="0.4" strokeDasharray="5 12" strokeOpacity="0.2" />
+        <rect
+          x="20"
+          y="18%"
+          width="420"
+          height="72%"
+          rx="210"
+          fill="none"
+          stroke="#c9a96e"
+          strokeWidth="0.4"
+          strokeDasharray="5 12"
+          strokeOpacity="0.2"
+        />
 
         {/* Door legs — bottom solid blocks (icon DNA) */}
-        <rect x="60" y="82%" width="120" height="18%" rx="0" fill="#ffffff" fillOpacity="0.08" />
-        <rect x="280" y="82%" width="120" height="18%" rx="0" fill="#ffffff" fillOpacity="0.08" />
+        <rect
+          x="60"
+          y="82%"
+          width="120"
+          height="18%"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.08"
+        />
+        <rect
+          x="280"
+          y="82%"
+          width="120"
+          height="18%"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.08"
+        />
 
         {/* Door lintel — horizontal bar */}
-        <rect x="60" y="80%" width="340" height="20" rx="0" fill="#ffffff" fillOpacity="0.1" />
+        <rect
+          x="60"
+          y="80%"
+          width="340"
+          height="20"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.1"
+        />
 
         {/* Crown cap */}
-        <rect x="190" y="22%" width="80" height="14" rx="0" fill="#ffffff" fillOpacity="0.15" />
+        <rect
+          x="190"
+          y="22%"
+          width="80"
+          height="14"
+          rx="0"
+          fill="#ffffff"
+          fillOpacity="0.15"
+        />
 
         {/* Vertical axis line */}
-        <line x1="230" y1="8%" x2="230" y2="22%" stroke="#ffffff" strokeWidth="0.6" strokeOpacity="0.3" />
+        <line
+          x1="230"
+          y1="8%"
+          x2="230"
+          y2="22%"
+          stroke="#ffffff"
+          strokeWidth="0.6"
+          strokeOpacity="0.3"
+        />
 
         {/* Ghost inner arch path (traced from icon polygon) */}
         <path
@@ -67,16 +155,58 @@ function IconSculpture() {
         />
 
         {/* Keystone dot */}
-        <circle cx="230" cy="22%" r="7" fill="none" stroke="#ffffff" strokeWidth="0.8" strokeOpacity="0.5" />
+        <circle
+          cx="230"
+          cy="22%"
+          r="7"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.8"
+          strokeOpacity="0.5"
+        />
         <circle cx="230" cy="22%" r="2.5" fill="#c9a96e" fillOpacity="0.8" />
 
         {/* Corner joints */}
-        <circle cx="62" cy="80%" r="5" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeOpacity="0.4" />
-        <circle cx="398" cy="80%" r="5" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeOpacity="0.4" />
+        <circle
+          cx="62"
+          cy="80%"
+          r="5"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.7"
+          strokeOpacity="0.4"
+        />
+        <circle
+          cx="398"
+          cy="80%"
+          r="5"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.7"
+          strokeOpacity="0.4"
+        />
 
         {/* Construction guide lines */}
-        <line x1="150" y1="28%" x2="150" y2="80%" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="3 10" strokeOpacity="0.12" />
-        <line x1="310" y1="28%" x2="310" y2="80%" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="3 10" strokeOpacity="0.12" />
+        <line
+          x1="150"
+          y1="28%"
+          x2="150"
+          y2="80%"
+          stroke="#ffffff"
+          strokeWidth="0.3"
+          strokeDasharray="3 10"
+          strokeOpacity="0.12"
+        />
+        <line
+          x1="310"
+          y1="28%"
+          x2="310"
+          y2="80%"
+          stroke="#ffffff"
+          strokeWidth="0.3"
+          strokeDasharray="3 10"
+          strokeOpacity="0.12"
+        />
       </g>
     </svg>
   );
@@ -86,13 +216,15 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5500); // Slower, more cinematic timing
+    const timer = setInterval(
+      () => setCurrent((p) => (p + 1) % slides.length),
+      5500,
+    ); // Slower, more cinematic timing
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative h-screen w-full bg-black flex items-center overflow-hidden">
-
       {/* ── Cinematic Background Carousel ── */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -116,19 +248,21 @@ export default function Hero() {
 
       {/* ── Premium Dark Overlays ── */}
       {/* Vignette + Base Dark Wash */}
-      <div 
-        className="absolute inset-0 z-[1]" 
-        style={{ 
-          background: 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 100%), linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.65) 100%)' 
-        }} 
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 100%), linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.65) 100%)",
+        }}
       />
-      
+
       {/* Left side gradient to ensure text pops */}
-      <div 
-        className="absolute inset-0 z-[1]" 
-        style={{ 
-          background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' 
-        }} 
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)",
+        }}
       />
 
       {/* Subtle warm luxury tint */}
@@ -141,13 +275,11 @@ export default function Hero() {
 
       {/* ── Content Layout ── */}
       <div className="max-w-7xl w-full relative z-10 px-8 md:px-16 lg:px-24 flex flex-col justify-center h-full">
-
         <div className="max-w-xl">
-
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 48 }} // Wider accent line for luxury
-            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
             className="h-[1px] bg-accent mb-8"
           />
 
@@ -164,10 +296,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08] tracking-tight mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08]  mb-8"
           >
-            Shaping Interiors,<br />
-            <span className="text-accent font-normal italic">Elevating Homes.</span>
+            Premium Furniture,
+            <br />
+            <span className="text-accent font-normal italic">
+              Shaping Interiors.
+            </span>
           </motion.h1>
 
           <motion.p
@@ -176,8 +311,9 @@ export default function Hero() {
             transition={{ duration: 1.2, delay: 0.9 }}
             className="text-white/60 font-light text-base leading-relaxed mb-10 border-l-2 border-accent pl-5 max-w-md"
           >
-            From bespoke dressing rooms to architectural state-of-the-art kitchen hubs.
-            We craft the structural identity of modern living spaces.
+            From bespoke dressing rooms to architectural state-of-the-art
+            kitchen hubs. We craft the structural identity of modern living
+            spaces.
           </motion.p>
 
           <motion.div
@@ -188,13 +324,15 @@ export default function Hero() {
           >
             <div>
               <a
-                href="#projects"
+                href="#portfolio"
                 className="group relative border border-white/20 hover:border-accent text-white px-10 py-4 rounded-sm tracking-[0.2em] text-[10px] uppercase transition-all duration-500 inline-block overflow-hidden"
               >
                 <span className="relative z-10">View Portfolio</span>
                 {/* Subtle hover fill effect */}
                 <div className="absolute inset-0 bg-accent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 tracking-[0.2em] text-[10px] uppercase">View Portfolio</span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 tracking-[0.2em] text-[10px] uppercase">
+                  View Portfolio
+                </span>
               </a>
             </div>
 
@@ -205,10 +343,10 @@ export default function Hero() {
                   key={i}
                   onClick={() => setCurrent(i)}
                   aria-label={`Slide ${i + 1}`}
-                  className={`h-[2px] rounded-full transition-all duration-700 ease-out cursor-pointer ${
+                  className={`h-0.5 rounded-full transition-all duration-700 ease-out cursor-pointer ${
                     i === current
-                      ? 'w-10 bg-accent'
-                      : 'w-5 bg-white/20 hover:bg-white/40'
+                      ? "w-10 bg-accent"
+                      : "w-5 bg-white/20 hover:bg-white/40"
                   }`}
                 />
               ))}

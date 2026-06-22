@@ -6,10 +6,10 @@ export default function History() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-claywood/25 to-transparent" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         <div className="lg:col-span-5">
-          <span className="text-vibrant text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+          <span className="text-vibrant text-base uppercase font-bold tracking-[0.35em] block mb-4">
             Our Heritage
           </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-light  leading-tight mb-6 max-w-xl">
             Precision, restraint, and the patience to do it properly.
           </h2>
           <p className="text-claywood/80 font-light leading-relaxed mb-8 max-w-xl text-base md:text-lg">
@@ -37,7 +37,7 @@ export default function History() {
           <div className="bg-claywood text-sandstone p-7 md:p-8 rounded-2xl flex flex-col justify-between min-h-56 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
             <div>
               <h4 className="text-4xl md:text-5xl font-light text-vibrant mb-3">100%</h4>
-              <p className="text-xs font-light tracking-[0.25em] uppercase text-desert leading-relaxed">
+              <p className="text-base font-light tracking-[0.25em] uppercase text-desert leading-relaxed">
                 Designed, fabricated, and finished in-house for full quality control.
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function History() {
           <div className="bg-sandstone text-claywood p-7 md:p-8 rounded-2xl flex flex-col justify-between min-h-56 border border-claywood/10 shadow-[0_12px_40px_rgba(36,26,25,0.08)]">
             <div>
               <h4 className="text-4xl md:text-5xl font-light text-cocoa mb-3">Premium</h4>
-              <p className="text-xs font-light tracking-[0.25em] uppercase text-claywood/70 leading-relaxed">
+              <p className="text-base font-light tracking-[0.25em] uppercase text-claywood/70 leading-relaxed">
                 Material sourcing rooted in durable, responsibly selected timber.
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function History() {
                 <span className="text-[10px] uppercase tracking-[0.3em] text-vibrant block mb-3">
                   Studio Mindset
                 </span>
-                <p className="text-xl md:text-2xl font-light tracking-tight max-w-3xl leading-relaxed">
+                <p className="text-xl md:text-2xl font-light  max-w-3xl leading-relaxed">
                   We build with the discipline of a workshop and the restraint of
                   a luxury interior house.
                 </p>

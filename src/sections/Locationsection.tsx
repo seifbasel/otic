@@ -115,7 +115,7 @@ export default function LocationSection() {
                 Studio Locations
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-foreground">
+            <h2 className="text-4xl md:text-5xl font-light  leading-tight text-foreground">
               Crafted Here.
               <br />
               <em className="not-italic font-light text-accent">Delivered Everywhere.</em>
@@ -304,9 +304,9 @@ export default function LocationSection() {
                     <div className="space-y-2.5">
                       {loc.hours.map((h) => (
                         <div key={h.days} className="flex justify-between items-baseline gap-4">
-                          <span className="text-xs font-light text-foreground/70">{h.days}</span>
+                          <span className="text-base font-light text-foreground/70">{h.days}</span>
                           <span className="flex-1 border-b border-dotted border-border mb-1"></span>
-                          <span className="text-xs font-mono text-foreground">{h.time}</span>
+                          <span className="text-base font-mono text-foreground">{h.time}</span>
                         </div>
                       ))}
                     </div>
@@ -342,7 +342,7 @@ export default function LocationSection() {
                             {icon}
                           </svg>
                         </div>
-                        <span className="text-xs font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
+                        <span className="text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
                           {label}
                         </span>
                       </a>

@@ -73,10 +73,10 @@ export default function Services() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-6"
         >
           <div>
-            <span className="text-accent text-xs uppercase font-bold tracking-widest block mb-3">
+            <span className="text-accent text-base uppercase font-bold  block mb-3">
               OUR CAPABILITIES
             </span>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-light ">
               Tailored Structural Elements
             </h2>
           </div>
@@ -126,11 +126,11 @@ export default function Services() {
                     !isEven ? "lg:order-1 lg:text-right" : ""
                   }`}
                 >
-                  <span className="text-accent font-mono font-bold text-sm tracking-widest block mb-4">
+                  <span className="text-accent font-mono font-bold text-sm  block mb-4">
                     {svc.id}
                   </span>
 
-                  <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                  <h3 className="text-3xl md:text-4xl font-light  mb-6">
                     {svc.title}
                   </h3>
 
@@ -144,7 +144,7 @@ export default function Services() {
                   <div className={`${!isEven ? "lg:ml-auto" : ""}`}>
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-semibold group/link"
+                      className="inline-flex items-center gap-2 text-accent text-base uppercase  font-semibold group/link"
                     >
                       Inquire Feature
                       <svg

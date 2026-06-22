@@ -8,48 +8,138 @@ export default function FooterAr() {
         <div className="md:col-span-4">
           <div className="flex items-center justify-center">
             <div className="relative w-200 h-50">
-              <Image src="/logo-1.png" alt="شعار أوتيك" fill className="object-cover dark:hidden" />
-              <Image src="/logo-2.png" alt="شعار أوتيك" fill className="object-cover hidden dark:block" />
+              <Image
+                src="/logo-1.png"
+                alt="شعار أوتيك"
+                fill
+                className="object-cover dark:hidden"
+              />
+              <Image
+                src="/logo-2.png"
+                alt="شعار أوتيك"
+                fill
+                className="object-cover hidden dark:block"
+              />
             </div>
           </div>
         </div>
 
         <div className="md:col-span-3 space-y-4">
-          <h4 className="text-xs tracking-widest text-vibrant font-bold">الأقسام</h4>
+          <h4 className="text-base  text-vibrant font-bold">الأقسام</h4>
           <ul className="space-y-2 text-sm font-medium text-desert/80">
-            <li><a href="#services" className="hover:text-sandstone transition-colors">غرف الملابس</a></li>
-            <li><a href="#portfolio" className="hover:text-sandstone transition-colors">الأعمال المختارة</a></li>
-            <li><a href="#products" className="hover:text-sandstone transition-colors">المنتجات</a></li>
-            <li><a href="#history" className="hover:text-sandstone transition-colors">سجل أوتيك</a></li>
+            <li>
+              <a
+                href="#services"
+                className="hover:text-sandstone transition-colors"
+              >
+                الخدمات{" "}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                className="hover:text-sandstone transition-colors"
+              >
+                الأعمال{" "}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#products"
+                className="hover:text-sandstone transition-colors"
+              >
+                المنتجات
+              </a>
+            </li>
+            <li>
+              <a
+                href="#history"
+                className="hover:text-sandstone transition-colors"
+              >
+                تاريخ أوتيك
+              </a>
+            </li>
           </ul>
         </div>
 
         <div className="md:col-span-2 space-y-4">
-          <h4 className="text-xs tracking-widest text-vibrant font-bold">القنوات</h4>
+          <h4 className="text-base  text-vibrant font-bold">القنوات</h4>
           <ul className="space-y-2 text-sm font-medium text-desert/80">
-            <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">إنستغرام</a></li>
-            <li><a href="https://pinterest.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">بنترست</a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">لينكدإن</a></li>
-            <li><a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-sandstone transition-colors">فيسبوك</a></li>
+            <li>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-sandstone transition-colors"
+              >
+                إنستغرام
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pinterest.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-sandstone transition-colors"
+              >
+                تيك توك
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-sandstone transition-colors"
+              >
+                فيسبوك
+              </a>
+            </li>
           </ul>
         </div>
 
         <div className="md:col-span-3 space-y-4 text-sm font-medium text-desert/80">
-          <h4 className="text-xs tracking-widest text-vibrant font-bold">مقر الاستوديو</h4>
+          <h4 className="text-base  text-vibrant font-bold">مقر الاستوديو</h4>
           <p>
             المنطقة الصناعية، القطاع الرابع،
             <br />
             مركز الأعمال الخشبية الراقية
           </p>
-          <p className="text-xs font-mono text-sandstone">contact@oticwood.com</p>
+          <p className="text-base font-mono text-sandstone">
+            contact@oticwood.com
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col sm:flex-row justify-between items-center text-xs text-desert/60 gap-4">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col sm:flex-row justify-between items-center text-base text-desert/60 gap-4">
         <p>&copy; {new Date().getFullYear()} أوتيك. جميع الحقوق محفوظة.</p>
+        <a
+          href="https://seifbasel.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex items-center justify-center gap-2 text-desert/60 hover:text-sandstone transition-colors"
+          aria-label="Visit Seif Pixels"
+        >
+          <span className="flex items-center gap-2">
+            تم البناء بواسطة
+            <span className="relative inline-block h-14 w-14 transition-transform duration-500 ease-out group-hover:rotate-360">
+              <Image
+                src="/seif.png"
+                alt="seif pixels"
+                fill
+                aria-hidden="true"
+                className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </span>
+          </span>
+        </a>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-sandstone transition-colors">سياسة الخصوصية</a>
-          <a href="#" className="hover:text-sandstone transition-colors">شروط الاستخدام</a>
+          <a href="#" className="hover:text-sandstone transition-colors">
+            سياسة الخصوصية
+          </a>
+          <a href="#" className="hover:text-sandstone transition-colors">
+            شروط الاستخدام
+          </a>
         </div>
       </div>
     </footer>

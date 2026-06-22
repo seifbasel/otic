@@ -74,10 +74,10 @@ export default function CraftsAr() {
     <section id="services" className="py-32 bg-background text-foreground px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-right">
-          <span className="text-accent text-xs font-bold tracking-widest block mb-3">
+          <span className="text-accent text-base font-bold  block mb-3">
             ما نقدمه
           </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-light ">
             حلولنا الحرفية
           </h2>
         </div>

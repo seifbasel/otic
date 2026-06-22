@@ -235,7 +235,7 @@ function ProductModalEn({
             <span className="text-accent text-[10px] uppercase tracking-[0.25em] font-mono block mb-3">
               {product.category}
             </span>
-            <h3 className="text-3xl md:text-4xl font-light tracking-tight text-foreground leading-tight">
+            <h3 className="text-3xl md:text-4xl font-light  text-foreground leading-tight">
               {product.name}
             </h3>
           </div>
@@ -302,7 +302,7 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 text-[11px] uppercase tracking-widest font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
+      className={`px-4 py-2 text-[11px] uppercase  font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
         active
           ? "bg-accent border-accent text-white shadow-[0_10px_25px_rgba(244,116,59,0.25)]"
           : "bg-transparent border-border text-foreground/60 hover:border-foreground/40 hover:text-foreground"
@@ -328,7 +328,7 @@ function PaginationButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`min-w-10 h-10 px-3 rounded-full border text-xs uppercase tracking-[0.25em] transition-colors ${
+      className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
         active
           ? "bg-foreground text-background border-foreground"
           : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
@@ -419,10 +419,10 @@ export default function ProductCatalogEn() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 md:mb-16">
             <div className="max-w-3xl">
-              <span className="text-accent text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+              <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
                 {t.collection}
               </span>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light  leading-tight">
                 {t.title}
               </h2>
             </div>
@@ -473,7 +473,7 @@ export default function ProductCatalogEn() {
                         onChange={(e) =>
                           handleFilterChange(setPriceRange, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase tracking-widest focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
                       >
                         {t.priceRanges.map((r) => (
                           <option
@@ -496,7 +496,7 @@ export default function ProductCatalogEn() {
                         onChange={(e) =>
                           handleFilterChange(setSort, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase tracking-widest focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
                       >
                         {t.sortOptions.map((o) => (
                           <option
@@ -559,7 +559,7 @@ export default function ProductCatalogEn() {
                         <div className="absolute inset-0 bg-linear-to-t from-onyx/80 via-onyx/10 to-transparent opacity-50" />
 
                         <div className="absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                          <div className="bg-background/90 backdrop-blur-sm text-foreground text-xs uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">
+                          <div className="bg-background/90 backdrop-blur-sm text-foreground text-base uppercase tracking-[0.25em] text-center py-3 rounded-full font-medium">
                             {t.viewDetails}
                           </div>
                         </div>
@@ -588,7 +588,7 @@ export default function ProductCatalogEn() {
               </motion.div>
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-xs uppercase tracking-[0.25em] text-foreground/40">
+                <p className="text-base uppercase tracking-[0.25em] text-foreground/40">
                   {t.page} {safeCurrentPage} {t.of} {totalPages}
                 </p>
 
@@ -634,7 +634,7 @@ export default function ProductCatalogEn() {
               </p>
               <button
                 onClick={clearFilters}
-                className="text-accent text-xs uppercase tracking-[0.35em] hover:text-accent/70 transition-colors cursor-pointer"
+                className="text-accent text-base uppercase tracking-[0.35em] hover:text-accent/70 transition-colors cursor-pointer"
               >
                 {t.reset}
               </button>

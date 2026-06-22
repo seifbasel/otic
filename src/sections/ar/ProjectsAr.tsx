@@ -13,10 +13,10 @@ export default function ProjectsAr() {
     <section id="projects" className="py-32 bg-claywood text-sandstone px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-right">
-          <span className="text-vibrant text-xs font-bold tracking-widest block mb-2">
+          <span className="text-vibrant text-base font-bold  block mb-2">
             مجموعة مختارة
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold ">
             أبرز الأعمال والمساحات المنفذة
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default function ProjectsAr() {
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <p className="text-xs text-vibrant font-bold tracking-wider mb-1">{proj.category}</p>
+              <p className="text-base text-vibrant font-bold tracking-wider mb-1">{proj.category}</p>
               <h3 className="text-2xl font-bold tracking-wide group-hover:text-vibrant transition-colors duration-300">
                 {proj.title}
               </h3>

@@ -4,11 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 const slides = [
-  { src: "/5.jpg", alt: "مطبخ مفصل" },
-  { src: "/6.jpg", alt: "غرفة ملابس" },
-  { src: "/7.jpg", alt: "مساحة معيشة" },
-  { src: "/8.jpg", alt: "تفاصيل معمارية" },
-  { src: "/9.jpg", alt: "تفاصيل معمارية" },
+  { src: "/1.jpg", alt: "1" },
+  { src: "/2.jpg", alt: "2" },
+  { src: "/3.jpg", alt: "3" },
+  { src: "/4.jpg", alt: "4" },
+  { src: "/5.jpg", alt: "5" },
+  { src: "/6.jpg", alt: "6" },
 ];
 
 function IconSculpture() {
@@ -259,16 +260,15 @@ export default function HeroAr() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-accent uppercase tracking-[0.35em] font-medium text-[11px] mb-6"
           >
-            نجارة خشب راقية
+            نجارة خشبية راقية
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08] tracking-tight mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08]  mb-8"
           >
-            نصنع الفراغات،
-            <br />
+            نصنع الأثاث الفاخر <br />
             <span className="text-accent font-normal italic">
               ونرتقي بالمنازل.
             </span>

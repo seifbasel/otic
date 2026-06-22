@@ -7,10 +7,10 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div>
-            <span className="text-vibrant text-xs uppercase font-bold tracking-[0.35em] block mb-4">
+            <span className="text-vibrant text-base uppercase font-bold tracking-[0.35em] block mb-4">
               Collaborate With OTIC
             </span>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-light  leading-tight max-w-xl">
               Begin a project shaped with restraint, precision, and care.
             </h2>
             <p className="mt-6 text-claywood/80 font-light leading-relaxed text-base md:text-lg max-w-xl">
@@ -43,7 +43,7 @@ export default function Contact() {
 
             <div className="relative z-10 p-8 md:p-12 lg:p-14">
               <div className="mb-10">
-                <h3 className="text-2xl md:text-3xl font-light tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-light ">
                   Request a private studio consultation
                 </h3>
                 <p className="mt-3 text-sandstone/75 text-sm md:text-base leading-relaxed max-w-2xl">
@@ -93,10 +93,10 @@ export default function Contact() {
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-xs uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
+                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-base uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
                     Request Consultation
                   </button>
-                  <p className="text-xs text-sandstone/75 leading-relaxed max-w-md">
+                  <p className="text-base text-sandstone/75 leading-relaxed max-w-md">
                     We handle private residential projects, studio fit-outs, and
                     bespoke joinery enquiries.
                   </p>

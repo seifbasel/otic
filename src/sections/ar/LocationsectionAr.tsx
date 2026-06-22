@@ -105,7 +105,7 @@ export default function LocationsectionAr() {
               </span>
               <div className="h-px w-10 bg-accent" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-foreground">
+            <h2 className="text-4xl md:text-5xl font-light  leading-tight text-foreground">
               نصنع هنا.
               <br />
               <em className="not-italic font-light text-accent">ونسلّم إلى كل مكان.</em>
@@ -278,9 +278,9 @@ export default function LocationsectionAr() {
                     <div className="space-y-2.5">
                       {loc.hours.map((h) => (
                         <div key={h.days} className="flex justify-between items-baseline gap-4">
-                          <span className="text-xs font-light text-foreground/70">{h.days}</span>
+                          <span className="text-base font-light text-foreground/70">{h.days}</span>
                           <span className="flex-1 border-b border-dotted border-border mb-1"></span>
-                          <span className="text-xs font-mono text-foreground">{h.time}</span>
+                          <span className="text-base font-mono text-foreground">{h.time}</span>
                         </div>
                       ))}
                     </div>
@@ -310,7 +310,7 @@ export default function LocationsectionAr() {
                       },
                     ].map(({ href, label, icon }) => (
                       <a key={href} href={href} className="flex items-center gap-3 group justify-end">
-                        <span className="text-xs font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
+                        <span className="text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
                           {label}
                         </span>
                         <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border border-border transition-all duration-200 group-hover:bg-accent/20 group-hover:border-accent">
