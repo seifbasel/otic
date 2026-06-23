@@ -11,7 +11,7 @@ export default function ContactAr() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-between text-right">
           <div>
-            <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
+            <span className="text-accent text-base font-bold  block mb-4">
               تواصل مع أوتيك
             </span>
             <h2 className="text-4xl md:text-5xl font-light  leading-tight max-w-xl mr-auto">
@@ -71,7 +71,7 @@ export default function ContactAr() {
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <label className="space-y-2 block text-right">
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                    <span className="text-sm text-sandstone/70">
                       اسمك الكريم
                     </span>
                     <input
@@ -81,7 +81,7 @@ export default function ContactAr() {
                     />
                   </label>
                   <label className="space-y-2 block text-right">
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                    <span className="text-sm text-sandstone/70">
                       البريد الإلكتروني
                     </span>
                     <input
@@ -94,7 +94,7 @@ export default function ContactAr() {
                 </div>
 
                 <label className="space-y-2 block text-right">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                  <span className="text-sm text-sandstone/70">
                     نطاق الاهتمام
                   </span>
                   <select className="w-full bg-claywood/35 border border-sandstone/20 focus:border-white/40 rounded-xl text-sandstone/80 px-4 py-3.5 text-sm focus:outline-none transition-colors">
@@ -107,7 +107,7 @@ export default function ContactAr() {
                 </label>
 
                 <label className="space-y-2 block text-right">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                  <span className="text-sm text-sandstone/70">
                     ملاحظات المشروع
                   </span>
                   <textarea
@@ -118,7 +118,7 @@ export default function ContactAr() {
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-base uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
+                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-base px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
                     طلب الاستشارة
                   </button>
                   <p className="text-base text-sandstone/75 leading-relaxed max-w-md">

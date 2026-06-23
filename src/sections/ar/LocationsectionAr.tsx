@@ -9,33 +9,17 @@ const locations = [
     country: "السعودية",
     role: "المقر الرئيسي والمصنع",
     tagline: "هنا تبدأ كل قطعة.",
-    address: ["المنطقة الصناعية، القطاع الرابع", "مركز الأعمال الخشبية الراقية", "الرياض 12382"],
-    hours: [
-      { days: "الأحد - الخميس", time: "09:00 - 18:00" },
-      { days: "السبت", time: "10:00 - 16:00" },
+    address: [
+      "المنطقة الصناعية، حي بدر",
+      "61 شارع الاعتدال",
+      "الرياض",
     ],
-    phone: "+966 11 000 0000",
-    email: "riyadh@oticwood.com",
-    coords: "24.7136°N 46.6753°E",
+    hours: [{ days: "السبت - الخميس", time: "18:00 - 9:00" }],
+    phone: "966544230533+",
+    email: "contact@otic-home.com",
+    coords: "24.5257°N 46.7126°E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14498.4!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1700000000000",
-  },
-  {
-    id: "jeddah",
-    city: "جدة",
-    country: "السعودية",
-    role: "الورشة",
-    tagline: "اكتشفوا رحلة التصنيع.",
-    address: ["طريق الملك عبدالله", "حي الروضة", "جدة 23523"],
-    hours: [
-      { days: "الأحد - الخميس", time: "09:00 - 18:00" },
-      { days: "السبت", time: "10:00 - 15:00" },
-    ],
-    phone: "+966 12 000 0000",
-    email: "jeddah@oticwood.com",
-    coords: "21.5433°N 39.1728°E",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14850.4!2d39.1728!3d21.5433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1700000000001",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.5!2d46.7099885!3d24.5256714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0d8bee043c99%3A0x33aecf7cdc17e845!2sOtic%20Wood!5e0!3m2!1sen!2seg!4v1782220344274!5m2!1sen!2seg",
   },
 ];
 
@@ -48,7 +32,12 @@ function GrainTexture({ opacity = 0.06 }: { opacity?: number }) {
       style={{ opacity }}
     >
       <filter id="noise-ar">
-        <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch" />
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.80"
+          numOctaves="4"
+          stitchTiles="stitch"
+        />
         <feColorMatrix type="saturate" values="0" />
       </filter>
       <rect width="100%" height="100%" filter="url(#noise-ar)" />
@@ -75,7 +64,11 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const },
+  },
 };
 
 export default function LocationsectionAr() {
@@ -91,6 +84,9 @@ export default function LocationsectionAr() {
       <div className="absolute top-0 bottom-0 left-1/2 w-px pointer-events-none hidden xl:block bg-linear-to-b from-transparent via-foreground/20 to-transparent opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10 font-sans">
+        <span className="text-base font-medium text-accent">
+          مواقع الاستوديو
+        </span>
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,16 +95,12 @@ export default function LocationsectionAr() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-8"
         >
           <div className="text-right">
-            <div className="flex items-center gap-3 mb-5 justify-end">
-              <span className="text-[10px] uppercase tracking-[0.35em] font-medium text-accent">
-                مواقع الاستوديو
-              </span>
-              <div className="h-px w-10 bg-accent" />
-            </div>
             <h2 className="text-4xl md:text-5xl font-light  leading-tight text-foreground">
               نصنع هنا.
               <br />
-              <em className="not-italic font-light text-accent">ونسلّم إلى كل مكان.</em>
+              <em className="not-italic font-light text-accent">
+                ونسلّم إلى كل مكان.
+              </em>
             </h2>
           </div>
           <p className="max-w-xs text-sm font-light leading-relaxed md:text-left text-foreground/60">
@@ -129,7 +121,7 @@ export default function LocationsectionAr() {
 
             <div className="hidden lg:flex items-center gap-2 px-6 py-5 shrink-0">
               <div className="h-px flex-1 bg-foreground/20" />
-              <span className="text-[8px] uppercase tracking-[0.4em] text-foreground/40">اختر</span>
+              <span className="text-sm text-foreground/40">اختر</span>
               <div className="h-px flex-1 bg-foreground/20" />
             </div>
 
@@ -147,33 +139,59 @@ export default function LocationsectionAr() {
                     <motion.div
                       layoutId="city-bar"
                       className="absolute right-0 top-0 bottom-0 w-0.75 hidden lg:block rounded-l-full bg-accent"
-                      transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 40,
+                      }}
                     />
                   )}
                   {isActive && (
                     <motion.div
                       layoutId="city-bar-h"
                       className="absolute bottom-0 left-0 right-0 h-0.5 lg:hidden bg-accent"
-                      transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 40,
+                      }}
                     />
                   )}
 
-                  <span className={`text-[9px] font-mono shrink-0 w-4 transition-colors ${isActive ? "text-accent" : "text-foreground/30"}`}>
+                  <span
+                    className={`text-sm font-mono shrink-0 w-4 transition-colors ${isActive ? "text-accent" : "text-foreground/30"}`}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
                   <div className="min-w-0">
-                    <p className={`text-sm tracking-wide font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}>
+                    <p
+                      className={`text-sm tracking-wide font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}
+                    >
                       {l.city}
                     </p>
-                    <p className={`text-[9px] uppercase tracking-[0.2em] mt-0.5 transition-colors duration-200 truncate ${isActive ? "text-accent" : "text-foreground/40"}`}>
+                    <p
+                      className={`text-sm mt-0.5 transition-colors duration-200 truncate ${isActive ? "text-accent" : "text-foreground/40"}`}
+                    >
                       {l.country}
                     </p>
                   </div>
 
                   {isActive && (
-                    <svg className="mr-auto hidden lg:block shrink-0 text-accent" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      className="mr-auto hidden lg:block shrink-0 text-accent"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <path
+                        d="M2 6h8M6 2l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   )}
                 </button>
@@ -181,7 +199,7 @@ export default function LocationsectionAr() {
             })}
 
             <div className="hidden lg:block mt-auto px-6 pb-6 pt-4 border-t border-border">
-              <p className="text-[8px] font-mono leading-relaxed text-foreground/30">
+              <p className="text-sm font-mono leading-relaxed text-foreground/30">
                 {loc.coords}
               </p>
             </div>
@@ -198,7 +216,8 @@ export default function LocationsectionAr() {
                 className="absolute inset-0 w-full h-full"
                 style={{
                   border: 0,
-                  filter: "grayscale(0.65) sepia(0.3) contrast(1.08) brightness(0.82)",
+                  filter:
+                    "grayscale(0.65) sepia(0.3) contrast(1.08) brightness(0.82)",
                 }}
                 allowFullScreen
                 loading="lazy"
@@ -220,7 +239,7 @@ export default function LocationsectionAr() {
                 className="absolute top-4 right-4 z-10 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-background/80 backdrop-blur-md border border-border"
               >
                 <PulseDot />
-                <span className="text-[10px] font-light uppercase tracking-[0.2em] text-foreground">
+                <span className="text-base font-light text-foreground">
                   {loc.city} · {loc.country}
                 </span>
               </motion.div>
@@ -242,9 +261,14 @@ export default function LocationsectionAr() {
                 transition={{ duration: 0.42, ease: "easeOut" }}
                 className="relative z-10 flex flex-col h-full p-8 lg:p-10 gap-8 text-right"
               >
-                <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col gap-8 h-full">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex flex-col gap-8 h-full"
+                >
                   <motion.div variants={itemVariants}>
-                    <span className="inline-block text-[9px] uppercase tracking-[0.3em] font-medium px-2.5 py-1 rounded mb-4 text-accent bg-foreground/10 border border-border">
+                    <span className="inline-block text-sm font-medium px-2.5 py-1 rounded mb-4 text-accent bg-foreground/10 border border-border">
                       {loc.role}
                     </span>
                     <p className="text-xl font-light leading-snug text-foreground">
@@ -254,17 +278,21 @@ export default function LocationsectionAr() {
                     </p>
                   </motion.div>
 
-                  <motion.div variants={itemVariants} className="relative h-px overflow-hidden bg-border">
+                  <motion.div
+                    variants={itemVariants}
+                    className="relative h-px overflow-hidden bg-border"
+                  >
                     <div className="absolute right-0 top-0 h-full w-12 bg-accent" />
                   </motion.div>
 
                   <motion.div variants={itemVariants}>
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
-                      العنوان
-                    </p>
+                    <p className="text-base mb-3 text-foreground/50">العنوان</p>
                     <div className="space-y-0.5">
                       {loc.address.map((line, i) => (
-                        <p key={i} className={`text-sm font-light leading-relaxed ${i === 0 ? "text-foreground" : "text-foreground/70"}`}>
+                        <p
+                          key={i}
+                          className={`text-sm font-light leading-relaxed ${i === 0 ? "text-foreground" : "text-foreground/70"}`}
+                        >
                           {line}
                         </p>
                       ))}
@@ -272,22 +300,29 @@ export default function LocationsectionAr() {
                   </motion.div>
 
                   <motion.div variants={itemVariants}>
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
+                    <p className="text-base mb-3 text-foreground/50">
                       ساعات العمل
                     </p>
                     <div className="space-y-2.5">
                       {loc.hours.map((h) => (
-                        <div key={h.days} className="flex justify-between items-baseline gap-4">
-                          <span className="text-base font-light text-foreground/70">{h.days}</span>
+                        <div
+                          key={h.days}
+                          className="flex justify-between items-baseline gap-4"
+                        >
+                          <span className="text-base font-light text-foreground/70">
+                            {h.days}
+                          </span>
                           <span className="flex-1 border-b border-dotted border-border mb-1"></span>
-                          <span className="text-base font-mono text-foreground">{h.time}</span>
+                          <span className="text-base font-mono text-foreground">
+                            {h.time}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </motion.div>
 
                   <motion.div variants={itemVariants} className="space-y-3">
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
+                    <p className="text-base mb-3 text-foreground/50 ">
                       التواصل
                     </p>
                     {[
@@ -309,12 +344,26 @@ export default function LocationsectionAr() {
                         ),
                       },
                     ].map(({ href, label, icon }) => (
-                      <a key={href} href={href} className="flex items-center gap-3 group justify-end">
+                      <a
+                        key={href}
+                        href={href}
+                        className="flex items-center gap-3 group justify-end"
+                      >
                         <span className="text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
                           {label}
                         </span>
                         <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border border-border transition-all duration-200 group-hover:bg-accent/20 group-hover:border-accent">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-accent"
+                          >
                             {icon}
                           </svg>
                         </div>
@@ -322,19 +371,34 @@ export default function LocationsectionAr() {
                     ))}
                   </motion.div>
 
-                  <motion.div variants={itemVariants} className="mt-auto pt-5 border-t border-border flex items-center justify-between">
-                    <span className="text-[8px] font-mono text-foreground/30">
+                  <motion.div
+                    variants={itemVariants}
+                    className="mt-auto pt-5 border-t border-border flex items-center justify-between"
+                  >
+                    <span className="text-sm font-mono text-foreground/30">
                       {loc.coords.split(" ")[0]}
                     </span>
                     <a
                       href={`https://maps.google.com/?q=OTIC+Wood+${loc.city}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-medium transition-colors duration-200 hover:opacity-80 text-accent"
+                      className="group flex items-center gap-2 text-base font-medium transition-colors duration-200 hover:opacity-80 text-accent"
                     >
                       احصل على الاتجاهات
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transform group-hover:-translate-x-1 transition-transform duration-200 text-accent">
-                        <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        className="transform group-hover:-translate-x-1 transition-transform duration-200 text-accent"
+                      >
+                        <path
+                          d="M2 6h8M6 2l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </a>
                   </motion.div>
@@ -345,10 +409,14 @@ export default function LocationsectionAr() {
         </motion.div>
 
         <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 items-center text-foreground/40">
-          {["عينات مواد مجانية عند الطلب", "الاستشارة الأولية مجانية", "يفضل الحجز المسبق"].map((t) => (
+          {[
+            "عينات مواد مجانية عند الطلب",
+            "الاستشارة الأولية مجانية",
+            "يفضل الحجز المسبق",
+          ].map((t) => (
             <div key={t} className="flex items-center gap-2">
               <div className="w-1 h-1 rounded-full shrink-0 bg-accent" />
-              <span className="text-[9px] uppercase tracking-[0.2em]">{t}</span>
+              <span className="text-sm">{t}</span>
             </div>
           ))}
         </div>

@@ -258,7 +258,7 @@ export default function HeroAr() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-accent uppercase tracking-[0.35em] font-medium text-[11px] mb-6"
+            className="text-accent font-medium text-base mb-6"
           >
             نجارة خشبية راقية
           </motion.p>
@@ -319,7 +319,7 @@ export default function HeroAr() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-[10px] tracking-[0.3em] uppercase animate-bounce z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-base animate-bounce z-10">
         مرّر لاكتشاف المزيد
       </div>
     </section>

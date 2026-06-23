@@ -67,7 +67,7 @@ export default function FooterAr() {
           <ul className="space-y-2 text-sm font-medium text-desert/80">
             <li>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/otic_home?utm_source=qr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
@@ -77,7 +77,7 @@ export default function FooterAr() {
             </li>
             <li>
               <a
-                href="https://pinterest.com"
+                href="https://www.tiktok.com/@otic_home?_r=1&_t=ZS-97S4Gl9PPme"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
@@ -87,7 +87,7 @@ export default function FooterAr() {
             </li>
             <li>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/14idjbKdcWK/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
@@ -99,11 +99,11 @@ export default function FooterAr() {
         </div>
 
         <div className="md:col-span-3 space-y-4 text-sm font-medium text-desert/80">
-          <h4 className="text-base  text-vibrant font-bold">مقر الاستوديو</h4>
+          <h4 className="text-base  text-vibrant font-bold">مقر المصنع</h4>
           <p>
-            المنطقة الصناعية، القطاع الرابع،
+            المنطقة الصناعية، حي بدر
             <br />
-            مركز الأعمال الخشبية الراقية
+            61 شارع الاعتدال{" "}
           </p>
           <p className="text-base font-mono text-sandstone">
             contact@oticwood.com

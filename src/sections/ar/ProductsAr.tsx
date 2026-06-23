@@ -241,7 +241,7 @@ function ProductModalAr({
 
         <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto">
           <div className="mb-6">
-            <span className="text-accent text-[10px] uppercase tracking-[0.25em] font-mono block mb-3">
+            <span className="text-accent text-base font-mono block mb-3">
               {product.category}
             </span>
             <h3 className="text-3xl md:text-4xl font-light  text-foreground leading-tight">
@@ -262,7 +262,7 @@ function ProductModalAr({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="border border-border rounded-2xl p-4 bg-white/2">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
+              <span className="text-base text-foreground/50 block mb-2">
                 {t.dimensions}
               </span>
               <span className="text-sm font-light">{product.dimensions}</span>
@@ -449,7 +449,7 @@ export default function ProductCatalogAr() {
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
                 <div className="flex items-start md:items-center gap-3 flex-wrap">
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
+                  <span className="text-base text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
                     {t.type}
                   </span>
                   <div className="flex gap-2 flex-wrap">
@@ -471,7 +471,7 @@ export default function ProductCatalogAr() {
                 <div className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2.5">
-                      <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 shrink-0">
+                      <span className="text-base text-foreground/40 shrink-0">
                         {t.price}
                       </span>
                       <select
@@ -479,7 +479,7 @@ export default function ProductCatalogAr() {
                         onChange={(e) =>
                           handleFilterChange(setPriceRange, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-base  focus:outline-none cursor-pointer"
                       >
                         {t.priceRanges.map((r) => (
                           <option
@@ -502,7 +502,7 @@ export default function ProductCatalogAr() {
                         onChange={(e) =>
                           handleFilterChange(setSort, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-base  focus:outline-none cursor-pointer"
                       >
                         {t.sortOptions.map((o) => (
                           <option
@@ -519,7 +519,7 @@ export default function ProductCatalogAr() {
                 </div>
 
                 <div className="flex items-center justify-between xl:justify-end gap-4 xl:gap-5 xl:ml-auto">
-                  <span className="text-[11px] text-foreground/40 font-light whitespace-nowrap">
+                  <span className="text-base text-foreground/40 font-light whitespace-nowrap">
                     {filtered.length}{" "}
                     {filtered.length === 1 ? t.itemSingle : t.items}
                   </span>
@@ -579,7 +579,7 @@ export default function ProductCatalogAr() {
                         </div>
                       </div>
 
-                      <p className="text-accent text-[10px] font-mono uppercase tracking-[0.25em] mb-1.5">
+                      <p className="text-accent text-base font-mono mb-1.5">
                         {product.category}
                       </p>
                       <h3 className="text-xl md:text-2xl font-light tracking-wide leading-snug group-hover:text-accent transition-colors duration-300">
@@ -595,7 +595,7 @@ export default function ProductCatalogAr() {
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 {/* English Version UI string update */}
-                <p className="text-base uppercase tracking-[0.25em] text-foreground/40">
+                <p className="text-base text-foreground/40">
                   {t.page} {safeCurrentPage} {t.of} {totalPages}
                 </p>
 
@@ -636,12 +636,12 @@ export default function ProductCatalogAr() {
               animate={{ opacity: 1 }}
               className="py-24 text-center"
             >
-              <p className="text-foreground/30 text-sm font-light uppercase tracking-[0.35em] mb-4">
+              <p className="text-foreground/30 text-sm font-light mb-4">
                 {t.noProducts}
               </p>
               <button
                 onClick={clearFilters}
-                className="text-accent text-base uppercase tracking-[0.35em] hover:text-accent/70 transition-colors cursor-pointer"
+                className="text-accent text-base hover:text-accent/70 transition-colors cursor-pointer"
               >
                 {t.reset}
               </button>

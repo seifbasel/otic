@@ -110,10 +110,10 @@ export default function PortfolioAr() {
                   <div className="absolute inset-0 bg-onyx/0 group-hover:bg-onyx/40 transition-colors duration-300 z-10" />
                 </div>
 
-                <p className="text-accent text-[10px] font-mono uppercase tracking-[0.2em] mb-1.5">
+                <p className="text-accent text-base font-mono mb-1.5">
                   {project.category}
                 </p>
-                <h3 className="text-xl font-light tracking-wide group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-light group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="mt-2 text-sm text-foreground/60 leading-relaxed max-w-sm">
