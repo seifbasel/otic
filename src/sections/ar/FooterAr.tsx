@@ -112,8 +112,14 @@ export default function FooterAr() {
       </div>
 
       <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col sm:flex-row justify-between items-center text-base text-desert/60 gap-4">
-        <p>&copy; {new Date().getFullYear()} أوتيك. جميع الحقوق محفوظة.</p>
-        <a
+        
+        <div className="flex justify-center items-center gap-6">
+          <a href="#" className="hover:text-sandstone transition-colors">
+            سياسة الخصوصية
+          </a>
+          <a href="#" className="hover:text-sandstone transition-colors">
+            شروط الاستخدام
+          </a><a
           href="https://seifbasel.vercel.app"
           target="_blank"
           rel="noreferrer"
@@ -133,14 +139,8 @@ export default function FooterAr() {
             </span>
           </span>
         </a>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-sandstone transition-colors">
-            سياسة الخصوصية
-          </a>
-          <a href="#" className="hover:text-sandstone transition-colors">
-            شروط الاستخدام
-          </a>
-        </div>
+        </div>        <p>&copy; {new Date().getFullYear()} أوتيك. جميع الحقوق محفوظة.</p>
+
       </div>
     </footer>
   );
