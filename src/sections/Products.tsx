@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 // Internal Independent Types and Configs
-const WHATSAPP_NUMBER = "1234567890";
+const WHATSAPP_NUMBER = "+966544230533";
 const ITEMS_PER_PAGE = 8;
 
 interface Product {
@@ -16,15 +16,15 @@ interface Product {
   priceNum: number;
   finish: string;
   img: string;
-  finishLabel:string;
   description: string;
   dimensions: string;
+  finishLabel: string;
 }
 
 const PRODUCTS_DATA = [
   {
     id: 1,
-    name: "The Noir Walnut Door",
+    name: "Noir Walnut Door",
     category: "Doors",
     priceRange: "mid",
     price: "1,450",
@@ -32,13 +32,13 @@ const PRODUCTS_DATA = [
     finish: "Veneer",
     img: "/17.png",
     description:
-      "A deep walnut finish with quiet, refined lines and a calm architectural presence.",
-    dimensions: "2100mm x 900mm x 40mm",
+      "A deep walnut finish with calm lines and a refined architectural presence that brings quiet depth to the space.",
+    dimensions: "2100 mm x 900 mm x 40 mm",
     finishLabel: "Natural Walnut Veneer",
   },
   {
     id: 2,
-    name: "Arctic Minimalist Door",
+    name: "Quiet White Door",
     category: "Doors",
     priceRange: "entry",
     price: "1,050",
@@ -46,13 +46,13 @@ const PRODUCTS_DATA = [
     finish: "Lacquer",
     img: "/11.png",
     description:
-      "A pure white surface for interiors that rely on restraint, clarity, and seamless integration.",
-    dimensions: "2100mm x 850mm x 40mm",
+      "A clean white surface for interiors that rely on restraint, clarity, and a seamless visual flow.",
+    dimensions: "2100 mm x 850 mm x 40 mm",
     finishLabel: "Matte Lacquer",
   },
   {
     id: 3,
-    name: "Savanna Oak Door",
+    name: "Lux Plank Door",
     category: "Doors",
     priceRange: "premium",
     price: "2,100",
@@ -60,13 +60,13 @@ const PRODUCTS_DATA = [
     finish: "Veneer",
     img: "/12.png",
     description:
-      "Warm oak tones paired with polished hardware for a balanced, architectural finish.",
-    dimensions: "2100mm x 900mm x 44mm",
+      "Warm plank-inspired tones with polished hardware for a balanced and architectural finish.",
+    dimensions: "2100 mm x 900 mm x 44 mm",
     finishLabel: "Smoked Oak Veneer",
   },
   {
     id: 4,
-    name: "Stone Gray Flush Door",
+    name: "Matte Gray Door",
     category: "Doors",
     priceRange: "premium",
     price: "1,950",
@@ -74,13 +74,13 @@ const PRODUCTS_DATA = [
     finish: "Laminate",
     img: "/13.png",
     description:
-      "A flush gray design ideal for modern interiors that prefer a quieter architectural line.",
-    dimensions: "2100mm x 900mm x 40mm",
-    finishLabel: "Textured Matte Laminate",
+      "A calm gray design suited to modern interiors that prefer a quieter architectural line.",
+    dimensions: "2100 mm x 900 mm x 40 mm",
+    finishLabel: "Soft Matte Laminate",
   },
   {
     id: 5,
-    name: "Linear Panel Door",
+    name: "Linear Pattern Door",
     category: "Doors",
     priceRange: "luxury",
     price: "2,800",
@@ -88,27 +88,27 @@ const PRODUCTS_DATA = [
     finish: "Lacquer",
     img: "/14.png",
     description:
-      "A subtle vertical rhythm adds depth and shadow to transitional wall and door compositions.",
-    dimensions: "2100mm x 950mm x 50mm",
-    finishLabel: "Painted MDF / Veneer",
+      "A subtle vertical rhythm that adds depth and shadow to wall and door compositions.",
+    dimensions: "2100 mm x 950 mm x 50 mm",
+    finishLabel: "Painted MDF / Wood Veneer",
   },
   {
     id: 6,
-    name: "Deco Geometric Door",
-    category: " Doors",
+    name: "Industrial-Look Door",
+    category: "Doors",
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
     finish: "Lacquer",
     img: "/15.png",
     description:
-      "A statement piece with geometric brass inlays designed to anchor a luxury entrance.",
-    dimensions: "2200mm x 1000mm x 55mm",
-    finishLabel: "Dark Grey Lacquer & Brass",
+      "Detailed brass elements give the entrance a distinct character and a strong first impression.",
+    dimensions: "2200 mm x 1000 mm x 55 mm",
+    finishLabel: "Dark Gray Lacquer with Brass",
   },
   {
     id: 7,
-    name: "Ribbed Oak Panel",
+    name: "Ribbed Oak Panels",
     category: "Doors",
     priceRange: "luxury",
     price: "3,200",
@@ -116,9 +116,9 @@ const PRODUCTS_DATA = [
     finish: "Veneer",
     img: "/16.png",
     description:
-      "Ribbed oak creates richer shadow play and stronger texture, especially with concealed lighting.",
-    dimensions: "2200mm x 1000mm x 55mm",
-    finishLabel: "Dark Grey Lacquer & Brass",
+      "Ribbed oak introduces deeper texture and richer shadow play, especially when paired with concealed lighting.",
+    dimensions: "2200 mm x 1000 mm x 55 mm",
+    finishLabel: "Dark Gray Lacquer with Brass",
   },
 ];
 
@@ -127,7 +127,7 @@ const DICTIONARY = {
   collection: "Collection",
   title: "Products Catalog",
   subtitle:
-    "A curated selection of doors, panels, and signature pieces",
+    "A curated selection of doors, panels, and signature pieces with a quieter, more premium architectural feel.",
   type: "Type",
   finish: "Finish",
   price: "Price",
@@ -146,8 +146,17 @@ const DICTIONARY = {
   whatsappBtn: "Order via WhatsApp",
   continueBtn: "Continue Browsing",
   whatsappMsg: (name: string, cat: string, price: string) =>
-    `Hi, I'm interested in the *${name}* (${cat}) priced at SAR ${price}. Could you provide more details?`,
-  categories: ["All", "Doors", "Wall Paneling", "Signature Pieces"],
+    `Hi, I'm interested in *${name}* (${cat}) priced at SAR ${price}. Could you share more details?`,
+  categories: [
+    "All",
+    "Wardrobes",
+    "Bedrooms",
+    "Kitchens",
+    "Doors",
+    "Wall Paneling",
+    "Living Rooms",
+    "Decorative Units",
+  ],
   priceRanges: [
     { key: "all", label: "All Prices" },
     { key: "entry", label: "Under SAR 1,500" },
@@ -221,30 +230,30 @@ function ProductModalEn({
           </svg>
         </button>
 
-        <div className="w-full md:w-[46%] h-72 md:h-auto relative ">
+        <div className="w-full md:w-[46%] h-72 md:h-auto relative">
           <Image
             src={product.img}
             alt={product.name}
             fill
-          className="object-cover"
+            className="object-cover"
           />
         </div>
 
-        <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto">
+        <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto text-left">
           <div className="mb-6">
-            <span className="text-accent text-[10px] uppercase tracking-[0.25em] font-mono block mb-3">
+            <span className="text-accent text-base font-mono block mb-3">
               {product.category}
             </span>
-            <h3 className="text-3xl md:text-4xl font-light  text-foreground leading-tight">
+            <h3 className="text-3xl md:text-4xl font-light text-foreground leading-tight">
               {product.name}
             </h3>
           </div>
 
           <div className="flex items-end gap-3 mb-6 justify-start">
-            <span className="text-sm text-foreground/50">{t.perPiece}</span>
             <span className="text-3xl md:text-4xl font-light text-foreground">
               SAR {product.price}
             </span>
+            <span className="text-sm text-foreground/50">{t.perPiece}</span>
           </div>
 
           <p className="text-foreground/70 text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
@@ -253,7 +262,7 @@ function ProductModalEn({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="border border-border rounded-2xl p-4 bg-white/2">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-foreground/50 block mb-2">
+              <span className="text-base text-foreground/50 block mb-2">
                 {t.dimensions}
               </span>
               <span className="text-sm font-light">{product.dimensions}</span>
@@ -264,7 +273,6 @@ function ProductModalEn({
               </span>
               <span className="text-sm font-light">{product.finishLabel}</span>
             </div>
-            
           </div>
 
           <div className="mt-auto flex flex-col gap-3 pt-2">
@@ -302,7 +310,7 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 text-[11px] uppercase  font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
+      className={`px-4 py-2 text-[11px] uppercase font-medium rounded-full border transition-all duration-300 cursor-pointer whitespace-nowrap ${
         active
           ? "bg-accent border-accent text-white shadow-[0_10px_25px_rgba(244,116,59,0.25)]"
           : "bg-transparent border-border text-foreground/60 hover:border-foreground/40 hover:text-foreground"
@@ -361,8 +369,9 @@ export default function ProductCatalogEn() {
       result = result.filter((p) => p.finish === finish);
     }
 
-    if (priceRange !== "all")
+    if (priceRange !== "all") {
       result = result.filter((p) => p.priceRange === priceRange);
+    }
 
     if (sort === "price-asc") result.sort((a, b) => a.priceNum - b.priceNum);
     else if (sort === "price-desc")
@@ -374,7 +383,6 @@ export default function ProductCatalogEn() {
   }, [category, finish, priceRange, sort, products, t.all]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
-  // Fix: Fallback to the maximum available page if current page exceeds it
   const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
@@ -422,7 +430,7 @@ export default function ProductCatalogEn() {
               <span className="text-accent text-base uppercase font-bold tracking-[0.35em] block mb-4">
                 {t.collection}
               </span>
-              <h2 className="text-4xl md:text-5xl font-light  leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light leading-tight">
                 {t.title}
               </h2>
             </div>
@@ -441,7 +449,7 @@ export default function ProductCatalogEn() {
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
                 <div className="flex items-start md:items-center gap-3 flex-wrap">
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
+                  <span className="text-base text-foreground/40 w-16 shrink-0 pt-2 md:pt-0">
                     {t.type}
                   </span>
                   <div className="flex gap-2 flex-wrap">
@@ -461,11 +469,9 @@ export default function ProductCatalogEn() {
 
               <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-5 xl:gap-8 items-start">
                 <div className="flex flex-col gap-5">
-            
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2.5">
-                      <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40 shrink-0">
+                      <span className="text-base text-foreground/40 shrink-0">
                         {t.price}
                       </span>
                       <select
@@ -473,7 +479,7 @@ export default function ProductCatalogEn() {
                         onChange={(e) =>
                           handleFilterChange(setPriceRange, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-base focus:outline-none cursor-pointer"
                       >
                         {t.priceRanges.map((r) => (
                           <option
@@ -496,7 +502,7 @@ export default function ProductCatalogEn() {
                         onChange={(e) =>
                           handleFilterChange(setSort, e.target.value)
                         }
-                        className="w-full bg-transparent text-foreground text-[11px] uppercase  focus:outline-none cursor-pointer"
+                        className="w-full bg-transparent text-foreground text-base focus:outline-none cursor-pointer"
                       >
                         {t.sortOptions.map((o) => (
                           <option
@@ -512,8 +518,8 @@ export default function ProductCatalogEn() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between xl:justify-end gap-4 xl:gap-5 xl:mr-auto">
-                  <span className="text-[11px] text-foreground/40 font-light whitespace-nowrap">
+                <div className="flex items-center justify-between xl:justify-end gap-4 xl:gap-5 xl:ml-auto">
+                  <span className="text-base text-foreground/40 font-light whitespace-nowrap">
                     {filtered.length}{" "}
                     {filtered.length === 1 ? t.itemSingle : t.items}
                   </span>
@@ -548,7 +554,7 @@ export default function ProductCatalogEn() {
                       className="group cursor-pointer"
                       onClick={() => setSelectedProduct(product)}
                     >
-                      <div className="relative w-full aspect-4/5 overflow-hidden rounded-3xl mb-5 bg-background border border-border group-hover:border-accent/25 transition-colors duration-300">
+                      <div className="relative w-full aspect-4/5 overflow-hidden rounded-3xl mb-5 border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
                         <Image
                           src={product.img}
                           alt={product.name}
@@ -573,7 +579,7 @@ export default function ProductCatalogEn() {
                         </div>
                       </div>
 
-                      <p className="text-accent text-[10px] font-mono uppercase tracking-[0.25em] mb-1.5">
+                      <p className="text-accent text-base font-mono mb-1.5">
                         {product.category}
                       </p>
                       <h3 className="text-xl md:text-2xl font-light tracking-wide leading-snug group-hover:text-accent transition-colors duration-300">
@@ -588,7 +594,7 @@ export default function ProductCatalogEn() {
               </motion.div>
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-base uppercase tracking-[0.25em] text-foreground/40">
+                <p className="text-base text-foreground/40">
                   {t.page} {safeCurrentPage} {t.of} {totalPages}
                 </p>
 

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 // Internal Independent Types and Configs
-const WHATSAPP_NUMBER = "1234567890";
+const WHATSAPP_NUMBER = "+966544230533";
 const ITEMS_PER_PAGE = 8;
 
 interface Product {

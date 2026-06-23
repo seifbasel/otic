@@ -1,9 +1,35 @@
-'use client';
+"use client";
+
+import { useState } from "react";
 
 export default function Contact() {
-  return (
-    <section id="contact" className="relative py-28 md:py-36 bg-sandstone px-6 overflow-hidden">
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    scope: "Select scope of interest",
+    notes: "",
+  });
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Construct the WhatsApp message string
+    const text =
+      `*New Studio Consultation Request*\n\n` +
+      `*Name:* ${formData.name || "Not provided"}\n` +
+      `*Email:* ${formData.email || "Not provided"}\n` +
+      `*Scope of Interest:* ${formData.scope}\n` +
+      `*Project Notes:* ${formData.notes || "No notes provided"}`;
+
+    const whatsappUrl = `https://wa.me/966544230533?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  return (
+    <section
+      id="contact"
+      className="relative py-28 md:py-36 bg-sandstone px-6 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div>
@@ -22,22 +48,34 @@ export default function Contact() {
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">Response</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">Within one business day.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                Response
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                Within one business day.
+              </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">Scope</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">Private homes and luxury fit-outs.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                Scope
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                Private homes and luxury fit-outs.
+              </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">Visit</p>
-              <p className="text-sm text-claywood/80 leading-relaxed">Consultations by appointment.</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+                Visit
+              </p>
+              <p className="text-sm text-claywood/80 leading-relaxed">
+                Consultations by appointment.
+              </p>
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative rounded-[2rem] border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
+          <div className="relative rounded-4xl border border-white/20 bg-accent dark:bg-accent/70 text-foreground shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-claywood/10 rounded-full blur-3xl" />
 
@@ -52,20 +90,34 @@ export default function Contact() {
                 </p>
               </div>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <label className="space-y-2">
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">Your name</span>
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                      Your name
+                    </span>
                     <input
                       type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       placeholder="Your name"
                       className="w-full bg-claywood/35 border border-sandstone/20 focus:border-white/40 rounded-xl text-sandstone px-4 py-3.5 text-sm focus:outline-none transition-colors placeholder:text-sandstone/50"
                     />
                   </label>
                   <label className="space-y-2">
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">Email address</span>
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                      Email address
+                    </span>
                     <input
                       type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       placeholder="Email address"
                       className="w-full bg-claywood/35 border border-sandstone/20 focus:border-white/40 rounded-xl text-sandstone px-4 py-3.5 text-sm focus:outline-none transition-colors placeholder:text-sandstone/50"
                     />
@@ -73,27 +125,54 @@ export default function Contact() {
                 </div>
 
                 <label className="space-y-2 block">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">Scope of interest</span>
-                  <select className="w-full bg-claywood/35 border border-sandstone/20 focus:border-white/40 rounded-xl text-sandstone/80 px-4 py-3.5 text-sm focus:outline-none transition-colors">
-                    <option>Select scope of interest</option>
-                    <option>Complete dressing room fitout</option>
-                    <option>Architectural kitchen and dining</option>
-                    <option>Integrated wall panelling and doors</option>
-                    <option>Full residential fit-out</option>
+                  <span className="text-sm text-sandstone/70">
+                    Scope of interest
+                  </span>
+                  <select
+                    value={formData.scope}
+                    onChange={(e) =>
+                      setFormData({ ...formData, scope: e.target.value })
+                    }
+                    className="w-full bg-sandstone dark:bg-claywood/35 border rounded-xl border-sandstone/20 focus:border-white/40 px-4 py-3.5 text-sm focus:outline-none transition-colors text-claywood dark:text-sandstone"
+                  >
+                    <option className="bg-background text-claywood dark:bg-onyx dark:text-sandstone">
+                      Select scope of interest
+                    </option>
+                    <option className="bg-background text-claywood dark:bg-onyx dark:text-sandstone">
+                      Complete dressing room fitout
+                    </option>
+                    <option className="bg-background text-claywood dark:bg-onyx dark:text-sandstone">
+                      Architectural kitchen and dining
+                    </option>
+                    <option className="bg-background text-claywood dark:bg-onyx dark:text-sandstone">
+                      Integrated wall panelling and doors
+                    </option>
+                    <option className="bg-background text-claywood dark:bg-onyx dark:text-sandstone">
+                      Full residential fit-out
+                    </option>
                   </select>
                 </label>
 
                 <label className="space-y-2 block">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">Project notes</span>
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-sandstone/70">
+                    Project notes
+                  </span>
                   <textarea
                     rows={5}
+                    value={formData.notes}
+                    onChange={(e) =>
+                      setFormData({ ...formData, notes: e.target.value })
+                    }
                     placeholder="Share the approximate size, style direction, and timeline..."
                     className="w-full bg-claywood/35 border border-sandstone/20 focus:border-white/40 rounded-xl text-sandstone px-4 py-3.5 text-sm focus:outline-none transition-colors resize-none placeholder:text-sandstone/50"
                   />
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                  <button className="bg-white hover:bg-white/90 text-accent font-medium text-base uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
+                  <button
+                    type="submit"
+                    className="bg-white hover:bg-white/90 text-accent font-medium text-base uppercase tracking-[0.3em] px-8 py-4 rounded-full transition-colors w-full sm:w-auto"
+                  >
                     Request Consultation
                   </button>
                   <p className="text-base text-sandstone/75 leading-relaxed max-w-md">

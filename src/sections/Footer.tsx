@@ -5,9 +5,8 @@ export default function Footer() {
   return (
     <footer className="bg-claywood text-sandstone pt-24 pb-12 px-6 border-t border-sandstone/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-        {/* Brand Column */}
-        <div className="md:col-span-4 ">
-          <div className="flex items-center justify-center text-vibrant font-mono uppercase ">
+        <div className="md:col-span-4">
+          <div className="flex items-center justify-center">
             <div className="relative w-200 h-50">
               <Image
                 src="/logo-1.png"
@@ -25,56 +24,50 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Directory Links */}
         <div className="md:col-span-3 space-y-4">
-          <h4 className="text-base uppercase  text-vibrant font-bold">
-            Collections
-          </h4>
-          <ul className="space-y-2 text-sm font-light text-desert/80">
+          <h4 className="text-base text-vibrant font-bold">Sections</h4>
+          <ul className="space-y-2 text-sm font-medium text-desert/80">
             <li>
               <a
                 href="#services"
                 className="hover:text-sandstone transition-colors"
               >
-                Dressing Rooms
+                Services
               </a>
             </li>
             <li>
               <a
-                href="#services"
+                href="#portfolio"
                 className="hover:text-sandstone transition-colors"
               >
-                Kitchen Layouts
+                Portfolio
               </a>
             </li>
             <li>
               <a
-                href="#services"
+                href="#products"
                 className="hover:text-sandstone transition-colors"
               >
-                Wall Surfacing
+                Products
               </a>
             </li>
             <li>
               <a
-                href="#services"
+                href="#history"
                 className="hover:text-sandstone transition-colors"
               >
-                Internal Doors
+                OTIC History
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Social Media Column */}
         <div className="md:col-span-2 space-y-4">
-          <h4 className="text-base uppercase  text-vibrant font-bold">
-            Channels
-          </h4>
-          <ul className="space-y-2 text-sm font-light text-desert/80">
+          <h4 className="text-base text-vibrant font-bold">Channels</h4>
+          <ul className="space-y-2 text-sm font-medium text-desert/80">
             <li>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/otic_home?utm_source=qr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
@@ -84,17 +77,17 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@otic_home?_r=1&_t=ZS-97S4Gl9PPme"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
               >
-                Tiktok
+                TikTok
               </a>
             </li>
             <li>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/14idjbKdcWK/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-sandstone transition-colors"
@@ -105,15 +98,12 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Studio Info */}
-        <div className="md:col-span-3 space-y-4 text-sm font-light text-desert/80">
-          <h4 className="text-base uppercase  text-vibrant font-bold">
-            Studio Hub
-          </h4>
+        <div className="md:col-span-3 space-y-4 text-sm font-medium text-desert/80">
+          <h4 className="text-base text-vibrant font-bold">Factory Address</h4>
           <p>
-            Industrial Zone Sector 4,
+            Industrial Zone, Badr District
             <br />
-            Premium Woodworks Center
+            61 Al Ittidal Street
           </p>
           <p className="text-base font-mono text-sandstone">
             contact@oticwood.com
@@ -121,23 +111,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Under-Footer */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col gap-4 text-base text-desert/60">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>
-            &copy; {new Date().getFullYear()} OTIC Inc. All rights reserved.
-          </p>{" "}
-          <a
-            href="https://seifbasel.vercel.app"
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs font-medium tracking-[0.2em] uppercase text-desert/60 hover:text-sandstone transition-all duration-300"
-            aria-label="Visit Seif Pixels"
-          >
-            <span className="group-hover:tracking-[0.25em] transition-all duration-300">
-              built by
-            </span>
-
+      <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col sm:flex-row justify-between items-center text-base text-desert/60 gap-4">
+        <p>&copy; {new Date().getFullYear()} OTIC. All rights reserved.</p>
+        <a
+          href="https://seifbasel.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex items-center justify-center gap-2 text-desert/60 hover:text-sandstone transition-colors"
+          aria-label="Visit Seif Pixels"
+        >
+          <span className="flex items-center gap-2">
+            built by
             <span className="relative inline-block h-14 w-14 transition-transform duration-500 ease-out group-hover:rotate-360">
               <Image
                 src="/seif.png"
@@ -147,15 +131,15 @@ export default function Footer() {
                 className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
               />
             </span>
+          </span>
+        </a>
+        <div className="flex gap-6">
+          <a href="#" className="hover:text-sandstone transition-colors">
+            Privacy Policy
           </a>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-sandstone transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-sandstone transition-colors">
-              Terms of Craft
-            </a>
-          </div>
+          <a href="#" className="hover:text-sandstone transition-colors">
+            Terms of Use
+          </a>
         </div>
       </div>
     </footer>

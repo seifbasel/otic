@@ -11,13 +11,13 @@ const services = [
   },
   {
     id: "02",
-    title: "Architectural Kitchens",
+    title: "Kitchens",
     desc: "Culinary epicenters balancing robust utility with seamless hidden integrations and pristine timber millwork.",
     img: "/kitchen.png",
   },
   {
     id: "03",
-    title: "Bespoke Doors",
+    title: "Doors",
     desc: "Grand entryways and internal structural pivot doors precision-cut to define spatial flow with minimalist elegance.",
     img: "/door.png",
   },
@@ -29,9 +29,15 @@ const services = [
   },
   {
     id: "05",
-    title: "Premium Bedrooms",
+    title: "Bedrooms",
     desc: "Private sanctuaries custom-crafted with bespoke joinery, integrated ambient lighting, and premium material palettes designed for ultimate tranquility.",
     img: "/bedroom.png",
+  },
+  {
+    id: "06",
+    title: "Living Rooms",
+    desc: "Curated living spaces crafted with tailored joinery, ambient lighting, and balanced material palettes that create a calm, refined atmosphere.",
+    img: "/living-2.png",
   },
 ];
 

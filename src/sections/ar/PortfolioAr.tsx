@@ -3,6 +3,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
+const ITEMS_PER_PAGE = 8;
+
 const categories = [
   "الكل",
   "غرف الملابس",
@@ -35,7 +37,7 @@ const projects = [
   },
   {
     title: "نظام ألواح مجعدة",
-    category: "ألواح جدارية",
+    category: "التكسيات الخشبية",
     img: "/walls.png",
     desc: "كسوة خشبية تحول الجدار إلى عنصر معماري يضيف عمقًا وشخصية للمكان.",
   },
@@ -43,11 +45,24 @@ const projects = [
 
 export default function PortfolioAr() {
   const [activeFilter, setActiveFilter] = useState("الكل");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProjects =
     activeFilter === "الكل"
       ? projects
       : projects.filter((p) => p.category === activeFilter);
+
+  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / ITEMS_PER_PAGE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const paginatedProjects = filteredProjects.slice(
+    (safeCurrentPage - 1) * ITEMS_PER_PAGE,
+    safeCurrentPage * ITEMS_PER_PAGE,
+  );
+
+  const handleFilterChange = (cat: string) => {
+    setActiveFilter(cat);
+    setCurrentPage(1);
+  };
 
   return (
     <section
@@ -62,18 +77,18 @@ export default function PortfolioAr() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-right"
         >
-          <span className="text-accent text-base uppercase font-bold  block mb-3">
+          <span className="text-accent text-base uppercase font-bold block mb-3">
             أعمال مختارة
           </span>
-          <h2 className="text-4xl md:text-5xl font-light ">أعمال وتصميمات</h2>
+          <h2 className="text-4xl md:text-5xl font-light">أعمال وتصميمات</h2>
         </motion.div>
 
         <div className="flex flex-wrap gap-3 mb-16 justify-start md:justify-end">
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveFilter(cat)}
-              className={`relative px-5 py-2.5 text-base uppercase  font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
+              onClick={() => handleFilterChange(cat)}
+              className={`relative px-5 py-2.5 text-base uppercase font-medium rounded-sm border transition-colors duration-300 cursor-pointer ${
                 activeFilter === cat
                   ? "bg-foreground text-background border-foreground"
                   : "bg-transparent text-foreground/60 border-border hover:border-foreground/40 hover:text-foreground"
@@ -89,7 +104,7 @@ export default function PortfolioAr() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
+            {paginatedProjects.map((project, idx) => (
               <motion.div
                 key={project.title}
                 layout
@@ -123,6 +138,44 @@ export default function PortfolioAr() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-base text-foreground/40">
+            صفحة {safeCurrentPage} من {totalPages}
+          </p>
+
+          <div className="flex items-center gap-2 flex-wrap justify-center">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              السابق
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
+                  page === safeCurrentPage
+                    ? "bg-foreground text-background border-foreground"
+                    : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              التالي
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

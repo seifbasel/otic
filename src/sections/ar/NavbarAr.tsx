@@ -110,7 +110,7 @@ export default function NavbarAr() {
                 variants={itemVariants}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-3xl font-light text-sand uppercase  hover:text-accent transition-colors"
+                className="text-3xl font-light text-sand uppercase hover:text-accent transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -120,9 +120,13 @@ export default function NavbarAr() {
               className="mt-8 flex flex-col items-center gap-4"
             >
               <LangSwitcher currentLang="ar" />
-              <button className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors">
-                <a href="#contact"> ابدأ مشروعك</a>
-              </button>
+              <a
+                href="#contact"
+                onClick={handleLinkClick}
+                className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors"
+              >
+                ابدأ مشروعك
+              </a>
             </motion.div>
           </motion.div>
         )}
@@ -150,7 +154,7 @@ export default function NavbarAr() {
             />
           </div>
 
-          <div className="hidden md:flex items-center gap-8 text-sm uppercase  text-bone">
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase text-bone">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -172,7 +176,7 @@ export default function NavbarAr() {
             >
               {isDark ? (
                 <svg
-                  className="w-5 h-5 "
+                  className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -201,9 +205,12 @@ export default function NavbarAr() {
               )}
             </button>
 
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+            <a
+              href="#contact"
+              className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer"
+            >
               اطلب استشارة
-            </button>
+            </a>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}

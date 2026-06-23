@@ -1,46 +1,28 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-/* ─── Location data ─────────────────────────────────────────────── */
 const locations = [
   {
     id: "riyadh",
     city: "Riyadh",
-    country: "KSA",
-    role: "Headquarters & Factory",
-    tagline: "Where every piece begins.",
-    address: ["Industrial Zone, Sector 4", "Premium Woodworks Center", "Riyadh 12382"],
-    hours: [
-      { days: "Sun – Thu", time: "09:00 – 18:00" },
-      { days: "Saturday", time: "10:00 – 16:00" },
+    country: "Saudi Arabia",
+    role: "Head Office and Factory",
+    tagline: "Every piece begins here.",
+    address: [
+      "Industrial Zone, Badr District",
+      "61 Al Ittidal Street",
+      "Riyadh",
     ],
-    phone: "+966 11 000 0000",
-    email: "riyadh@oticwood.com",
-    coords: "24.7136°N  46.6753°E",
+    hours: [{ days: "Saturday - Thursday", time: "09:00 - 18:00" }],
+    phone: "966544230533+",
+    email: "contact@otic-home.com",
+    coords: "24.5257°N 46.7126°E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14498.4!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1700000000000",
-  },
-  {
-    id: "Factory",
-    city: "Riyadh",
-    country: "KSA",
-    role: "Factory",
-    tagline: "Explore the crafting.",
-    address: ["King Abdullah Road", "Al Rawdah District", "Jeddah 23523"],
-    hours: [
-      { days: "Sun – Thu", time: "09:00 – 18:00" },
-      { days: "Saturday", time: "10:00 – 15:00" },
-    ],
-    phone: "+966 12 000 0000",
-    email: "jeddah@oticwood.com",
-    coords: "21.5433°N  39.1728°E",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14850.4!2d39.1728!3d21.5433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1700000000001",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.5!2d46.7099885!3d24.5256714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0d8bee043c99%3A0x33aecf7cdc17e845!2sOtic%20Wood!5e0!3m2!1sen!2seg!4v1782220344274!5m2!1sen!2seg",
   },
 ];
 
-/* ─── SVG Noise/Grain texture ────────────────────────────────────── */
 function GrainTexture({ opacity = 0.06 }: { opacity?: number }) {
   return (
     <svg
@@ -49,16 +31,20 @@ function GrainTexture({ opacity = 0.06 }: { opacity?: number }) {
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity }}
     >
-      <filter id="noise">
-        <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch" />
+      <filter id="noise-en">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.80"
+          numOctaves="4"
+          stitchTiles="stitch"
+        />
         <feColorMatrix type="saturate" values="0" />
       </filter>
-      <rect width="100%" height="100%" filter="url(#noise)" />
+      <rect width="100%" height="100%" filter="url(#noise-en)" />
     </svg>
   );
 }
 
-/* ─── Pulse dot (live indicator) ────────────────────────────────── */
 function PulseDot() {
   return (
     <span className="relative flex h-2 w-2 shrink-0">
@@ -68,7 +54,6 @@ function PulseDot() {
   );
 }
 
-/* ─── Framer Motion Variants ────────────────────────────────────── */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -79,10 +64,13 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const },
+  },
 };
 
-/* ─── Main component ─────────────────────────────────────────────── */
 export default function LocationSection() {
   const [activeId, setActiveId] = useState(locations[0].id);
   const loc = locations.find((l) => l.id === activeId)!;
@@ -92,15 +80,14 @@ export default function LocationSection() {
       id="location"
       className="relative py-24 md:py-32 px-4 md:px-6 overflow-hidden bg-background selection:bg-accent selection:text-background"
     >
-      {/* Ambient section grain */}
       <GrainTexture opacity={0.4} />
-
-      {/* Vertical center rule — architectural drawing motif */}
       <div className="absolute top-0 bottom-0 left-1/2 w-px pointer-events-none hidden xl:block bg-linear-to-b from-transparent via-foreground/20 to-transparent opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10 font-sans">
-        
-        {/* ── Header ── */}
+        <span className="text-base font-medium text-accent">
+          Studio Locations
+        </span>
+
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,25 +95,21 @@ export default function LocationSection() {
           transition={{ duration: 0.75, ease: "easeOut" }}
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-8"
         >
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-10 bg-accent" />
-              <span className="text-[10px] uppercase tracking-[0.35em] font-medium text-accent">
-                Studio Locations
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-light  leading-tight text-foreground">
-              Crafted Here.
+          <div className="text-left">
+            <h2 className="text-4xl md:text-5xl font-light leading-tight text-foreground">
+              Crafted here.
               <br />
-              <em className="not-italic font-light text-accent">Delivered Everywhere.</em>
+              <em className="not-italic font-light text-accent">
+                Delivered to every space.
+              </em>
             </h2>
           </div>
           <p className="max-w-xs text-sm font-light leading-relaxed md:text-right text-foreground/60">
-            Walk through completed rooms. Touch the materials. Speak with our design team directly.
+            Visit the completed projects, feel the materials, and speak directly
+            with the design team.
           </p>
         </motion.div>
 
-        {/* ── Panel grid ── */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,14 +117,12 @@ export default function LocationSection() {
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
           className="grid grid-cols-1 lg:grid-cols-12 overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/50"
         >
-          {/* ─ Col 1: City selector ─ */}
-          <nav className="lg:col-span-3 relative flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible border-b lg:border-b-0 lg:border-r border-border bg-foreground/5">
+          <nav className="lg:order-1 lg:col-span-3 relative flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible border-b lg:border-b-0 lg:border-r border-border bg-foreground/5">
             <GrainTexture opacity={0.1} />
 
-            {/* Sidebar header label */}
             <div className="hidden lg:flex items-center gap-2 px-6 py-5 shrink-0">
               <div className="h-px flex-1 bg-foreground/20" />
-              <span className="text-[8px] uppercase tracking-[0.4em] text-foreground/40">Select</span>
+              <span className="text-sm text-foreground/40">Choose</span>
               <div className="h-px flex-1 bg-foreground/20" />
             </div>
 
@@ -155,55 +136,77 @@ export default function LocationSection() {
                     isActive ? "bg-foreground/10" : "hover:bg-foreground/[0.07]"
                   }`}
                 >
-                  {/* Active left-edge bar (Desktop) */}
                   {isActive && (
                     <motion.div
                       layoutId="city-bar"
                       className="absolute left-0 top-0 bottom-0 w-0.75 hidden lg:block rounded-r-full bg-accent"
-                      transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 40,
+                      }}
                     />
                   )}
-                  {/* Active bottom bar (Mobile) */}
                   {isActive && (
                     <motion.div
                       layoutId="city-bar-h"
                       className="absolute bottom-0 left-0 right-0 h-0.5 lg:hidden bg-accent"
-                      transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 40,
+                      }}
                     />
                   )}
 
-                  <span className={`text-[9px] font-mono shrink-0 w-4 transition-colors ${isActive ? "text-accent" : "text-foreground/30"}`}>
+                  <span
+                    className={`text-sm font-mono shrink-0 w-4 transition-colors ${isActive ? "text-accent" : "text-foreground/30"}`}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
                   <div className="min-w-0">
-                    <p className={`text-sm tracking-wide font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}>
+                    <p
+                      className={`text-sm tracking-wide font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}
+                    >
                       {l.city}
                     </p>
-                    <p className={`text-[9px] uppercase tracking-[0.2em] mt-0.5 transition-colors duration-200 truncate ${isActive ? "text-accent" : "text-foreground/40"}`}>
+                    <p
+                      className={`text-sm mt-0.5 transition-colors duration-200 truncate ${isActive ? "text-accent" : "text-foreground/40"}`}
+                    >
                       {l.country}
                     </p>
                   </div>
 
                   {isActive && (
-                    <svg className="ml-auto hidden lg:block shrink-0 text-accent" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      className="ml-auto hidden lg:block shrink-0 text-accent"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <path
+                        d="M2 6h8M6 2l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   )}
                 </button>
               );
             })}
 
-            {/* Bottom coords watermark */}
             <div className="hidden lg:block mt-auto px-6 pb-6 pt-4 border-t border-border">
-              <p className="text-[8px] font-mono leading-relaxed text-foreground/30">
+              <p className="text-sm font-mono leading-relaxed text-foreground/30">
                 {loc.coords}
               </p>
             </div>
           </nav>
 
-          {/* ─ Col 2: Map ─ */}
-          <div className="lg:col-span-5 relative overflow-hidden h-85 lg:h-auto bg-background">
+          <div className="lg:order-2 lg:col-span-5 relative overflow-hidden h-85 lg:h-auto bg-background">
             <AnimatePresence mode="wait">
               <motion.iframe
                 key={loc.id + "-map"}
@@ -214,7 +217,8 @@ export default function LocationSection() {
                 className="absolute inset-0 w-full h-full"
                 style={{
                   border: 0,
-                  filter: "grayscale(0.65) sepia(0.3) contrast(1.08) brightness(0.82)",
+                  filter:
+                    "grayscale(0.65) sepia(0.3) contrast(1.08) brightness(0.82)",
                 }}
                 allowFullScreen
                 loading="lazy"
@@ -226,7 +230,6 @@ export default function LocationSection() {
               />
             </AnimatePresence>
 
-            {/* Top badge */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={loc.city + "-badge"}
@@ -237,20 +240,17 @@ export default function LocationSection() {
                 className="absolute top-4 left-4 z-10 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-background/80 backdrop-blur-md border border-border"
               >
                 <PulseDot />
-                <span className="text-[10px] font-light uppercase tracking-[0.2em] text-foreground">
-                  {loc.city} · {loc.country}
+                <span className="text-base font-light text-foreground">
+                  {loc.city} - {loc.country}
                 </span>
               </motion.div>
             </AnimatePresence>
 
-            {/* Bottom-to-top fade out into info panel */}
             <div className="absolute inset-x-0 bottom-0 h-32 pointer-events-none z-10 bg-linear-to-t from-background via-background/60 to-transparent" />
-            {/* Right-to-left fade into info panel */}
             <div className="absolute inset-y-0 right-0 w-20 pointer-events-none z-10 hidden lg:block bg-linear-to-r from-transparent to-background/40" />
           </div>
 
-          {/* ─ Col 3: Info panel ─ */}
-          <div className="lg:col-span-4 relative flex flex-col border-t lg:border-t-0 lg:border-l border-border bg-foreground/5">
+          <div className="lg:order-3 lg:col-span-4 relative flex flex-col border-t lg:border-t-0 lg:border-l border-border bg-foreground/5">
             <GrainTexture opacity={0.08} />
 
             <AnimatePresence mode="wait">
@@ -260,63 +260,70 @@ export default function LocationSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -12 }}
                 transition={{ duration: 0.42, ease: "easeOut" }}
-                className="relative z-10 flex flex-col h-full p-8 lg:p-10 gap-8"
+                className="relative z-10 flex flex-col h-full p-8 lg:p-10 gap-8 text-left"
               >
-                
-                <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col gap-8 h-full">
-                  
-                  {/* Role badge + tagline */}
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex flex-col gap-8 h-full"
+                >
                   <motion.div variants={itemVariants}>
-                    <span className="inline-block text-[9px] uppercase tracking-[0.3em] font-medium px-2.5 py-1 rounded mb-4 text-accent bg-foreground/10 border border-border">
+                    <span className="inline-block text-sm font-medium px-2.5 py-1 rounded mb-4 text-accent bg-foreground/10 border border-border">
                       {loc.role}
                     </span>
                     <p className="text-xl font-light leading-snug text-foreground">
-                      <span className="text-foreground/70">“</span>
+                      <span className="text-foreground/70">&ldquo;</span>
                       {loc.tagline}
-                      <span className="text-foreground/70">”</span>
+                      <span className="text-foreground/70">&rdquo;</span>
                     </p>
                   </motion.div>
 
-                  {/* Grain divider */}
-                  <motion.div variants={itemVariants} className="relative h-px overflow-hidden bg-border">
+                  <motion.div
+                    variants={itemVariants}
+                    className="relative h-px overflow-hidden bg-border"
+                  >
                     <div className="absolute left-0 top-0 h-full w-12 bg-accent" />
                   </motion.div>
 
-                  {/* Address block */}
                   <motion.div variants={itemVariants}>
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
-                      Address
-                    </p>
+                    <p className="text-base mb-3 text-foreground/50">Address</p>
                     <div className="space-y-0.5">
                       {loc.address.map((line, i) => (
-                        <p key={i} className={`text-sm font-light leading-relaxed ${i === 0 ? "text-foreground" : "text-foreground/70"}`}>
+                        <p
+                          key={i}
+                          className={`text-sm font-light leading-relaxed ${i === 0 ? "text-foreground" : "text-foreground/70"}`}
+                        >
                           {line}
                         </p>
                       ))}
                     </div>
                   </motion.div>
 
-                  {/* Hours */}
                   <motion.div variants={itemVariants}>
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
+                    <p className="text-base mb-3 text-foreground/50">
                       Studio Hours
                     </p>
                     <div className="space-y-2.5">
                       {loc.hours.map((h) => (
-                        <div key={h.days} className="flex justify-between items-baseline gap-4">
-                          <span className="text-base font-light text-foreground/70">{h.days}</span>
-                          <span className="flex-1 border-b border-dotted border-border mb-1"></span>
-                          <span className="text-base font-mono text-foreground">{h.time}</span>
+                        <div
+                          key={h.days}
+                          className="flex justify-between items-baseline gap-4"
+                        >
+                          <span className="text-base font-light text-foreground/70">
+                            {h.days}
+                          </span>
+                          <span className="flex-1 border-b border-dotted border-border mb-1" />
+                          <span className="text-base font-mono text-foreground">
+                            {h.time}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </motion.div>
 
-                  {/* Contact */}
                   <motion.div variants={itemVariants} className="space-y-3">
-                    <p className="text-[9px] uppercase tracking-[0.35em] mb-3 text-foreground/50">
-                      Contact
-                    </p>
+                    <p className="text-base mb-3 text-foreground/50">Contact</p>
                     {[
                       {
                         href: `tel:${loc.phone}`,
@@ -336,26 +343,45 @@ export default function LocationSection() {
                         ),
                       },
                     ].map(({ href, label, icon }) => (
-                      <a key={href} href={href} className="flex items-center gap-3 group">
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border border-border transition-all duration-200 group-hover:bg-accent/20 group-hover:border-accent">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
-                            {icon}
-                          </svg>
-                        </div>
+                      <a
+                        key={href}
+                        href={href}
+                        className="flex items-center gap-3 group justify-start"
+                      >
                         <span className="text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
                           {label}
                         </span>
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border border-border transition-all duration-200 group-hover:bg-accent/20 group-hover:border-accent">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-accent"
+                          >
+                            {icon}
+                          </svg>
+                        </div>
                       </a>
                     ))}
                   </motion.div>
 
-                  {/* Bottom CTA */}
-                  <motion.div variants={itemVariants} className="mt-auto pt-5 border-t border-border flex items-center justify-between">
+                  <motion.div
+                    variants={itemVariants}
+                    className="mt-auto pt-5 border-t border-border flex items-center justify-between"
+                  >
+                    <span className="text-sm font-mono text-foreground/30">
+                      {loc.coords.split(" ")[0]}
+                    </span>
                     <a
                       href={`https://maps.google.com/?q=OTIC+Wood+${loc.city}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-medium transition-colors duration-200 hover:opacity-80 text-accent"
+                      className="group flex items-center gap-2 text-base font-medium transition-colors duration-200 hover:opacity-80 text-accent"
                     >
                       Get Directions
                       <svg
@@ -365,12 +391,15 @@ export default function LocationSection() {
                         fill="none"
                         className="transform group-hover:translate-x-1 transition-transform duration-200 text-accent"
                       >
-                        <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M2 6h8M6 2l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </a>
-                    <span className="text-[8px] font-mono text-foreground/30">
-                      {loc.coords.split("  ")[0]}
-                    </span>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -378,12 +407,15 @@ export default function LocationSection() {
           </div>
         </motion.div>
 
-        {/* ── Footer strip ── */}
         <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 items-center text-foreground/40">
-          {["Free material samples on request", "Initial consultation complimentary", "Appointments recommended"].map((t) => (
+          {[
+            "Free material samples on request",
+            "Initial consultation is complimentary",
+            "Advance booking is preferred",
+          ].map((t) => (
             <div key={t} className="flex items-center gap-2">
               <div className="w-1 h-1 rounded-full shrink-0 bg-accent" />
-              <span className="text-[9px] uppercase tracking-[0.2em]">{t}</span>
+              <span className="text-sm">{t}</span>
             </div>
           ))}
         </div>

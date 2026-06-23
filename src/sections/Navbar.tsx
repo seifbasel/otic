@@ -114,7 +114,7 @@ export default function Navbar() {
                 variants={itemVariants}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-3xl font-light text-text uppercase  hover:text-accent transition-colors"
+                className="text-3xl font-light text-sand uppercase hover:text-accent transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -124,9 +124,13 @@ export default function Navbar() {
               className="mt-8 flex flex-col items-center gap-4"
             >
               <LangSwitcher currentLang="en" />
-              <button className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors">
+              <a
+                href="#contact"
+                onClick={handleLinkClick}
+                className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors"
+              >
                 Start a Project
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         )}
@@ -208,29 +212,32 @@ export default function Navbar() {
             </button>
 
             {/* Desktop Inquire Button */}
-            <button className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+            <a
+              href="#contact"
+              className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer"
+            >
               Inquire
-            </button>
+            </a>
 
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-foreground"
+              className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer z-60 text-bone"
               aria-label="Toggle Menu"
             >
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                className="w-6 h-[1.5px] bg-accent block transition-transform"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-[1.5px] bg-current block transition-opacity"
+                className="w-6 h-[1.5px] bg-accent block transition-opacity"
               />
               <motion.span
                 animate={
                   menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
                 }
-                className="w-6 h-[1.5px] bg-current block transition-transform"
+                className="w-6 h-[1.5px] bg-accent block transition-transform"
               />
             </button>
           </div>
