@@ -291,11 +291,11 @@ export default function HeroAr() {
             <div>
               <a
                 href="#portfolio"
-                className="group relative border border-white/20 hover:border-accent text-white px-10 py-4 rounded-sm tracking-[0.2em] text-[10px] uppercase transition-all duration-500 inline-block overflow-hidden"
+                className="group relative border border-white/20 hover:border-accent text-white px-10 py-4 rounded-sm text-base uppercase transition-all duration-500 inline-block overflow-hidden"
               >
                 <span className="relative z-10">استعرض أعمالنا</span>
                 <div className="absolute inset-0 bg-accent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 tracking-[0.2em] text-[10px] uppercase">
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white z-10 text-base uppercase">
                   استعرض أعمالنا
                 </span>
               </a>

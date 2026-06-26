@@ -101,7 +101,7 @@ export default function CraftsAr() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-onyx via-onyx/60 to-transparent z-10 group-hover:via-onyx/40 transition-all duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-right" style={{ transform: "translateZ(40px)" }}>
-                  <span className="text-accent text-[10px] tracking-[0.2em] font-bold mb-2 block">
+                  <span className="text-accent text-base font-bold mb-2 block">
                     {service.category}
                   </span>
                   <h3 className="text-2xl font-bold tracking-wide text-bone mb-3 group-hover:text-accent transition-colors duration-300">

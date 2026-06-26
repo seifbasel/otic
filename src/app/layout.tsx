@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OTIC WOOD",
+  title: "OTIC HOME",
   description: "Premium wood excepermient",
 };
 

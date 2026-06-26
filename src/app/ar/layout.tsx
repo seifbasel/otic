@@ -2,7 +2,7 @@ import HtmlDirPatcher from "@/components/HtmlDirPatcher";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "أوتيك — نجارة خشب راقية",
+  title: "أوتيك هوم — نجارة خشب راقية",
   description: "نجارة خشبية راقية للمساحات الداخلية الفاخرة في السعودية.",
 };
 

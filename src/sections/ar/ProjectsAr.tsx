@@ -40,8 +40,8 @@ export default function ProjectsAr() {
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <p className="text-base text-vibrant font-bold tracking-wider mb-1">{proj.category}</p>
-              <h3 className="text-2xl font-bold tracking-wide group-hover:text-vibrant transition-colors duration-300">
+              <p className="text-base text-vibrant font-bold  mb-1">{proj.category}</p>
+              <h3 className="text-2xl font-bold group-hover:text-vibrant transition-colors duration-300">
                 {proj.title}
               </h3>
             </motion.div>

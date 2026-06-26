@@ -105,9 +105,6 @@ export default function Footer() {
             <br />
             61 Al Ittidal Street
           </p>
-          <p className="text-base font-mono text-sandstone">
-            contact@oticwood.com
-          </p>
         </div>
       </div>
 

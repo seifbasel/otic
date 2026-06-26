@@ -166,7 +166,7 @@ export default function LocationsectionAr() {
 
                   <div className="min-w-0">
                     <p
-                      className={`text-sm tracking-wide font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}
+                      className={`text-sm font-light transition-colors duration-200 truncate ${isActive ? "text-foreground" : "text-foreground/70"}`}
                     >
                       {l.city}
                     </p>

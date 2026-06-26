@@ -24,6 +24,12 @@ const projects = [
     desc: "توزيعات مدروسة مع إضاءة مدمجة تمنح الغرفة حضورًا مرتبًا ومترفًا.",
   },
   {
+    title: "غرفة نوم هادئة",
+    category: "غرف نوم",
+    img: "/bedroom.png",
+    desc: "غرفة نوم مصممة بأعمال خشبية مخصصة وتفاصيل هادئة تمنح المساحة راحة وتوازنًا وأناقة دائمة.",
+  },
+  {
     title: "مطبخ هادئ بتفاصيل دقيقة",
     category: "مطابخ",
     img: "/kitchen.png",
@@ -41,6 +47,42 @@ const projects = [
     img: "/walls.png",
     desc: "كسوة خشبية تحول الجدار إلى عنصر معماري يضيف عمقًا وشخصية للمكان.",
   },
+  {
+    title: "وحدة ديكور مميزة",
+    category: "وحدات الديكور",
+    img: "/decoration-unit-1.png",
+    desc: "وحدة مصممة بعناية تجمع بين العرض والتخزين المخفي لتمنح المساحة مظهرًا أنيقًا ومتوازنًا.",
+  },
+  {
+    title: "غرفة معيشة عصرية",
+    category: "غرف المعيشة",
+    img: "/living-1.png",
+    desc: "مساحة معيشية متكاملة تعتمد على أعمال خشبية مخصصة تضيف الدفء والراحة والانسجام البصري.",
+  },
+  {
+    title: "مطبخ بتصميم بسيط",
+    category: "مطابخ",
+    img: "/kitchen-1.png",
+    desc: "خزائن مصممة حسب الطلب مع توزيع عملي وتفاصيل متقنة تلبي احتياجات الاستخدام اليومي.",
+  },
+  {
+    title: "مطبخ بتشطيبات راقية",
+    category: "مطابخ",
+    img: "/kitchen-2.png",
+    desc: "تشطيبات فاخرة وحرفية دقيقة تمنح المطبخ طابعًا خالدًا يجمع بين العملية والأناقة.",
+  },
+  {
+    title: "ألواح جدارية بخطوط انسيابية",
+    category: "التكسيات الخشبية",
+    img: "/wall-paneling-1.png",
+    desc: "ألواح خشبية تضيف إيقاعًا معماريًا وملمسًا غنيًا يعزز شخصية المساحة.",
+  },
+  {
+    title: "باب داخلي بتفاصيل معمارية",
+    category: "أبواب",
+    img: "/door-1.png",
+    desc: "باب داخلي بتشطيب متقن وخطوط هادئة يعزز الخصوصية ويحافظ على انسجام التصميم.",
+  },
 ];
 
 export default function PortfolioAr() {
@@ -52,7 +94,10 @@ export default function PortfolioAr() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredProjects.length / ITEMS_PER_PAGE),
+  );
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const paginatedProjects = filteredProjects.slice(
     (safeCurrentPage - 1) * ITEMS_PER_PAGE,
@@ -148,7 +193,7 @@ export default function PortfolioAr() {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="min-w-10 h-10 px-3 rounded-full border text-base  transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               السابق
             </button>
@@ -157,7 +202,7 @@ export default function PortfolioAr() {
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
+                className={`min-w-10 h-10 px-3 rounded-full border text-base  transition-colors ${
                   page === safeCurrentPage
                     ? "bg-foreground text-background border-foreground"
                     : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
@@ -170,7 +215,7 @@ export default function PortfolioAr() {
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="min-w-10 h-10 px-3 rounded-full border text-base transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               التالي
             </button>

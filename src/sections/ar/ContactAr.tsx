@@ -50,7 +50,7 @@ export default function ContactAr() {
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+              <p className="text-[10px]  text-vibrant mb-2">
                 الرد
               </p>
               <p className="text-sm text-claywood/80 leading-relaxed">
@@ -58,7 +58,7 @@ export default function ContactAr() {
               </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+              <p className="text-[10px]  text-vibrant mb-2">
                 النطاق
               </p>
               <p className="text-sm text-claywood/80 leading-relaxed">
@@ -66,7 +66,7 @@ export default function ContactAr() {
               </p>
             </div>
             <div className="rounded-2xl border border-claywood/10 bg-background/50 backdrop-blur-sm p-5">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-vibrant mb-2">
+              <p className="text-[10px] text-vibrant mb-2">
                 الزيارة
               </p>
               <p className="text-sm text-claywood/80 leading-relaxed">

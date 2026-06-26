@@ -105,42 +105,40 @@ export default function FooterAr() {
             <br />
             61 شارع الاعتدال{" "}
           </p>
-          <p className="text-base font-mono text-sandstone">
-            contact@oticwood.com
-          </p>
+      
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto pt-8 border-t border-sandstone/10 flex flex-col sm:flex-row justify-between items-center text-base text-desert/60 gap-4">
-        
         <div className="flex justify-center items-center gap-6">
           <a href="#" className="hover:text-sandstone transition-colors">
             سياسة الخصوصية
           </a>
           <a href="#" className="hover:text-sandstone transition-colors">
             شروط الاستخدام
-          </a><a
-          href="https://seifbasel.vercel.app"
-          target="_blank"
-          rel="noreferrer"
-          className="group inline-flex items-center justify-center gap-2 text-desert/60 hover:text-sandstone transition-colors"
-          aria-label="Visit Seif Pixels"
-        >
-          <span className="flex items-center gap-2">
-            تم البناء بواسطة
-            <span className="relative inline-block h-14 w-14 transition-transform duration-500 ease-out group-hover:rotate-360">
-              <Image
-                src="/seif.png"
-                alt="seif pixels"
-                fill
-                aria-hidden="true"
-                className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-              />
+          </a>
+          <a
+            href="https://seifbasel.vercel.app"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center justify-center gap-2 text-desert/60 hover:text-sandstone transition-colors"
+            aria-label="Visit Seif Pixels"
+          >
+            <span className="flex items-center gap-2">
+              تم البناء بواسطة
+              <span className="relative inline-block h-14 w-14 transition-transform duration-500 ease-out group-hover:rotate-360">
+                <Image
+                  src="/seif.png"
+                  alt="seif pixels"
+                  fill
+                  aria-hidden="true"
+                  className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </span>
             </span>
-          </span>
-        </a>
-        </div>        <p>&copy; {new Date().getFullYear()} أوتيك. جميع الحقوق محفوظة.</p>
-
+          </a>
+        </div>{" "}
+        <p>&copy; {new Date().getFullYear()} أوتيك. جميع الحقوق محفوظة.</p>
       </div>
     </footer>
   );

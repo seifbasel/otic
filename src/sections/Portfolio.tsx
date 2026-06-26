@@ -24,6 +24,12 @@ const projects = [
     desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
   },
   {
+    title: "Premium Bedroom",
+    category: "Bedrooms",
+    img: "/bedroom.png",
+    desc: "A custom-designed bedroom featuring integrated woodwork, soft textures, and balanced proportions for everyday comfort.",
+  },
+  {
     title: "Quiet Kitchen",
     category: "Kitchens",
     img: "/kitchen.png",
@@ -41,6 +47,42 @@ const projects = [
     img: "/walls.png",
     desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
   },
+  {
+    title: "Statement Decoration Unit",
+    category: "Decoration Units",
+    img: "/decoration-unit-1.png",
+    desc: "A custom-built display piece that balances open shelving and concealed storage for a refined interior.",
+  },
+  {
+    title: "Contemporary Living Room",
+    category: "Living Rooms",
+    img: "/living-1.png",
+    desc: "A cohesive living environment where custom woodwork creates warmth, comfort, and visual continuity.",
+  },
+  {
+    title: "Minimalist Kitchen",
+    category: "Kitchens",
+    img: "/kitchen-1.png",
+    desc: "Tailored cabinetry with efficient layouts and seamless detailing designed for everyday performance.",
+  },
+  {
+    title: "Signature Kitchen",
+    category: "Kitchens",
+    img: "/kitchen-2.png",
+    desc: "Premium finishes and precise craftsmanship combine to create a timeless kitchen with lasting appeal.",
+  },
+  {
+    title: "Linear Wall Paneling",
+    category: "Wall Paneling",
+    img: "/wall-paneling-1.png",
+    desc: "Architectural wood panels that introduce texture, rhythm, and understated elegance to the space.",
+  },
+  {
+    title: "Architectural Interior Door",
+    category: "Doors",
+    img: "/door-1.png",
+    desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
+  },
 ];
 
 export default function Portfolio() {
@@ -52,7 +94,10 @@ export default function Portfolio() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredProjects.length / ITEMS_PER_PAGE),
+  );
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const paginatedProjects = filteredProjects.slice(
     (safeCurrentPage - 1) * ITEMS_PER_PAGE,
@@ -101,7 +146,10 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           <AnimatePresence mode="popLayout">
             {paginatedProjects.map((project, idx) => (
               <motion.div

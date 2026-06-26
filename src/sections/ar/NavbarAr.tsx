@@ -123,7 +123,7 @@ export default function NavbarAr() {
               <a
                 href="#contact"
                 onClick={handleLinkClick}
-                className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase tracking-wider px-10 py-3.5 rounded-full transition-colors"
+                className="bg-accent hover:bg-accent/90 text-white font-medium text-sm uppercase px-10 py-3.5 rounded-full transition-colors"
               >
                 ابدأ مشروعك
               </a>
@@ -207,7 +207,7 @@ export default function NavbarAr() {
 
             <a
               href="#contact"
-              className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors cursor-pointer"
+              className="hidden md:block bg-accent hover:bg-accent/90 text-bone font-medium text-base px-5 py-2.5 rounded-full transition-colors cursor-pointer"
             >
               اطلب استشارة
             </a>
