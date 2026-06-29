@@ -14,11 +14,9 @@ interface Product {
   priceRange: string;
   price: string;
   priceNum: number;
-  finish: string;
   img: string;
   description: string;
   dimensions: string;
-  finishLabel: string;
 }
 
 const PRODUCTS_DATA = [
@@ -29,12 +27,10 @@ const PRODUCTS_DATA = [
     priceRange: "mid",
     price: "1,450",
     priceNum: 1450,
-    finish: "قشرة خشبية",
     img: "/17.png",
     description:
       "تشطيب جوز داكن بخطوط هادئة وحضور معماري راقٍ يضيف دفئًا وأناقة للمكان.",
     dimensions: "2100 مم × 900 مم × 40 مم",
-    finishLabel: "قشرة جوز طبيعية",
   },
   {
     id: 2,
@@ -43,12 +39,10 @@ const PRODUCTS_DATA = [
     priceRange: "entry",
     price: "1,050",
     priceNum: 1050,
-    finish: "لاكير",
     img: "/11.png",
     description:
       "سطح أبيض نقي للمساحات التي تعتمد على البساطة والاتساع والهدوء البصري.",
     dimensions: "2100 مم × 850 مم × 40 مم",
-    finishLabel: "لاكير مطفي",
   },
   {
     id: 3,
@@ -57,12 +51,10 @@ const PRODUCTS_DATA = [
     priceRange: "premium",
     price: "2,100",
     priceNum: 2100,
-    finish: "قشرة خشبية",
     img: "/12.png",
     description:
       "درجات بلوط دافئة مع إكسسوارات مصقولة تمنح التصميم توازنًا بصريًا فخمًا.",
     dimensions: "2100 مم × 900 مم × 44 مم",
-    finishLabel: "قشرة بلوط مدخن",
   },
   {
     id: 4,
@@ -71,12 +63,10 @@ const PRODUCTS_DATA = [
     priceRange: "premium",
     price: "1,950",
     priceNum: 1950,
-    finish: "لامينيت",
     img: "/13.png",
     description:
       "تصميم مسطح بدرجات رمادية هادئة ومسار بصري نظيف يناسب المساحات المعاصرة.",
     dimensions: "2100 مم × 900 مم × 40 مم",
-    finishLabel: "لامينيت مطفي محبب",
   },
   {
     id: 5,
@@ -85,12 +75,10 @@ const PRODUCTS_DATA = [
     priceRange: "luxury",
     price: "2,800",
     priceNum: 2800,
-    finish: "لاكير",
     img: "/13.png",
     description:
       "إيقاع رأسي خفيف يضيف عمقًا وظلالًا أنيقة لتكوينات الجدران والأبواب.",
     dimensions: "2100 مم × 950 مم × 50 مم",
-    finishLabel: "MDF مطلي / قشرة خشبية",
   },
   {
     id: 6,
@@ -99,12 +87,10 @@ const PRODUCTS_DATA = [
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
-    finish: "لاكير",
     img: "/14.png",
     description:
       "تفاصيل نحاسية هندسية تمنح المدخل شخصية فاخرة وحضورًا واضحًا من النظرة الأولى.",
     dimensions: "2200 مم × 1000 مم × 55 مم",
-    finishLabel: "لاكير رمادي داكن مع نحاس",
   },
   {
     id: 7,
@@ -113,12 +99,10 @@ const PRODUCTS_DATA = [
     priceRange: "luxury",
     price: "3,200",
     priceNum: 3200,
-    finish: "قشرة خشبية",
     img: "/15.png",
     description:
       "تموجات البلوط تضيف ملمسًا أعمق وأناقة أكثر هدوءًا مع إمكانية دمج الإضاءة المخفية.",
     dimensions: "2200 مم × 1000 مم × 55 مم",
-    finishLabel: "لاكير رمادي داكن مع نحاس",
   },
 ];
 
@@ -129,7 +113,6 @@ const DICTIONARY = {
   subtitle:
     "مجموعة مختارة من الأبواب والألواح والقطع المميزة، مع تصفح خفيف وفلاتر مرتبة وصفحات واضحة.",
   type: "النوع",
-  finish: "التشطيب",
   price: "السعر",
   sort: "الترتيب",
   reset: "إعادة الضبط",
@@ -141,9 +124,8 @@ const DICTIONARY = {
   prev: "السابق",
   next: "التالي",
   viewDetails: "عرض التفاصيل",
-  perPiece: "للقطعة",
   dimensions: "الأبعاد",
-  whatsappBtn: "اطلب عبر واتساب",
+  whatsappBtn: "أشتر الأن ",
   continueBtn: "متابعة التصفح",
   whatsappMsg: (name: string, cat: string, price: string) =>
     `مرحبًا، أرغب بالاستفسار عن *${name}* (${cat}) بسعر SAR ${price}. هل يمكنكم مشاركة المزيد من التفاصيل؟`,
@@ -207,12 +189,12 @@ function ProductModalAr({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full max-w-5xl max-h-[90vh] bg-background rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
+        className="relative w-full max-w-5xl max-h-[92vh] md:max-h-[90vh] bg-background rounded-[2rem] md:rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 left-4 z-50 w-10 h-10 rounded-full bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center text-foreground transition-colors cursor-pointer"
+          className="absolute top-3 left-3 z-50 w-10 h-10 rounded-full bg-background/85 md:bg-foreground/10 hover:bg-foreground/20 flex items-center justify-center text-foreground transition-colors cursor-pointer backdrop-blur-sm"
           aria-label="إغلاق"
         >
           <svg
@@ -230,7 +212,7 @@ function ProductModalAr({
           </svg>
         </button>
 
-        <div className="w-full md:w-[46%] h-72 md:h-auto relative">
+        <div className="relative aspect-[3/4] w-full shrink-0 md:h-auto md:w-[46%] md:aspect-auto">
           <Image
             src={product.img}
             alt={product.name}
@@ -239,43 +221,34 @@ function ProductModalAr({
           />
         </div>
 
-        <div className="w-full md:w-[54%] p-7 md:p-10 lg:p-12 flex flex-col overflow-y-auto">
-          <div className="mb-6">
+        <div className="flex w-full flex-1 flex-col overflow-y-auto overscroll-contain px-5 pb-5 pt-5 scroll-pb-28 md:w-[54%] md:px-10 md:pb-10 md:pt-10 lg:px-12 lg:pb-12 lg:pt-12">
+          <div className="mb-4 md:mb-6">
             <span className="text-accent text-base font-mono block mb-3">
               {product.category}
             </span>
-            <h3 className="text-3xl md:text-4xl font-light  text-foreground leading-tight">
-              {product.name}
-            </h3>
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <h3 className="text-2xl md:text-4xl font-light text-foreground leading-tight">
+                {product.name}
+              </h3>
+              <span className="text-xl md:text-3xl font-light text-foreground/80 whitespace-nowrap">
+                SAR {product.price}
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-end gap-3 mb-6 justify-end">
-            <span className="text-3xl md:text-4xl font-light text-foreground">
-              SAR {product.price}
-            </span>
-            <span className="text-sm text-foreground/50">{t.perPiece}</span>
-          </div>
-
-          <p className="text-foreground/70 text-sm md:text-base leading-relaxed mb-8 max-w-2xl">
+          <p className="mb-5 max-w-2xl text-sm text-foreground/70 leading-relaxed md:mb-8 md:text-base">
             {product.description}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="border border-border rounded-2xl p-4 bg-white/2">
-              <span className="text-base text-foreground/50 block mb-2">
-                {t.dimensions}
-              </span>
-              <span className="text-sm font-light">{product.dimensions}</span>
-            </div>
-            <div className="border border-border rounded-2xl p-4 bg-white/2">
-              <span className="text-sm text-foreground/50 block mb-2">
-                {t.finish}
-              </span>
-              <span className="text-sm font-light">{product.finishLabel}</span>
-            </div>
+          <div className="mb-6 border border-border rounded-2xl p-4 bg-white/2 md:mb-8">
+            <span className="mb-2 block text-sm text-foreground/50 md:text-base">
+              {t.dimensions}
+            </span>
+            <span className="text-sm font-light">{product.dimensions}</span>
           </div>
 
-          <div className="mt-auto flex flex-col gap-3 pt-2">
+          <div className="sticky bottom-0 -mx-5 mt-auto border-t border-border/70 bg-background/95 px-5 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-4 backdrop-blur-sm md:static md:mx-0 md:border-t-0 md:bg-transparent md:px-0 md:pb-0 md:pt-2 md:backdrop-blur-none">
+            <div className="grid grid-cols-2 gap-3">
             <button
               onClick={handleWhatsApp}
               className="w-full bg-[#25D366] hover:bg-[#1da851] text-white font-medium text-sm px-6 py-4 rounded-full transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer"
@@ -287,10 +260,11 @@ function ProductModalAr({
             </button>
             <button
               onClick={onClose}
-              className="w-full border border-border text-foreground hover:border-accent text-sm  px-6 py-3 rounded-full transition-colors duration-300 cursor-pointer"
+              className="w-full border border-border text-foreground hover:border-accent text-sm px-4 py-3 rounded-full transition-colors duration-300 cursor-pointer"
             >
               {t.continueBtn}
             </button>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -353,7 +327,6 @@ export default function ProductCatalogAr() {
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [category, setCategory] = useState(t.all);
-  const [finish, setFinish] = useState(t.all);
   const [priceRange, setPriceRange] = useState("all");
   const [sort, setSort] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
@@ -363,10 +336,6 @@ export default function ProductCatalogAr() {
 
     if (category !== t.all) {
       result = result.filter((p) => p.category === category);
-    }
-
-    if (finish !== t.all) {
-      result = result.filter((p) => p.finish === finish);
     }
 
     if (priceRange !== "all")
@@ -379,7 +348,7 @@ export default function ProductCatalogAr() {
       result.sort((a, b) => a.name.localeCompare(b.name));
 
     return result;
-  }, [category, finish, priceRange, sort, products, t.all]);
+  }, [category, priceRange, sort, products, t.all]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
   // Fix: Fallback to the maximum available page if current page exceeds it
@@ -394,7 +363,6 @@ export default function ProductCatalogAr() {
 
   const clearFilters = () => {
     setCategory(t.all);
-    setFinish(t.all);
     setPriceRange("all");
     setSort("default");
     setCurrentPage(1);
@@ -402,7 +370,6 @@ export default function ProductCatalogAr() {
 
   const hasActiveFilters =
     category !== t.all ||
-    finish !== t.all ||
     priceRange !== "all" ||
     sort !== "default";
 
@@ -554,7 +521,7 @@ export default function ProductCatalogAr() {
                       className="group cursor-pointer"
                       onClick={() => setSelectedProduct(product)}
                     >
-                      <div className="relative w-full aspect-4/5 overflow-hidden rounded-3xl mb-5  border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
+                      <div className="relative w-full aspect-[3/4] md:aspect-4/5 overflow-hidden rounded-3xl mb-5 border border-border/80 group-hover:border-accent/25 transition-colors duration-300">
                         <Image
                           src={product.img}
                           alt={product.name}
@@ -569,22 +536,19 @@ export default function ProductCatalogAr() {
                             {t.viewDetails}
                           </div>
                         </div>
-
-                        <div className="absolute top-4 left-4 z-20 bg-onyx/75 backdrop-blur-sm text-bone text-sm px-3 py-1.5 rounded-full font-light">
-                          SAR {product.price}
-                        </div>
-
-                        <div className="absolute top-4 right-4 z-20 bg-onyx/55 backdrop-blur-sm text-bone/80 text-[10px] px-2.5 py-1 rounded-full font-light">
-                          {product.finish}
-                        </div>
                       </div>
 
                       <p className="text-accent text-base font-mono mb-1.5">
                         {product.category}
                       </p>
-                      <h3 className="text-xl md:text-2xl font-light leading-snug group-hover:text-accent transition-colors duration-300">
-                        {product.name}
-                      </h3>
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="flex-1 text-xl md:text-2xl font-light leading-snug group-hover:text-accent transition-colors duration-300">
+                          {product.name}
+                        </h3>
+                        <span className="shrink-0 pt-1 text-base md:text-lg font-light text-foreground/75">
+                          SAR {product.price}
+                        </span>
+                      </div>
                       <p className="mt-2 text-sm text-foreground/60 leading-relaxed max-w-md">
                         {product.description}
                       </p>
