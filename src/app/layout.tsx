@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "OTIC HOME",
-  description: "Premium wood excepermient",
+  description: "Premium Wood Experience",
 };
 
 export default function RootLayout({
