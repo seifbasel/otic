@@ -25,8 +25,8 @@ const PRODUCTS_DATA = [
     name: "باب جوز داكن",
     category: "أبواب",
     priceRange: "mid",
-    price: "1,450",
-    priceNum: 1450,
+    price: "1,099",
+    priceNum: 1099,
     img: "/17.png",
     description:
       "تشطيب جوز داكن بخطوط هادئة وحضور معماري راقٍ يضيف دفئًا وأناقة للمكان.",
@@ -37,8 +37,8 @@ const PRODUCTS_DATA = [
     name: "باب أبيض هادئ",
     category: "أبواب",
     priceRange: "entry",
-    price: "1,050",
-    priceNum: 1050,
+    price: "999",
+    priceNum: 999,
     img: "/11.png",
     description:
       "سطح أبيض نقي للمساحات التي تعتمد على البساطة والاتساع والهدوء البصري.",
@@ -49,8 +49,8 @@ const PRODUCTS_DATA = [
     name: "باب بلوط فاخر",
     category: "أبواب",
     priceRange: "premium",
-    price: "2,100",
-    priceNum: 2100,
+    price: "1,099",
+    priceNum: 1099,
     img: "/12.png",
     description:
       "درجات بلوط دافئة مع إكسسوارات مصقولة تمنح التصميم توازنًا بصريًا فخمًا.",
@@ -61,8 +61,8 @@ const PRODUCTS_DATA = [
     name: "باب رمادي مسطح",
     category: "أبواب",
     priceRange: "premium",
-    price: "1,950",
-    priceNum: 1950,
+    price: "999",
+    priceNum: 999,
     img: "/13.png",
     description:
       "تصميم مسطح بدرجات رمادية هادئة ومسار بصري نظيف يناسب المساحات المعاصرة.",
@@ -73,8 +73,8 @@ const PRODUCTS_DATA = [
     name: "باب بألواح خطية",
     category: "أبواب",
     priceRange: "luxury",
-    price: "2,800",
-    priceNum: 2800,
+    price: "1,099",
+    priceNum: 1099,
     img: "/13.png",
     description:
       "إيقاع رأسي خفيف يضيف عمقًا وظلالًا أنيقة لتكوينات الجدران والأبواب.",
@@ -85,8 +85,8 @@ const PRODUCTS_DATA = [
     name: "باب هندسي بطابع لافت",
     category: "أبواب",
     priceRange: "luxury",
-    price: "3,200",
-    priceNum: 3200,
+    price: "999",
+    priceNum: 999,
     img: "/14.png",
     description:
       "تفاصيل نحاسية هندسية تمنح المدخل شخصية فاخرة وحضورًا واضحًا من النظرة الأولى.",
@@ -97,8 +97,8 @@ const PRODUCTS_DATA = [
     name: "ألواح بلوط ذات تموج",
     category: "أبواب",
     priceRange: "luxury",
-    price: "3,200",
-    priceNum: 3200,
+    price: "999",
+    priceNum: 999,
     img: "/15.png",
     description:
       "تموجات البلوط تضيف ملمسًا أعمق وأناقة أكثر هدوءًا مع إمكانية دمج الإضاءة المخفية.",
@@ -189,7 +189,7 @@ function ProductModalAr({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full max-w-5xl max-h-[92vh] md:max-h-[90vh] bg-background rounded-[2rem] md:rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
+        className="relative w-full max-w-5xl max-h-[92vh] md:max-h-[90vh] bg-background rounded-4xl md:rounded-4xl overflow-hidden shadow-2xl border border-border/60 flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -212,7 +212,7 @@ function ProductModalAr({
           </svg>
         </button>
 
-        <div className="relative aspect-[3/4] w-full shrink-0 md:h-auto md:w-[46%] md:aspect-auto">
+        <div className="relative aspect-3/4 w-full shrink-0 md:h-auto md:w-[46%] md:aspect-auto">
           <Image
             src={product.img}
             alt={product.name}
