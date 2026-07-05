@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
@@ -86,8 +86,9 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [loadedPages, setLoadedPages] = useState(1);
 
   const filteredProjects =
     activeFilter === "All"
@@ -98,20 +99,38 @@ export default function Portfolio() {
     1,
     Math.ceil(filteredProjects.length / ITEMS_PER_PAGE),
   );
-  const safeCurrentPage = Math.min(currentPage, totalPages);
-  const paginatedProjects = filteredProjects.slice(
-    (safeCurrentPage - 1) * ITEMS_PER_PAGE,
-    safeCurrentPage * ITEMS_PER_PAGE,
+  const safeLoadedPages = Math.min(loadedPages, totalPages);
+
+  const visibleProjects = filteredProjects.slice(
+    0,
+    safeLoadedPages * ITEMS_PER_PAGE,
   );
 
   const handleFilterChange = (cat: string) => {
     setActiveFilter(cat);
-    setCurrentPage(1);
+    setLoadedPages(1);
+  };
+
+  const handlePageClick = (page: number) => {
+    setLoadedPages((prev) => Math.max(prev, page));
+  };
+
+  const handleLoadMore = () => {
+    setLoadedPages((prev) => Math.min(totalPages, prev + 1));
+  };
+
+  const handleShowLess = () => {
+    // Scroll back to the top of the section first so the collapse
+    // reads as a smooth transition instead of a sudden cut below
+    // the fold, then reset the visible items.
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setLoadedPages(1);
   };
 
   return (
     <section
       id="portfolio"
+      ref={sectionRef}
       className="relative w-full bg-background text-foreground px-6 py-32 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
@@ -151,14 +170,14 @@ export default function Portfolio() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {paginatedProjects.map((project, idx) => (
+            {visibleProjects.map((project, idx) => (
               <motion.div
                 key={project.title}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                transition={{ duration: 0.4, delay: (idx % ITEMS_PER_PAGE) * 0.05 }}
                 className="group cursor-pointer"
               >
                 <div className="relative w-full aspect-4/5 overflow-hidden rounded-xl mb-5 bg-card border border-border group-hover:border-accent/30 transition-colors duration-300">
@@ -188,38 +207,39 @@ export default function Portfolio() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-base text-foreground/40">
-            Page {safeCurrentPage} of {totalPages}
+            Showing {visibleProjects.length} of {filteredProjects.length}
           </p>
 
           <div className="flex items-center gap-2 flex-wrap justify-center">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
-                  page === safeCurrentPage
+                onClick={() => handlePageClick(page)}
+                className={`w-10 h-10 shrink-0 rounded-full border text-base uppercase tracking-normal transition-colors inline-flex items-center justify-center leading-none ${
+                  page <= safeLoadedPages
                     ? "bg-foreground text-background border-foreground"
                     : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
                 }`}
               >
-                {page}
+                <span className="flex items-center justify-center">{page}</span>
               </button>
             ))}
 
+            {safeLoadedPages > 1 && (
+              <button
+                onClick={handleShowLess}
+                className="h-10 px-5 rounded-full border text-base uppercase tracking-[0.25em] transition-colors inline-flex items-center justify-center leading-none bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
+              >
+                Show Less
+              </button>
+            )}
+
             <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
+              onClick={handleLoadMore}
+              disabled={safeLoadedPages === totalPages}
+              className="h-10 px-5 rounded-full border text-base uppercase tracking-[0.25em] transition-colors inline-flex items-center justify-center leading-none bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              Next
+              Load More
             </button>
           </div>
         </div>

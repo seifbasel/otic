@@ -20,7 +20,22 @@ const deliveredResultImages = [
   "/40.png",
   "/41.png",
   "/42.png",
-  "/door-1.png",
+  "/43.png",
+  "/51.png",
+  "/52.jpeg",
+  "/52.png",
+  "/54.jpeg",
+  "/55.jpeg",
+  "/44.png",
+  "/45.png",
+  "/46.png",
+  "/47.png",
+  "/48.jpg",
+  "/49.png",
+  "/50.png",
+  "/56.jpeg",
+  "/57.jpeg",
+  "/59.png",
 ];
 
 const CARD_OFFSETS = deliveredResultImages.map((_, i) => ({

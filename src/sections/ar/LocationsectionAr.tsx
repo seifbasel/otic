@@ -9,13 +9,9 @@ const locations = [
     country: "السعودية",
     role: "المقر الرئيسي والمصنع",
     tagline: "هنا تبدأ كل قطعة.",
-    address: [
-      "المنطقة الصناعية، حي بدر",
-      "61 شارع الاعتدال",
-      "الرياض",
-    ],
+    address: ["المنطقة الصناعية، حي بدر", "61 شارع الاعتدال", "الرياض"],
     hours: [{ days: "السبت - الخميس", time: "18:00 - 9:00" }],
-    phone: "966544230533+",
+    phones: ["+966544230533", "+966569712996"],
     email: "contact@otic-home.com",
     coords: "24.5257°N 46.7126°E",
     mapSrc:
@@ -74,6 +70,28 @@ const itemVariants = {
 export default function LocationsectionAr() {
   const [activeId, setActiveId] = useState(locations[0].id);
   const loc = locations.find((l) => l.id === activeId)!;
+
+  const contactLinks = [
+    ...loc.phones.map((phone) => ({
+      href: `tel:${phone}`,
+      label: phone,
+      isPhone: true,
+      icon: (
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+      ),
+    })),
+    {
+      href: `mailto:${loc.email}`,
+      label: loc.email,
+      isPhone: false,
+      icon: (
+        <>
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </>
+      ),
+    },
+  ];
 
   return (
     <section
@@ -325,31 +343,18 @@ export default function LocationsectionAr() {
                     <p className="text-base mb-3 text-foreground/50 ">
                       التواصل
                     </p>
-                    {[
-                      {
-                        href: `tel:${loc.phone}`,
-                        label: loc.phone,
-                        icon: (
-                          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
-                        ),
-                      },
-                      {
-                        href: `mailto:${loc.email}`,
-                        label: loc.email,
-                        icon: (
-                          <>
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                          </>
-                        ),
-                      },
-                    ].map(({ href, label, icon }) => (
+                    {contactLinks.map(({ href, label, icon, isPhone }) => (
                       <a
                         key={href}
                         href={href}
                         className="flex items-center gap-3 group justify-end"
                       >
-                        <span className="text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate">
+                        <span
+                          dir={isPhone ? "ltr" : undefined}
+                          className={`text-base font-light transition-colors duration-200 group-hover:text-foreground text-foreground/70 truncate ${
+                            isPhone ? "text-left" : ""
+                          }`}
+                        >
                           {label}
                         </span>
                         <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border border-border transition-all duration-200 group-hover:bg-accent/20 group-hover:border-accent">

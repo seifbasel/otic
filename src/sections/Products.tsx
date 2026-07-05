@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
@@ -119,10 +119,10 @@ const DICTIONARY = {
   items: "items",
   itemSingle: "item",
   noProducts: "No matching pieces found",
-  page: "Page",
+  showing: "Showing",
   of: "of",
-  prev: "Previous",
-  next: "Next",
+  loadMore: "Load More",
+  showLess: "Show Less",
   viewDetails: "View Details",
   dimensions: "Dimensions",
   whatsappBtn: "Order",
@@ -299,13 +299,34 @@ function Chip({
   );
 }
 
-function PaginationButton({
+function PaginationNumberButton({
   active,
-  disabled,
   children,
   onClick,
 }: {
   active?: boolean;
+  children: React.ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`w-10 h-10 shrink-0 rounded-full border text-base transition-colors inline-flex items-center justify-center leading-none ${
+        active
+          ? "bg-foreground text-background border-foreground"
+          : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
+      } cursor-pointer`}
+    >
+      <span className="flex items-center justify-center">{children}</span>
+    </button>
+  );
+}
+
+function PaginationActionButton({
+  disabled,
+  children,
+  onClick,
+}: {
   disabled?: boolean;
   children: React.ReactNode;
   onClick: () => void;
@@ -314,11 +335,9 @@ function PaginationButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`min-w-10 h-10 px-3 rounded-full border text-base uppercase tracking-[0.25em] transition-colors ${
-        active
-          ? "bg-foreground text-background border-foreground"
-          : "bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
-      } ${disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}`}
+      className={`h-10 px-5 rounded-full border text-base uppercase tracking-[0.25em] transition-colors inline-flex items-center justify-center leading-none bg-transparent border-border text-foreground/60 hover:text-foreground hover:border-foreground/40 ${
+        disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
+      }`}
     >
       {children}
     </button>
@@ -328,12 +347,13 @@ function PaginationButton({
 export default function ProductCatalogEn() {
   const t = DICTIONARY;
   const products = PRODUCTS_DATA;
+  const sectionRef = useRef<HTMLElement>(null);
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [category, setCategory] = useState(t.all);
   const [priceRange, setPriceRange] = useState("all");
   const [sort, setSort] = useState("default");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [loadedPages, setLoadedPages] = useState(1);
 
   const filtered = useMemo(() => {
     let result = [...products];
@@ -356,20 +376,32 @@ export default function ProductCatalogEn() {
   }, [category, priceRange, sort, products, t.all]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
-  const safeCurrentPage = currentPage > totalPages ? totalPages : currentPage;
-  const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
+  const safeLoadedPages = Math.min(loadedPages, totalPages);
+  const visible = filtered.slice(0, safeLoadedPages * ITEMS_PER_PAGE);
 
   const handleFilterChange = (setter: (val: string) => void, val: string) => {
     setter(val);
-    setCurrentPage(1);
+    setLoadedPages(1);
   };
 
   const clearFilters = () => {
     setCategory(t.all);
     setPriceRange("all");
     setSort("default");
-    setCurrentPage(1);
+    setLoadedPages(1);
+  };
+
+  const handlePageClick = (page: number) => {
+    setLoadedPages((prev) => Math.max(prev, page));
+  };
+
+  const handleLoadMore = () => {
+    setLoadedPages((prev) => Math.min(totalPages, prev + 1));
+  };
+
+  const handleShowLess = () => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setLoadedPages(1);
   };
 
   const hasActiveFilters =
@@ -388,6 +420,7 @@ export default function ProductCatalogEn() {
 
       <section
         id="products"
+        ref={sectionRef}
         className="relative py-28 md:py-36 bg-background text-foreground px-6 overflow-hidden"
       >
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-foreground/15 to-transparent" />
@@ -512,14 +545,17 @@ export default function ProductCatalogEn() {
                 className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
               >
                 <AnimatePresence mode="popLayout">
-                  {paginated.map((product, idx) => (
+                  {visible.map((product, idx) => (
                     <motion.div
                       key={product.id}
                       layout
                       initial={{ opacity: 0, scale: 0.96 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.96 }}
-                      transition={{ duration: 0.35, delay: idx * 0.04 }}
+                      transition={{
+                        duration: 0.35,
+                        delay: (idx % ITEMS_PER_PAGE) * 0.04,
+                      }}
                       className="group cursor-pointer"
                       onClick={() => setSelectedProduct(product)}
                     >
@@ -561,37 +597,34 @@ export default function ProductCatalogEn() {
 
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-base text-foreground/40">
-                  {t.page} {safeCurrentPage} {t.of} {totalPages}
+                  {t.showing} {visible.length} {t.of} {filtered.length}
                 </p>
 
                 <div className="flex items-center gap-2 flex-wrap justify-center">
-                  <PaginationButton
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
-                  >
-                    {t.prev}
-                  </PaginationButton>
-
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                     (page) => (
-                      <PaginationButton
+                      <PaginationNumberButton
                         key={page}
-                        active={page === currentPage}
-                        onClick={() => setCurrentPage(page)}
+                        active={page <= safeLoadedPages}
+                        onClick={() => handlePageClick(page)}
                       >
                         {page}
-                      </PaginationButton>
+                      </PaginationNumberButton>
                     ),
                   )}
 
-                  <PaginationButton
-                    onClick={() =>
-                      setCurrentPage((p) => Math.min(totalPages, p + 1))
-                    }
-                    disabled={currentPage === totalPages}
+                  {safeLoadedPages > 1 && (
+                    <PaginationActionButton onClick={handleShowLess}>
+                      {t.showLess}
+                    </PaginationActionButton>
+                  )}
+
+                  <PaginationActionButton
+                    onClick={handleLoadMore}
+                    disabled={safeLoadedPages === totalPages}
                   >
-                    {t.next}
-                  </PaginationButton>
+                    {t.loadMore}
+                  </PaginationActionButton>
                 </div>
               </div>
             </>
