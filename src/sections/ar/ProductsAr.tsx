@@ -6,6 +6,9 @@ import Image from "next/image";
 // Internal Independent Types and Configs
 const WHATSAPP_NUMBER = "+966544230533";
 const ITEMS_PER_PAGE = 8;
+const GENERIC_PRODUCT_NAME = "باب WPC";
+const GENERIC_PRODUCT_DESCRIPTION =
+  "باب WPC متين بتشطيب نظيف وحديث يناسب المساحات السكنية والتجارية.";
 
 interface Product {
   id: number;
@@ -22,86 +25,79 @@ interface Product {
 const PRODUCTS_DATA = [
   {
     id: 1,
-    name: "باب جوز داكن",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "mid",
     price: "1,099",
     priceNum: 1099,
     img: "/17.png",
-    description:
-      "تشطيب جوز داكن بخطوط هادئة وحضور معماري راقٍ يضيف دفئًا وأناقة للمكان.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 مم × 900 مم × 40 مم",
   },
   {
     id: 2,
-    name: "باب أبيض هادئ",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "entry",
     price: "999",
     priceNum: 999,
     img: "/11.png",
-    description:
-      "سطح أبيض نقي للمساحات التي تعتمد على البساطة والاتساع والهدوء البصري.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 مم × 850 مم × 40 مم",
   },
   {
     id: 3,
-    name: "باب بلوط فاخر",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "premium",
     price: "1,099",
     priceNum: 1099,
     img: "/12.png",
-    description:
-      "درجات بلوط دافئة مع إكسسوارات مصقولة تمنح التصميم توازنًا بصريًا فخمًا.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 مم × 900 مم × 44 مم",
   },
   {
     id: 4,
-    name: "باب رمادي مسطح",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "premium",
     price: "999",
     priceNum: 999,
     img: "/13.png",
-    description:
-      "تصميم مسطح بدرجات رمادية هادئة ومسار بصري نظيف يناسب المساحات المعاصرة.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 مم × 900 مم × 40 مم",
   },
   {
     id: 5,
-    name: "باب بألواح خطية",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "luxury",
     price: "1,099",
     priceNum: 1099,
     img: "/13.png",
-    description:
-      "إيقاع رأسي خفيف يضيف عمقًا وظلالًا أنيقة لتكوينات الجدران والأبواب.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 مم × 950 مم × 50 مم",
   },
   {
     id: 6,
-    name: "باب هندسي بطابع لافت",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "luxury",
     price: "999",
     priceNum: 999,
     img: "/14.png",
-    description:
-      "تفاصيل نحاسية هندسية تمنح المدخل شخصية فاخرة وحضورًا واضحًا من النظرة الأولى.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2200 مم × 1000 مم × 55 مم",
   },
   {
     id: 7,
-    name: "ألواح بلوط ذات تموج",
-    category: "أبواب",
+    name: GENERIC_PRODUCT_NAME,
+    category: "باب WPC",
     priceRange: "luxury",
     price: "999",
     priceNum: 999,
     img: "/15.png",
-    description:
-      "تموجات البلوط تضيف ملمسًا أعمق وأناقة أكثر هدوءًا مع إمكانية دمج الإضاءة المخفية.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2200 مم × 1000 مم × 55 مم",
   },
 ];
@@ -109,9 +105,9 @@ const PRODUCTS_DATA = [
 const DICTIONARY = {
   all: "الكل",
   collection: "المجموعة",
-  title: "كتالوج منتجات",
+  title: "منتجات أبواب WPC",
   subtitle:
-    "مجموعة مختارة من الأبواب والألواح والقطع المميزة، مع تصفح خفيف وفلاتر مرتبة وصفحات واضحة.",
+    "مجموعة مركزة من أبواب WPC بتشطيبات نظيفة، أسطح متينة، وطابع داخلي حديث.",
   type: "النوع",
   price: "السعر",
   sort: "الترتيب",
@@ -134,7 +130,8 @@ const DICTIONARY = {
     "غرف الملابس",
     "غرف نوم",
     "مطابخ",
-    "أبواب",
+    "أبواب خشبية",
+    "أبواب WPC",
     "التكسيات الخشبية",
     "غرف معيشة",
     "وحدات ديكورية",

@@ -4,10 +4,24 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const locations = [
   {
-    id: "riyadh",
+    id: "1",
     city: "Riyadh",
     country: "Saudi Arabia",
-    role: "Head Office and Factory",
+    role: "Head Office",
+    tagline: "Every piece begins here.",
+    address: [" Laysen Valley", "Building 13,", "Riyadh"],
+    hours: [{ days: "Saturday - Thursday", time: "09:00 - 18:00" }],
+    phones: ["+966544230533", "+966569712996"],
+    email: "contact@otic-home.com",
+    coords: "24.5257°N 46.7126°E",
+    mapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3294.5906230387695!2d46.63180010000001!3d24.6927435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1d6a1f7dcee1%3A0xbee346f4233b8b81!2sServcorp%20Laysen%20Valley%20-%20Coworking%2C%20Offices%2C%20Virtual%20Office%2C%20Meeting%20Rooms!5e1!3m2!1sen!2seg!4v1783346634407!5m2!1sen!2seg",
+  },
+  {
+    id: "2",
+    city: "Riyadh",
+    country: "Saudi Arabia",
+    role: "Factory",
     tagline: "Every piece begins here.",
     address: [
       "Industrial Zone, Badr District",

@@ -6,6 +6,9 @@ import Image from "next/image";
 // Internal Independent Types and Configs
 const WHATSAPP_NUMBER = "+966544230533";
 const ITEMS_PER_PAGE = 8;
+const GENERIC_PRODUCT_NAME = "WPC Door";
+const GENERIC_PRODUCT_DESCRIPTION =
+  "A durable WPC door with a clean modern finish for residential and commercial interiors.";
 
 interface Product {
   id: number;
@@ -22,86 +25,79 @@ interface Product {
 const PRODUCTS_DATA = [
   {
     id: 1,
-    name: "Noir Walnut Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "mid",
     price: "1,099",
     priceNum: 1099,
     img: "/17.png",
-    description:
-      "A deep walnut finish with calm lines and a refined architectural presence that brings quiet depth to the space.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 mm x 900 mm x 40 mm",
   },
   {
     id: 2,
-    name: "Quiet White Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "entry",
     price: "999",
     priceNum: 999,
     img: "/11.png",
-    description:
-      "A clean white surface for interiors that rely on restraint, clarity, and a seamless visual flow.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 mm x 850 mm x 40 mm",
   },
   {
     id: 3,
-    name: "Lux Plank Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "premium",
     price: "1,099",
     priceNum: 1099,
     img: "/12.png",
-    description:
-      "Warm plank-inspired tones with polished hardware for a balanced and architectural finish.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 mm x 900 mm x 44 mm",
   },
   {
     id: 4,
-    name: "Matte Gray Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "premium",
     price: "999",
     priceNum: 999,
     img: "/13.png",
-    description:
-      "A calm gray design suited to modern interiors that prefer a quieter architectural line.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 mm x 900 mm x 40 mm",
   },
   {
     id: 5,
-    name: "Linear Pattern Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "luxury",
     price: "1,099",
     priceNum: 1099,
     img: "/14.png",
-    description:
-      "A subtle vertical rhythm that adds depth and shadow to wall and door compositions.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2100 mm x 950 mm x 50 mm",
   },
   {
     id: 6,
-    name: "Industrial-Look Door",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "luxury",
     price: "999",
     priceNum: 999,
     img: "/15.png",
-    description:
-      "Detailed brass elements give the entrance a distinct character and a strong first impression.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2200 mm x 1000 mm x 55 mm",
   },
   {
     id: 7,
-    name: "Ribbed Oak Panels",
-    category: "Doors",
+    name: GENERIC_PRODUCT_NAME,
+    category: "WPC Door",
     priceRange: "luxury",
     price: "999",
     priceNum: 999,
     img: "/16.png",
-    description:
-      "Ribbed oak introduces deeper texture and richer shadow play, especially when paired with concealed lighting.",
+    description: GENERIC_PRODUCT_DESCRIPTION,
     dimensions: "2200 mm x 1000 mm x 55 mm",
   },
 ];
@@ -109,9 +105,9 @@ const PRODUCTS_DATA = [
 const DICTIONARY = {
   all: "All",
   collection: "Collection",
-  title: "Products Catalog",
+  title: "WPC Door Products",
   subtitle:
-    "A curated selection of doors, panels, and signature pieces with a quieter, more premium architectural feel.",
+    "A focused selection of WPC doors with durable surfaces, clean finishes, and a modern interior look.",
   type: "Type",
   price: "Price",
   sort: "Sort",
@@ -134,7 +130,8 @@ const DICTIONARY = {
     "Wardrobes",
     "Bedrooms",
     "Kitchens",
-    "Doors",
+    "Wooden Doors",
+    "WPC Door",
     "Wall Paneling",
     "Living Rooms",
     "Decorative Units",
