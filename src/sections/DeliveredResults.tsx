@@ -30,7 +30,7 @@ const deliveredResultImages = [
   "/45.png",
   "/46.png",
   "/47.png",
-  "/48.jpg",
+  "/48.png",
   "/49.png",
   "/50.png",
   "/56.jpeg",
