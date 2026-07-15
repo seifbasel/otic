@@ -14,6 +14,7 @@ const categories = [
   "التكسيات الخشبية",
   "غرف معيشة",
   "وحدات ديكورية",
+  "كراسي وطاولات",
 ];
 
 const projects = [
@@ -49,7 +50,7 @@ const projects = [
   },
   {
     title: "وحدة ديكور مميزة",
-    category: "وحدات الديكور",
+    category: "وحدات ديكورية",
     img: "/decoration-unit-1.png",
     desc: "وحدة مصممة بعناية تجمع بين العرض والتخزين المخفي لتمنح المساحة مظهرًا أنيقًا ومتوازنًا.",
   },
@@ -82,6 +83,30 @@ const projects = [
     category: "أبواب",
     img: "/door-1.png",
     desc: "باب داخلي بتشطيب متقن وخطوط هادئة يعزز الخصوصية ويحافظ على انسجام التصميم.",
+  },
+  {
+    title: "غرف نوم عصرية",
+    category: "غرف نوم",
+    img: "/60.png",
+    desc: "غرفة نوم مصممة بتفاصيل هادئة تمنح الغرفة راحة وتوازنًا وأناقة دائمة",
+  },
+  {
+    title: "كراسي مقاهي فاخرة",
+    category: "كراسي وطاولات",
+    img: "/62.png",
+    desc: "كراسي وطاولات خشبية مصممة بتفاصيل هادئة تمنح المكان راحة وتوازن وأناقة دائمة",
+  },
+  {
+    title: "كراسي وطاولات خشبية فاخرة",
+    category: "كراسي وطاولات",
+    img: "/63.png",
+    desc: "كراسي وطاولات خشبية مصممة بتفاصيل هادئة تمنح المكان راحة وتوازن وأناقة دائمة",
+  },
+  {
+    title: "كراسي وطاولات خشبية دائرية",
+    category: "كراسي وطاولات",
+    img: "/64.png",
+    desc: "كراسي وطاولات خشبية مصممة لتناسب هوية المكان وتوازن بين الراحة وأناقة دائمة",
   },
 ];
 
@@ -172,7 +197,10 @@ export default function PortfolioAr() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: (idx % ITEMS_PER_PAGE) * 0.05 }}
+                transition={{
+                  duration: 0.4,
+                  delay: (idx % ITEMS_PER_PAGE) * 0.05,
+                }}
                 className="group cursor-pointer"
               >
                 <div className="relative w-full aspect-4/5 overflow-hidden rounded-xl mb-5 bg-card border border-border group-hover:border-accent/30 transition-colors duration-300">

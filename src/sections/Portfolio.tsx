@@ -14,6 +14,7 @@ const categories = [
   "Wall Paneling",
   "Living Rooms",
   "Decorative Units",
+  "Chairs & Tables",
 ];
 
 const projects = [
@@ -49,7 +50,7 @@ const projects = [
   },
   {
     title: "Statement Decoration Unit",
-    category: "Decoration Units",
+    category: "Decorative Units",
     img: "/decoration-unit-1.png",
     desc: "A custom-built display piece that balances open shelving and concealed storage for a refined interior.",
   },
@@ -82,6 +83,30 @@ const projects = [
     category: "Doors",
     img: "/door-1.png",
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
+  },
+  {
+    title: "Modern classic bedroom",
+    category: "Bedrooms",
+    img: "/60.png",
+    desc: "A finely crafted bedroom door with clean detailing that enhances comfort.",
+  },
+  {
+    title: "Modern Cafe chairs",
+    category: "Chairs & Tables",
+    img: "/62.png",
+    desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
+  },
+  {
+    title: "Modern cafe chairs and tables",
+    category: "Chairs & Tables",
+    img: "/63.png",
+    desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
+  },
+  {
+    title: "Round Wooden Chairs and Tables",
+    category: "Chairs & Tables",
+    img: "/64.png",
+    desc: "Wooden chairs and tables designed to suit the identity of the space, balancing comfort with lasting elegance.",
   },
 ];
 
@@ -177,7 +202,10 @@ export default function Portfolio() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: (idx % ITEMS_PER_PAGE) * 0.05 }}
+                transition={{
+                  duration: 0.4,
+                  delay: (idx % ITEMS_PER_PAGE) * 0.05,
+                }}
                 className="group cursor-pointer"
               >
                 <div className="relative w-full aspect-4/5 overflow-hidden rounded-xl mb-5 bg-card border border-border group-hover:border-accent/30 transition-colors duration-300">
