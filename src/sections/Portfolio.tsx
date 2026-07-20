@@ -31,22 +31,41 @@ const projects = [
     desc: "A custom-designed bedroom featuring integrated woodwork, soft textures, and balanced proportions for everyday comfort.",
   },
   {
+    title: "Double Bedroom",
+    category: "Bedrooms",
+    img: "/45.png",
+    desc: "A custom-designed bedroom featuring integrated woodwork, soft textures, and balanced proportions for everyday comfort.",
+  },
+  {
+    title: "wooden Wardrobe",
+    category: "Wardrobes",
+    img: "/44.png",
+    desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
+  },
+  {
+    title: "Modern classic bedroom",
+    category: "Bedrooms",
+    img: "/60.png",
+    desc: "A finely crafted bedroom door with clean detailing that enhances comfort.",
+  },
+  {
     title: "Quiet Kitchen",
     category: "Kitchens",
     img: "/kitchen.png",
     desc: "A practical focal point that blends calm lines with discreet integration for a clean, functional result.",
   },
-  {
-    title: "Primary Door With Soft Finish",
-    category: "Doors",
-    img: "/door.png",
-    desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
-  },
+
   {
     title: "Textured Wall System",
     category: "Wall Paneling",
     img: "/walls.png",
     desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
+  },
+  {
+    title: "Dressing Wardrobe",
+    category: "Wardrobes",
+    img: "/50.jpg",
+    desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
   },
   {
     title: "Statement Decoration Unit",
@@ -67,10 +86,28 @@ const projects = [
     desc: "Tailored cabinetry with efficient layouts and seamless detailing designed for everyday performance.",
   },
   {
+    title: "Premium White Wardrobe",
+    category: "Wardrobes",
+    img: "/57.png",
+    desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
+  },
+  {
+    title: "Modern Classic Living Room",
+    category: "Living Rooms",
+    img: "/living-2.png",
+    desc: "A cohesive living environment where custom woodwork creates warmth, comfort, and visual continuity.",
+  },
+  {
     title: "Signature Kitchen",
     category: "Kitchens",
     img: "/kitchen-2.png",
     desc: "Premium finishes and precise craftsmanship combine to create a timeless kitchen with lasting appeal.",
+  },
+  {
+    title: "Primary Door With Soft Finish",
+    category: "Doors",
+    img: "/door.png",
+    desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
   },
   {
     title: "Linear Wall Paneling",
@@ -85,16 +122,29 @@ const projects = [
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
   },
   {
-    title: "Modern classic bedroom",
-    category: "Bedrooms",
-    img: "/60.png",
-    desc: "A finely crafted bedroom door with clean detailing that enhances comfort.",
+    title: "Interior Door",
+    category: "Doors",
+    img: "/46.png",
+    desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
   },
+  {
+    title: "wooden Interior Door",
+    category: "Doors",
+    img: "/47.png",
+    desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
+  },
+  
   {
     title: "Modern Cafe chairs",
     category: "Chairs & Tables",
     img: "/62.png",
     desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
+  },
+  {
+    title: "Primary Door With Soft Smooth Finish",
+    category: "Doors",
+    img: "/53.png",
+    desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
   },
   {
     title: "Modern cafe chairs and tables",
@@ -107,6 +157,17 @@ const projects = [
     category: "Chairs & Tables",
     img: "/64.png",
     desc: "Wooden chairs and tables designed to suit the identity of the space, balancing comfort with lasting elegance.",
+  },
+  {
+    title: "Primary Wooden Door",
+    category: "Doors",
+    img: "/54.png",
+    desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
+  },{
+    title: "Premium Interior Door",
+    category: "Doors",
+    img: "/49.png",
+    desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
   },
 ];
 
