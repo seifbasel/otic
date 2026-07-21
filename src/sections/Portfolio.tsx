@@ -122,6 +122,12 @@ const projects = [
     desc: "A cohesive living environment where custom woodwork creates warmth, comfort, and visual continuity.",
   },
   {
+    title: "Linear golden Decoration Unit",
+    category: "Decorative Units",
+    img: "/73.png",
+    desc: "A custom-built display piece that balances open shelving and concealed storage for a refined interior.",
+  },
+  {
     title: "Signature Kitchen",
     category: "Kitchens",
     img: "/kitchen-2.png",
@@ -144,6 +150,12 @@ const projects = [
     category: "Wall Paneling",
     img: "/wall-paneling-1.png",
     desc: "Architectural wood panels that introduce texture, rhythm, and understated elegance to the space.",
+  },
+  {
+    title: "Classic Living Room",
+    category: "Living Rooms",
+    img: "/74.png",
+    desc: "A cohesive living environment where custom woodwork creates warmth, comfort, and visual continuity.",
   },
   {
     title: "Architectural Interior Door",
@@ -217,6 +229,12 @@ const projects = [
     category: "Doors",
     img: "/49.png",
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
+  },
+  {
+    title: "Classic Double bedroom",
+    category: "Bedrooms",
+    img: "/75.png",
+    desc: "A finely crafted bedroom door with clean detailing that enhances comfort.",
   },
   {
     title: "Modern Cafe Chair",
