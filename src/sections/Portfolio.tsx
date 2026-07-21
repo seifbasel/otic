@@ -37,7 +37,7 @@ const projects = [
     desc: "A custom-designed bedroom featuring integrated woodwork, soft textures, and balanced proportions for everyday comfort.",
   },
   {
-    title: "wooden Wardrobe",
+    title: "Wooden Wardrobe",
     category: "Wardrobes",
     img: "/44.png",
     desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
@@ -74,10 +74,22 @@ const projects = [
     desc: "A custom-built display piece that balances open shelving and concealed storage for a refined interior.",
   },
   {
+    title: "Classic bedroom",
+    category: "Bedrooms",
+    img: "/68.png",
+    desc: "A finely crafted bedroom door with clean detailing that enhances comfort.",
+  },
+  {
     title: "Contemporary Living Room",
     category: "Living Rooms",
     img: "/living-1.png",
     desc: "A cohesive living environment where custom woodwork creates warmth, comfort, and visual continuity.",
+  },
+  {
+    title: "Linear wood Paneling System",
+    category: "Wall Paneling",
+    img: "/70.jpg",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
   },
   {
     title: "Minimalist Kitchen",
@@ -92,6 +104,18 @@ const projects = [
     desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
   },
   {
+    title: "Wooden Wall System",
+    category: "Wall Paneling",
+    img: "/59.png",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
+  },
+  {
+    title: "Dark Wood Wardrobe",
+    category: "Wardrobes",
+    img: "/58.png",
+    desc: "Thoughtful storage planning with integrated lighting that gives the room a refined and orderly presence.",
+  },
+  {
     title: "Modern Classic Living Room",
     category: "Living Rooms",
     img: "/living-2.png",
@@ -102,6 +126,12 @@ const projects = [
     category: "Kitchens",
     img: "/kitchen-2.png",
     desc: "Premium finishes and precise craftsmanship combine to create a timeless kitchen with lasting appeal.",
+  },
+  {
+    title: "White Wood Wall Paneling System",
+    category: "Wall Paneling",
+    img: "/61.png",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
   },
   {
     title: "Primary Door With Soft Finish",
@@ -128,14 +158,26 @@ const projects = [
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
   },
   {
+    title: "Grid Wood Paneling System",
+    category: "Wall Paneling",
+    img: "/71.png",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
+  },
+  {
     title: "wooden Interior Door",
     category: "Doors",
     img: "/47.png",
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
   },
-  
   {
-    title: "Modern Cafe chairs",
+    title: "Round Wooden Wall Paneling System",
+    category: "Wall Paneling",
+    img: "/66.png",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
+  },
+
+  {
+    title: "Modern Cafe Chairs",
     category: "Chairs & Tables",
     img: "/62.png",
     desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
@@ -147,10 +189,16 @@ const projects = [
     desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
   },
   {
-    title: "Modern cafe chairs and tables",
+    title: "Modern Cafe Chairs and Tables",
     category: "Chairs & Tables",
     img: "/63.png",
     desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
+  },
+  {
+    title: "Oak Wood Wall",
+    category: "Wall Paneling",
+    img: "/67.png",
+    desc: "Wood surfacing that transforms the wall into an architectural feature with added depth and character.",
   },
   {
     title: "Round Wooden Chairs and Tables",
@@ -163,11 +211,18 @@ const projects = [
     category: "Doors",
     img: "/54.png",
     desc: "An internal door that controls the rhythm of the space while keeping the design clear and balanced.",
-  },{
+  },
+  {
     title: "Premium Interior Door",
     category: "Doors",
     img: "/49.png",
     desc: "A finely crafted interior door with clean detailing that enhances both privacy and visual harmony.",
+  },
+  {
+    title: "Modern Cafe Chair",
+    category: "Chairs & Tables",
+    img: "/72.png",
+    desc: "A finely crafted wooden chairs and tables with clean detailing that enhances comfort.",
   },
 ];
 
