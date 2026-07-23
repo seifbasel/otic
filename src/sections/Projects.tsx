@@ -2,10 +2,10 @@
 import { motion } from 'motion/react';
 
 const projects = [
-  { title: 'The Obsidian Kitchen', category: 'Kitchen / Minimalist', img: '/kitchen.png' },
-  { title: 'Oak Canopy Walk-In', category: 'Dressing Room / Luxury', img: '/dressing.png' },
-  { title: 'Oak Canopy Walk-In', category: 'Wooden Doors / Premium', img: '/door.png' },
-  { title: 'Slat Wall Linear Integration', category: 'Panels / Acoustic', img: '/walls.png' }
+  { title: 'The Obsidian Kitchen', category: 'Kitchen / Minimalist', img: '/kitchen.webp' },
+  { title: 'Oak Canopy Walk-In', category: 'Dressing Room / Luxury', img: '/dressing.webp' },
+  { title: 'Oak Canopy Walk-In', category: 'Wooden Doors / Premium', img: '/door.webp' },
+  { title: 'Slat Wall Linear Integration', category: 'Panels / Acoustic', img: '/walls.webp' }
 ];
 
 export default function Projects() {

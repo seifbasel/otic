@@ -4,12 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 const slides = [
-  { src: "/1.jpg", alt: "1" },
-  { src: "/2.jpg", alt: "2" },
-  { src: "/3.jpg", alt: "3" },
-  { src: "/4.jpg", alt: "4" },
-  { src: "/5.jpg", alt: "5" },
-  { src: "/6.jpg", alt: "6" },
+  { src: "/1.webp", alt: "1" },
+  { src: "/2.webp", alt: "2" },
+  { src: "/3.webp", alt: "3" },
+  { src: "/4.webp", alt: "4" },
+  { src: "/5.webp", alt: "5" },
+  { src: "/6.webp", alt: "6" },
 ];
 
 function IconSculpture() {

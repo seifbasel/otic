@@ -2,10 +2,10 @@
 import { motion } from "motion/react";
 
 const projects = [
-  { title: "مطبخ أوبسيديان", category: "مطبخ / بسيط", img: "/kitchen.png" },
-  { title: "غرفة ملابس من البلوط", category: "غرفة ملابس / فاخرة", img: "/dressing.png" },
-  { title: "باب خشبي فاخر", category: "أبواب خشبية / مميزة", img: "/door.png" },
-  { title: "ألواح جدارية بخطوط واضحة", category: "ألواح / صوتيات", img: "/walls.png" },
+  { title: "مطبخ أوبسيديان", category: "مطبخ / بسيط", img: "/kitchen.webp" },
+  { title: "غرفة ملابس من البلوط", category: "غرفة ملابس / فاخرة", img: "/dressing.webp" },
+  { title: "باب خشبي فاخر", category: "أبواب خشبية / مميزة", img: "/door.webp" },
+  { title: "ألواح جدارية بخطوط واضحة", category: "ألواح / صوتيات", img: "/walls.webp" },
 ];
 
 export default function ProjectsAr() {

@@ -7,37 +7,37 @@ const services = [
     id: "01",
     title: "Dressing Rooms",
     desc: "Walk-in statement systems custom-engineered with boutique configurations, integrated intelligent lighting, and premium veneers.",
-    img: "/dressing.png", // Replace with your actual image paths
+    img: "/dressing.webp", // Replace with your actual image paths
   },
   {
     id: "02",
     title: "Kitchens",
     desc: "Culinary epicenters balancing robust utility with seamless hidden integrations and pristine timber millwork.",
-    img: "/kitchen.png",
+    img: "/kitchen.webp",
   },
   {
     id: "03",
     title: "Doors",
     desc: "Grand entryways and internal structural pivot doors precision-cut to define spatial flow with minimalist elegance.",
-    img: "/door.png",
+    img: "/door.webp",
   },
   {
     id: "04",
     title: "Wall Panel Systems",
     desc: "Accoustic, fluted, or bookmatched rich timber wood surfacing that turns standard walls into architectural art.",
-    img: "/livingroom.png",
+    img: "/livingroom.webp",
   },
   {
     id: "05",
     title: "Bedrooms",
     desc: "Private sanctuaries custom-crafted with bespoke joinery, integrated ambient lighting, and premium material palettes designed for ultimate tranquility.",
-    img: "/bedroom.png",
+    img: "/bedroom.webp",
   },
   {
     id: "06",
     title: "Living Rooms",
     desc: "Curated living spaces crafted with tailored joinery, ambient lighting, and balanced material palettes that create a calm, refined atmosphere.",
-    img: "/living-2.png",
+    img: "/living-2.webp",
   },
 ];
 

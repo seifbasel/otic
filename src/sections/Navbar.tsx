@@ -151,7 +151,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="shrink-0 flex items-center h-full py-2">
             <Image
-              src="/logo-2.png"
+              src="/logo-2.webp"
               alt="OTIC Logo"
               width={300}
               height={300}

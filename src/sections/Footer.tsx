@@ -9,13 +9,13 @@ export default function Footer() {
           <div className="flex items-center justify-center">
             <div className="relative w-200 h-50">
               <Image
-                src="/logo-1.png"
+                src="/logo-1.webp"
                 alt="OTIC logo"
                 fill
                 className="object-cover dark:hidden"
               />
               <Image
-                src="/logo-2.png"
+                src="/logo-2.webp"
                 alt="OTIC logo"
                 fill
                 className="object-cover hidden dark:block"
@@ -126,7 +126,7 @@ export default function Footer() {
               built by
               <span className="relative inline-block h-14 w-14 transition-transform duration-500 ease-out group-hover:rotate-360">
                 <Image
-                  src="/seif.png"
+                  src="/seif.webp"
                   alt="seif pixels"
                   fill
                   aria-hidden="true"

@@ -7,25 +7,25 @@ const services = [
   {
     title: "مطابخ مفصلة",
     category: "النجارة المعمارية",
-    img: "/kitchen.png",
+    img: "/kitchen.webp",
     description: "مساحات طهي مصممة بعناية لتجمع بين العملية العالية والهدوء البصري.",
   },
   {
     title: "غرف ملابس فاخرة",
     category: "تصميم الفراغ",
-    img: "/dressing.png",
+    img: "/dressing.webp",
     description: "خزائن واسعة ومساحات تبديل ترتقي بالروتين اليومي إلى تجربة راقية.",
   },
   {
     title: "أبواب خشبية راقية",
     category: "بيانات المدخل",
-    img: "/door.png",
+    img: "/door.webp",
     description: "مداخل مصنوعة يدويًا تمنح الهوية المعمارية للمساحة لغة واضحة.",
   },
   {
     title: "ألواح جدارية صوتية",
     category: "التكامل الداخلي",
-    img: "/walls.png",
+    img: "/walls.webp",
     description: "جدران بتفاصيل خشبية مدمجة توازن بين الجمال والوظيفة والراحة الصوتية.",
   },
 ];

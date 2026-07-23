@@ -7,25 +7,25 @@ const services = [
   { 
     title: 'Bespoke Kitchens', 
     category: 'Culinary Architecture', 
-    img: '/kitchen.png',
+    img: '/kitchen.webp',
     description: 'State-of-the-art kitchen hubs engineered for culinary excellence and visual dominance.'
   },
   { 
     title: 'Luxury Dressing Rooms', 
     category: 'Spatial Design', 
-    img: '/dressing.png',
+    img: '/dressing.webp',
     description: 'Walk-in wardrobes and dressing spaces that elevate daily ritual into an art form.'
   },
   { 
     title: 'Premium Wooden Doors', 
     category: 'Entry Statements', 
-    img: '/door.png',
+    img: '/door.webp',
     description: 'Handcrafted entrances that set the tone for the architectural identity of your spaces.'
   },
   { 
     title: 'Acoustic Wall Paneling', 
     category: 'Interior Integration', 
-    img: '/walls.png',
+    img: '/walls.webp',
     description: 'Linear slat walls and acoustic panels merging aesthetic warmth with structural function.'
   }
 ];
