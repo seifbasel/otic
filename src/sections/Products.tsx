@@ -105,7 +105,7 @@ const PRODUCTS_DATA = [
 const DICTIONARY = {
   all: "All",
   collection: "Collection",
-  title: "WPC Door Products",
+  title: "Products",
   subtitle:
     "A focused selection of WPC doors with durable surfaces, clean finishes, and a modern interior look.",
   type: "Type",

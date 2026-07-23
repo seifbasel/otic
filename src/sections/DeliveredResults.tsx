@@ -161,7 +161,7 @@ export default function DeliveredResults({
                       .join(" ")}
                     data-stagger-index={index % 4}
                   >
-                    <div className="relative aspect-[4/5] w-full">
+                    <div className="relative aspect-4/5 w-full">
                       <Image
                         src={src}
                         alt={`${imageAltPrefix} ${index + 1}`}
@@ -174,7 +174,7 @@ export default function DeliveredResults({
 
                       {/* ── Dark gradient — always present, dims on hover ── */}
                       <div
-                        className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent
+                        className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent
                                    opacity-70 transition-opacity duration-400 group-hover:opacity-40"
                       />
 
@@ -293,7 +293,7 @@ export default function DeliveredResults({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed inset-0 z-[120] bg-onyx/92 p-4 md:p-8"
+            className="fixed inset-0 z-120 bg-onyx/92 p-4 md:p-8"
             onClick={() => setActiveImage(null)}
           >
             {/* Close button */}

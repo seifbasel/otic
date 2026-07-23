@@ -105,7 +105,7 @@ const PRODUCTS_DATA = [
 const DICTIONARY = {
   all: "الكل",
   collection: "المجموعة",
-  title: "منتجات أبواب WPC",
+  title: "المنتجات",
   subtitle:
     "مجموعة مركزة من أبواب WPC بتشطيبات نظيفة، أسطح متينة، وطابع داخلي حديث.",
   type: "النوع",
