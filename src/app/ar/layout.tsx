@@ -12,7 +12,10 @@ export default function ArabicLayout({
   return (
     <>
       <HtmlDirPatcher lang="ar" dir="rtl" />
-      <div dir="rtl" className="min-h-full flex flex-col font-(family-name:--font-arabic)">
+      <div
+        dir="rtl"
+        className="min-h-full flex flex-col font-(family-name:--font-arabic)"
+      >
         {children}
       </div>
     </>
