@@ -107,7 +107,7 @@ const DICTIONARY = {
   collection: "Collection",
   title: "Products",
   subtitle:
-    "A focused selection of WPC doors with durable surfaces, clean finishes, and a modern interior look.",
+    "A focused selection of  premium furniture, clean finishes, and a modern interior look.",
   type: "Type",
   price: "Price",
   sort: "Sort",
